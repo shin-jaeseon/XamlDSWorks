@@ -1,0 +1,106 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:itk="http://xamldesignstudio.com">
+
+	<Styles.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="/Themes/ItkThemes.axaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Styles.Resources>
+
+	<Style Selector="Window">
+		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
+		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
+	</Style>
+
+	<!--<Style Selector="TextBlock">
+	<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+	</Style>
+	<Style Selector="TextBox">
+	<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+	<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
+	</Style>
+
+	<Style Selector="ComboBox">
+	<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+	<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
+	</Style>
+
+	<Style Selector="ListBox">
+	<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+	<Setter Property="Foreground" Value="{StaticResource Fg2Brush}"/>
+	<Setter Property="Background" Value="{StaticResource Bg2Brush}"/>
+	</Style>-->
+
+	<Style Selector="CheckBox.Itk">
+		<Setter Property="Theme" Value="{StaticResource ItkCheckBoxTopDownTheme}"/>
+		<Style Selector="^.LeftRight">
+			<Setter Property="Theme" Value="{StaticResource ItkCheckBoxLeftRightTheme}"/>
+		</Style>
+	</Style>
+
+	<Style Selector="Border">
+		<Style Selector="^.Bg0">
+			<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
+		</Style>
+		<Style Selector="^.Bg1">
+			<Setter Property="Background" Value="{StaticResource Bg1Brush}"/>
+		</Style>
+		<Style Selector="^.Bg2">
+			<Setter Property="Background" Value="{StaticResource Bg2Brush}"/>
+		</Style>
+		<Style Selector="^.Bg3">
+			<Setter Property="Background" Value="{StaticResource Bg3Brush}"/>
+		</Style>
+	</Style>
+
+	<Style Selector="Grid, DockPanel, StackPanel, WrapPanel">
+		<Style Selector="^.Bg0">
+			<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
+		</Style>
+		<Style Selector="^.Bg1">
+			<Setter Property="Background" Value="{StaticResource Bg1Brush}"/>
+		</Style>
+		<Style Selector="^.Bg2">
+			<Setter Property="Background" Value="{StaticResource Bg2Brush}"/>
+		</Style>
+		<Style Selector="^.Bg3">
+			<Setter Property="Background" Value="{StaticResource Bg3Brush}"/>
+		</Style>
+	</Style>
+
+	<Style Selector="Border">
+		<Style Selector="^.BodyPanel">
+			<Setter Property="Margin" Value="2"/>
+			<Setter Property="Padding" Value="2"/>
+			<Setter Property="CornerRadius" Value="6"/>
+		</Style>
+	</Style>
+
+	<Style Selector="Button">
+		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+		<Setter Property="Theme" Value="{StaticResource ItkButtonTheme}"/>
+	</Style>
+
+	<Style Selector="ContentControl">
+		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+		<Style Selector="^.ControlsGroupBox">
+			<Setter Property="Theme" Value="{StaticResource ControlsGroupBoxTheme}"/>
+		</Style>
+	</Style>
+
+	<Style Selector="RadioButton.Itk">
+		<Setter Property="Theme" Value="{StaticResource ItkRadioButtonTopDownTheme}"/>
+		<Style Selector="^.LeftRight">
+			<Setter Property="Theme" Value="{StaticResource ItkRadioButtonLeftRightTheme}"/>
+		</Style>
+	</Style>
+
+	<Style Selector="itk|TextField">
+		<Setter Property="Theme" Value="{StaticResource TextFieldTheme}"/>
+	</Style>
+
+</Styles>

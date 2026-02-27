@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+										xmlns:res="clr-namespace:XamlDS.Itk.Resources;assembly=XamlDS.Itk"
+										xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<FontFamily x:Key="GlobalFontFamily">
+		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans,
+		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans KR,
+		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans JP,
+		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans SC,
+		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans TC,
+		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans Arabic
+	</FontFamily>
+
+	<Thickness x:Key="ControlMargin">3.0</Thickness>
+	<Thickness x:Key="ControlPadding">3.0</Thickness>
+	<CornerRadius x:Key="ControlCornerRadius">4.0</CornerRadius>
+
+	<Thickness x:Key="InputBorderThickness">1.0</Thickness>
+	<Thickness x:Key="InputControlMargin">3.0</Thickness>
+	<CornerRadius x:Key="InputBorderCornerRadius">4.0</CornerRadius>
+
+	<Thickness x:Key="ControlsGroupBoxMargin">3.0</Thickness>
+	<CornerRadius x:Key="ControlsGroupBoxCornerRadius">6.0</CornerRadius>
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="/Themes/Controls/ButtonThemes.axaml"/>
+		<ResourceInclude Source="/Themes/Controls/CheckBoxThemes.axaml"/>
+		<ResourceInclude Source="/Themes/Controls/ContentControlThemes.axaml"/>
+		<ResourceInclude Source="/Themes/Controls/RadioButtonThemes.axaml"/>
+		<ResourceInclude Source="/Themes/TemplatedControls/TextFieldThemes.axaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

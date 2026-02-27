@@ -1,0 +1,36 @@
+<UserControl x:Class="XamlDS.Showcases.ItkControls.Views.ItkControlsPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:XamlDS.Showcases.ItkControls.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border Style="{StaticResource BodyPanelStyle}" Background="#F333">
+        <DockPanel>
+            <Border DockPanel.Dock="Bottom">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel.Resources>
+                        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                            <Setter Property="MinWidth" Value="120"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button Content="Buttons"/>
+                    <Button Content="Radio"/>
+                    <Button Content="CheckBox"/>
+                    <Button Content="Slider"/>
+                    <Button Content="Layout 1"/>
+                    <Button Content="Layout 2"/>
+                    <Button Content="Layout 3"/>
+                    <Button Content="Layout 4"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource BodyPanelStyle}" Background="#F222">
+                <TextBlock Text="Itk Controls" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.2"/>
+            </Border>
+        </DockPanel>
+    </Border>
+
+</UserControl>

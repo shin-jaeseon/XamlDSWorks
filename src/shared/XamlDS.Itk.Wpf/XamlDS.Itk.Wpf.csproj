@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWpf>true</UseWpf>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>XamlDS.Itk</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\XamlDS.Itk\XamlDS.Itk.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,81 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+						 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+						 xmlns:res="clr-namespace:XamlDS.Itk.Resources;assembly=XamlDS.Itk"
+						 xmlns:viewmodels="using:XamlDS.DemoApp.ViewModels"
+						 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="50"
+						 x:DataType="viewmodels:AppBottomBarVm"
+						 x:Class="XamlDS.DemoApp.Views.AppBottomBarView">
+
+	<DockPanel Margin="3">
+		<StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+
+			<ListBox ItemsSource="{Binding LanguageSettings.AvailableLanguages}" SelectedItem="{Binding LanguageSettings.CurrentLanguage}" Margin="0,0,12,0">
+				<ListBox.Styles>
+					<Style Selector="ListBoxItem">
+						<Setter Property="Padding" Value="8,4"/>
+						<Setter Property="Margin" Value="3"/>
+					</Style>
+					<Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+						<Setter Property="Background" Value="#F555"/>
+					</Style>
+					<Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+						<Setter Property="Background" Value="#F999"/>
+					</Style>
+				</ListBox.Styles>
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border VerticalAlignment="Center">
+							<TextBlock Text="{Binding}"/>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"/>
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
+			</ListBox>
+
+			<ListBox ItemsSource="{Binding ThemeSettings.AvailableThemes}" SelectedItem="{Binding ThemeSettings.CurrentTheme}">
+				<ListBox.Styles>
+					<Style Selector="ListBoxItem">
+						<Setter Property="Padding" Value="8,4"/>
+						<Setter Property="Margin" Value="3"/>
+					</Style>
+					<Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+						<Setter Property="Background" Value="#F555"/>
+					</Style>
+					<Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+						<Setter Property="Background" Value="#F999"/>
+					</Style>
+				</ListBox.Styles>
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border VerticalAlignment="Center">
+							<TextBlock Text="{Binding}"/>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"/>
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
+			</ListBox>
+
+			<Button DataContext="{Binding ToggleFullscreenWindowCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
+			<Button DataContext="{Binding QuitApplicationCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
+			<Rectangle Width="42"/>
+		</StackPanel>
+		<StackPanel DockPanel.Dock="Left"  Orientation="Horizontal">
+			<Rectangle Width="42"/>
+			<Button Content="{Binding OpenHomePanelCvm.DisplayName}" Command="{Binding OpenHomePanelCvm.Command}"/>
+		</StackPanel>
+		<Border>
+
+		</Border>
+	</DockPanel>
+
+</UserControl>

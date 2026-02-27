@@ -1,0 +1,32 @@
+<UserControl x:Class="XamlDS.Showcases.ItkThemes.Views.ItkThemesPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:XamlDS.Showcases.ItkThemes.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="1200">
+
+    <Border Style="{StaticResource BodyPanelStyle}" Background="#F333">
+        <DockPanel>
+            <ContentControl HorizontalAlignment="Center" Style="{StaticResource RadioGroupStyle}" DockPanel.Dock="Bottom">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="RadioButton" BasedOn="{StaticResource ItkRadioButtonHStyle}">
+                            <Setter Property="MinWidth" Value="120"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <RadioButton GroupName="ThemePanelsGroup" Content="CONTROLS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Controls}" BorderBrush="Cyan"/>
+                    <RadioButton GroupName="ThemePanelsGroup" Content="SHOWCASE 1" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Showcase01}" BorderBrush="Orange"/>
+                    <RadioButton GroupName="ThemePanelsGroup" Content="SHOWCASE 2" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Showcase02}" BorderBrush="Orange"/>
+                    <RadioButton GroupName="ThemePanelsGroup" Content="SHOWCASE 3" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Showcase03}" BorderBrush="Orange"/>
+                    <RadioButton GroupName="ThemePanelsGroup" Content="OTHER 1" IsEnabled="False"/>
+                    <RadioButton GroupName="ThemePanelsGroup" Content="OTHER 2" IsEnabled="False"/>
+                    <RadioButton GroupName="ThemePanelsGroup" Content="OTHER 3" IsEnabled="False"/>
+                </StackPanel>
+            </ContentControl>
+            <ContentControl Content="{Binding CurrentPanel}"/>
+        </DockPanel>
+    </Border>
+
+</UserControl>

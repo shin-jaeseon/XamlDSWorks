@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWpf>true</UseWpf>
+		<RootNamespace>XamlDS.DemoApp</RootNamespace>
+		<ApplicationIcon>Assets\application.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\showcases\ItkControls\XamlDS.Showcases.ItkControls.Wpf\XamlDS.Showcases.ItkControls.Wpf.csproj" />
+	  <ProjectReference Include="..\..\..\showcases\ItkThemes\XamlDS.Showcases.ItkThemes.Wpf\XamlDS.Showcases.ItkThemes.Wpf.csproj" />
+	  <ProjectReference Include="..\XamlDS.DemoApp\XamlDS.DemoApp.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Assets\application.ico" />
+	</ItemGroup>
+
+</Project>

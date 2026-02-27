@@ -1,0 +1,41 @@
+<UserControl x:Class="XamlDS.DemoApp.Views.HomePanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:XamlDS.DemoApp.Views"
+             xmlns:itk="http://xamldesignstudio.com"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ContentControlTemplate1" TargetType="{x:Type ContentControl}">
+            <ContentPresenter/>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource BodyPanelStyle}" Background="#F222">
+        <Grid>
+            <itk:GridLinePane GridOpacity="0.05"/>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                        <Setter Property="Margin" Value="8"/>
+                        <Setter Property="Width" Value="200"/>
+                        <Setter Property="Height" Value="300"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Text="Welcome to the XamlDS Demo Application!" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Margin="8,0,0,8" Opacity="0.25"/>
+                <TextBlock Text="Industrial Touch Kit(Itk) Showcases" FontSize="16" HorizontalAlignment="Left" Margin="8,0,0,8"/>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button DataContext="{Binding OpenItkThemesMainPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
+                    <Button DataContext="{Binding OpenItkControlsMainPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
+                    <Button Content="Demo 03"/>
+                    <Button Content="Demo 04"/>
+                    <Button Content="Demo 05"/>
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+
+</UserControl>

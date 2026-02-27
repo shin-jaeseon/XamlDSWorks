@@ -1,0 +1,17 @@
+﻿<Window x:Class="XamlDS.DemoApp.Views.AppWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XamlDS.DemoApp.Views"
+        mc:Ignorable="d" Width="1600" Height="960" MinHeight="720" MinWidth="1200" Background="#ff0f0f0f"
+        Title="XamlDS Wpf Demo">
+
+    <Border Margin="3">
+        <DockPanel>
+            <local:AppBottomBarView DockPanel.Dock="Bottom" DataContext="{Binding AppBottomBar}"/>
+            <ContentControl Content="{Binding AppMainPanel.CurrentPanel}"/>
+        </DockPanel>
+    </Border>
+    
+</Window>

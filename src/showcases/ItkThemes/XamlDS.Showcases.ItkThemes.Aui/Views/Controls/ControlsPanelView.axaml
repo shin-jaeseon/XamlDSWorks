@@ -1,0 +1,27 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:Class="XamlDS.Showcases.ItkThemes.Views.Controls.ControlsPanelView">
+
+	<Border Classes="BodyPanel Bg2">
+		<DockPanel>
+			<ContentControl Classes="ControlsGroupBox" DockPanel.Dock="Left">
+				<StackPanel Orientation="Vertical" VerticalAlignment="Center">
+					<RadioButton Classes="Itk LeftRight" Content="BUTTONS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Buttons}"/>
+					<RadioButton Classes="Itk LeftRight" Content="CHECKBOXS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=CheckBoxs}"/>
+					<RadioButton Classes="Itk LeftRight" Content="RADIOBUTTONS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=RadioButtons}"/>
+					<RadioButton Classes="Itk LeftRight" Content="SLIDERS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Sliders}" BorderBrush="{DynamicResource AccentBBrush}"/>
+					<RadioButton Classes="Itk LeftRight" Content="TEXTBOXS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=TextBoxs}" BorderBrush="{DynamicResource AccentCBrush}"/>
+					<RadioButton Classes="Itk LeftRight" Content="TEXTFIELDS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=TextFields}" BorderBrush="{DynamicResource AccentCBrush}"/>
+					<RadioButton Classes="Itk LeftRight" Content="OTHER 1" IsEnabled="False"/>
+					<RadioButton Classes="Itk LeftRight" Content="OTHER 2" IsEnabled="False"/>
+					<RadioButton Classes="Itk LeftRight" Content="OTHER 3" IsEnabled="False"/>
+					<RadioButton Classes="Itk LeftRight" Content="OTHER4" IsEnabled="False"/>
+				</StackPanel>
+			</ContentControl>
+			<ContentControl Content="{Binding CurrentPanel}"/>
+		</DockPanel>
+	</Border>
+</UserControl>

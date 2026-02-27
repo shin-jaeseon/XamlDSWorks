@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>XamlDS.Showcases.ItkControls</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="11.3.11" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\shared\XamlDS.Itk.Aui\XamlDS.Itk.Aui.csproj" />
+	  <ProjectReference Include="..\XamlDS.Showcases.ItkControls\XamlDS.Showcases.ItkControls.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\ItkControlsPanelView.axaml.cs">
+	    <DependentUpon>ItkControlsPanelView.axaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+</Project>

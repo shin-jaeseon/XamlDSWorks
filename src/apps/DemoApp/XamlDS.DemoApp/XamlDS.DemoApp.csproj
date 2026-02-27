@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\showcases\ItkControls\XamlDS.Showcases.ItkControls\XamlDS.Showcases.ItkControls.csproj" />
+    <ProjectReference Include="..\..\..\showcases\ItkThemes\XamlDS.Showcases.ItkThemes\XamlDS.Showcases.ItkThemes.csproj" />
+  </ItemGroup>
+
+</Project>

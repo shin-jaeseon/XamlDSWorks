@@ -1,0 +1,34 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<!-- Add Controls for Previewer Here -->
+		</Border>
+	</Design.PreviewWith>
+
+	<Styles.Resources>
+		<ResourceDictionary>
+			<x:Boolean x:Key="IsItkTheme">True</x:Boolean>
+			<x:String x:Key="ThemeName">ItkDark</x:String>
+
+			<SolidColorBrush x:Key="Bg0Brush">#F000</SolidColorBrush>
+			<SolidColorBrush x:Key="Bg1Brush">#F111</SolidColorBrush>
+			<SolidColorBrush x:Key="Bg2Brush">#F222</SolidColorBrush>
+			<SolidColorBrush x:Key="Bg3Brush">#F333</SolidColorBrush>
+
+			<SolidColorBrush x:Key="Fg0Brush">#FFFF</SolidColorBrush>
+			<SolidColorBrush x:Key="Fg1Brush">#FEEE</SolidColorBrush>
+			<SolidColorBrush x:Key="Fg2Brush">#FDDD</SolidColorBrush>
+			<SolidColorBrush x:Key="Fg3Brush">#FCCC</SolidColorBrush>
+
+			<SolidColorBrush x:Key="AccentABrush">Cyan</SolidColorBrush>
+			<SolidColorBrush x:Key="AccentBBrush">Orange</SolidColorBrush>
+			<SolidColorBrush x:Key="AccentCBrush">#adff2f</SolidColorBrush>
+
+			<SolidColorBrush x:Key="InputControlBorderBrush">#FFFF</SolidColorBrush>
+		</ResourceDictionary>
+	</Styles.Resources>
+
+	<StyleInclude Source="/Styles/ItkBaseStyles.axaml"/>
+
+</Styles>

@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/Apps/" />
+  <Folder Name="/Apps/DemoApp/">
+    <Project Path="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" Id="ea186154-b289-44c2-8981-472a31f09329" />
+    <Project Path="src/apps/DemoApp/XamlDS.DemoApp.Wpf/XamlDS.DemoApp.Wpf.csproj" Id="f30a2342-3bdb-4fee-ad89-23322f94fcc4" />
+    <Project Path="src/apps/DemoApp/XamlDS.DemoApp/XamlDS.DemoApp.csproj" Id="2bf64391-d2a1-4715-b5b1-24eaa92eb11c" />
+  </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="src/shared/XamlDS.Core/XamlDS.Core.csproj" />
+    <Project Path="src/shared/XamlDS.Itk.Aui/XamlDS.Itk.Aui.csproj" />
+    <Project Path="src/shared/XamlDS.Itk.Wpf/XamlDS.Itk.Wpf.csproj" />
+    <Project Path="src/shared/XamlDS.Itk/XamlDS.Itk.csproj" />
+  </Folder>
+  <Folder Name="/Showcases/" />
+  <Folder Name="/Showcases/ItkControls/">
+    <Project Path="src/showcases/ItkControls/XamlDS.Showcases.ItkControls.Aui/XamlDS.Showcases.ItkControls.Aui.csproj" Id="ae490e34-0be3-43f3-ab5e-e847a5c06e26" />
+    <Project Path="src/showcases/ItkControls/XamlDS.Showcases.ItkControls.Wpf/XamlDS.Showcases.ItkControls.Wpf.csproj" Id="a7e36a16-7911-47cf-a66c-da55c3ddaf3a" />
+    <Project Path="src/showcases/ItkControls/XamlDS.Showcases.ItkControls/XamlDS.Showcases.ItkControls.csproj" Id="41c9c3d1-1566-4d9f-8846-e41cfeda1cda" />
+  </Folder>
+  <Folder Name="/Showcases/ItkThemes/">
+    <Project Path="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/XamlDS.Showcases.ItkThemes.Aui.csproj" Id="dccaa0c5-1beb-4b81-be2c-f860edd070cc" />
+    <Project Path="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Wpf/XamlDS.Showcases.ItkThemes.Wpf.csproj" Id="0f8a8614-c82f-4894-a818-bbf346b9045b" />
+    <Project Path="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes/XamlDS.Showcases.ItkThemes.csproj" Id="af2018c7-9b2c-4960-887c-e65a8b8952c1" />
+  </Folder>
+</Solution>

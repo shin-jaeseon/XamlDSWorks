@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action_Home" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+    <comment>Navigate to home screen</comment>
+  </data>
+  <data name="Action_Fullscreen" xml:space="preserve">
+    <value>ملء الشاشة</value>
+    <comment>Toggle fullscreen mode</comment>
+  </data>
+  <data name="Action_ExitFullscreen" xml:space="preserve">
+    <value>إنهاء ملء الشاشة</value>
+    <comment>Exit fullscreen mode</comment>
+  </data>
+  <data name="Action_Minimize" xml:space="preserve">
+    <value>تصغير</value>
+    <comment>Minimize window</comment>
+  </data>
+  <data name="Action_Maximize" xml:space="preserve">
+    <value>تكبير</value>
+    <comment>Maximize window</comment>
+  </data>
+  <data name="Action_Restore" xml:space="preserve">
+    <value>استعادة</value>
+    <comment>Restore window size</comment>
+  </data>
+  <data name="Action_Exit" xml:space="preserve">
+    <value>إنهاء</value>
+    <comment>Exit application (Windows style)</comment>
+  </data>
+  <data name="Action_Quit" xml:space="preserve">
+    <value>إنهاء</value>
+    <comment>Quit application (Unix/macOS style)</comment>
+  </data>
+  <data name="Action_Close" xml:space="preserve">
+    <value>إغلاق</value>
+    <comment>Close window or dialog</comment>
+  </data>
+  <data name="Action_New" xml:space="preserve">
+    <value>جديد</value>
+    <comment>Create new item</comment>
+  </data>
+  <data name="Action_Open" xml:space="preserve">
+    <value>فتح</value>
+    <comment>Open file or item</comment>
+  </data>
+  <data name="Action_Save" xml:space="preserve">
+    <value>حفظ</value>
+    <comment>Save current item</comment>
+  </data>
+  <data name="Action_SaveAs" xml:space="preserve">
+    <value>حفظ باسم...</value>
+    <comment>Save with new name or location</comment>
+  </data>
+  <data name="Action_SaveAll" xml:space="preserve">
+    <value>حفظ الكل</value>
+    <comment>Save all modified items</comment>
+  </data>
+  <data name="Action_Reload" xml:space="preserve">
+    <value>إعادة تحميل</value>
+    <comment>Reload current item</comment>
+  </data>
+  <data name="Action_Undo" xml:space="preserve">
+    <value>تراجع</value>
+    <comment>Undo last action</comment>
+  </data>
+  <data name="Action_Redo" xml:space="preserve">
+    <value>إعادة</value>
+    <comment>Redo last undone action</comment>
+  </data>
+  <data name="Action_Cut" xml:space="preserve">
+    <value>قص</value>
+    <comment>Cut selection to clipboard</comment>
+  </data>
+  <data name="Action_Copy" xml:space="preserve">
+    <value>نسخ</value>
+    <comment>Copy selection to clipboard</comment>
+  </data>
+  <data name="Action_Paste" xml:space="preserve">
+    <value>لصق</value>
+    <comment>Paste from clipboard</comment>
+  </data>
+  <data name="Action_Delete" xml:space="preserve">
+    <value>حذف</value>
+    <comment>Delete selected item</comment>
+  </data>
+  <data name="Action_SelectAll" xml:space="preserve">
+    <value>تحديد الكل</value>
+    <comment>Select all items</comment>
+  </data>
+  <data name="Action_OK" xml:space="preserve">
+    <value>موافق</value>
+    <comment>Confirm action</comment>
+  </data>
+  <data name="Action_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+    <comment>Cancel action</comment>
+  </data>
+  <data name="Action_Apply" xml:space="preserve">
+    <value>تطبيق</value>
+    <comment>Apply changes without closing</comment>
+  </data>
+  <data name="Action_Yes" xml:space="preserve">
+    <value>نعم</value>
+    <comment>Affirmative response</comment>
+  </data>
+  <data name="Action_No" xml:space="preserve">
+    <value>لا</value>
+    <comment>Negative response</comment>
+  </data>
+  <data name="Action_Add" xml:space="preserve">
+    <value>إضافة</value>
+    <comment>Add new item</comment>
+  </data>
+  <data name="Action_Remove" xml:space="preserve">
+    <value>إزالة</value>
+    <comment>Remove selected item</comment>
+  </data>
+  <data name="Action_Edit" xml:space="preserve">
+    <value>تحرير</value>
+    <comment>Edit selected item</comment>
+  </data>
+  <data name="Action_Refresh" xml:space="preserve">
+    <value>تحديث</value>
+    <comment>Refresh current view</comment>
+  </data>
+  <data name="Action_Search" xml:space="preserve">
+    <value>بحث</value>
+    <comment>Search for items</comment>
+  </data>
+  <data name="Action_Settings" xml:space="preserve">
+    <value>إعدادات</value>
+    <comment>Open settings</comment>
+  </data>
+  <data name="Action_Help" xml:space="preserve">
+    <value>مساعدة</value>
+    <comment>Open help documentation</comment>
+  </data>
+  <data name="Action_About" xml:space="preserve">
+    <value>حول</value>
+    <comment>Show about dialog</comment>
+  </data>
+  <data name="Action_ZoomIn" xml:space="preserve">
+    <value>تكبير</value>
+    <comment>Increase zoom level</comment>
+  </data>
+  <data name="Action_ZoomOut" xml:space="preserve">
+    <value>تصغير</value>
+    <comment>Decrease zoom level</comment>
+  </data>
+  <data name="Action_ZoomReset" xml:space="preserve">
+    <value>إعادة تعيين التكبير</value>
+    <comment>Reset to default zoom level</comment>
+  </data>
+  <data name="Action_Import" xml:space="preserve">
+    <value>استيراد</value>
+    <comment>Import data or file</comment>
+  </data>
+  <data name="Action_Export" xml:space="preserve">
+    <value>تصدير</value>
+    <comment>Export data or file</comment>
+  </data>
+  <data name="Label_Name" xml:space="preserve">
+    <value>الاسم</value>
+    <comment>Name label</comment>
+  </data>
+  <data name="Label_Description" xml:space="preserve">
+    <value>الوصف</value>
+    <comment>Description label</comment>
+  </data>
+  <data name="Label_Type" xml:space="preserve">
+    <value>النوع</value>
+    <comment>Type label</comment>
+  </data>
+  <data name="Label_Path" xml:space="preserve">
+    <value>المسار</value>
+    <comment>File or folder path label</comment>
+  </data>
+  <data name="Label_Size" xml:space="preserve">
+    <value>الحجم</value>
+    <comment>Size label</comment>
+  </data>
+  <data name="Label_Date" xml:space="preserve">
+    <value>التاريخ</value>
+    <comment>Date label</comment>
+  </data>
+  <data name="Label_Modified" xml:space="preserve">
+    <value>تاريخ التعديل</value>
+    <comment>Last modified date label</comment>
+  </data>
+  <data name="Label_Created" xml:space="preserve">
+    <value>تاريخ الإنشاء</value>
+    <comment>Creation date label</comment>
+  </data>
+  <data name="Label_Author" xml:space="preserve">
+    <value>المؤلف</value>
+    <comment>Author label</comment>
+  </data>
+  <data name="Label_Version" xml:space="preserve">
+    <value>الإصدار</value>
+    <comment>Version label</comment>
+  </data>
+  <data name="Label_Language" xml:space="preserve">
+    <value>اللغة</value>
+    <comment>Language selection label</comment>
+  </data>
+  <data name="Label_Theme" xml:space="preserve">
+    <value>السمة</value>
+    <comment>Theme selection label</comment>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>جاهز</value>
+    <comment>Application is ready</comment>
+  </data>
+  <data name="Status_Loading" xml:space="preserve">
+    <value>جارٍ التحميل...</value>
+    <comment>Loading in progress</comment>
+  </data>
+  <data name="Status_Saving" xml:space="preserve">
+    <value>جارٍ الحفظ...</value>
+    <comment>Saving in progress</comment>
+  </data>
+  <data name="Status_Processing" xml:space="preserve">
+    <value>جارٍ المعالجة...</value>
+    <comment>Processing in progress</comment>
+  </data>
+  <data name="Status_Completed" xml:space="preserve">
+    <value>مكتمل</value>
+    <comment>Operation completed</comment>
+  </data>
+  <data name="Status_Failed" xml:space="preserve">
+    <value>فشل</value>
+    <comment>Operation failed</comment>
+  </data>
+  <data name="Status_Canceled" xml:space="preserve">
+    <value>تم الإلغاء</value>
+    <comment>Operation canceled</comment>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>نعم</value>
+    <comment>Affirmative response</comment>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>لا</value>
+    <comment>Negative response</comment>
+  </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>موافق</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+    <comment>Cancellation</comment>
+  </data>
+  <data name="Common_None" xml:space="preserve">
+    <value>بلا</value>
+    <comment>No selection</comment>
+  </data>
+  <data name="Common_All" xml:space="preserve">
+    <value>الكل</value>
+    <comment>All items</comment>
+  </data>
+  <data name="Common_Default" xml:space="preserve">
+    <value>افتراضي</value>
+    <comment>Default value or option</comment>
+  </data>
+  <data name="Common_Custom" xml:space="preserve">
+    <value>مخصص</value>
+    <comment>Custom value or option</comment>
+  </data>
+  <data name="Common_Unknown" xml:space="preserve">
+    <value>غير معروف</value>
+    <comment>Unknown value or state</comment>
+  </data>
+  <data name="Time_Now" xml:space="preserve">
+    <value>الآن</value>
+    <comment>Current time</comment>
+  </data>
+  <data name="Time_Today" xml:space="preserve">
+    <value>اليوم</value>
+    <comment>Today's date</comment>
+  </data>
+  <data name="Time_Yesterday" xml:space="preserve">
+    <value>أمس</value>
+    <comment>Yesterday's date</comment>
+  </data>
+  <data name="Time_Tomorrow" xml:space="preserve">
+    <value>غداً</value>
+    <comment>Tomorrow's date</comment>
+  </data>
+  <data name="Unit_Bytes" xml:space="preserve">
+    <value>بايت</value>
+    <comment>Byte unit</comment>
+  </data>
+  <data name="Unit_KB" xml:space="preserve">
+    <value>كيلوبايت</value>
+    <comment>Kilobyte unit</comment>
+  </data>
+  <data name="Unit_MB" xml:space="preserve">
+    <value>ميجابايت</value>
+    <comment>Megabyte unit</comment>
+  </data>
+  <data name="Unit_GB" xml:space="preserve">
+    <value>جيجابايت</value>
+    <comment>Gigabyte unit</comment>
+  </data>
+  <data name="Unit_TB" xml:space="preserve">
+    <value>تيرابايت</value>
+    <comment>Terabyte unit</comment>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>ملف</value>
+    <comment>File menu</comment>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>تحرير</value>
+    <comment>Edit menu</comment>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>عرض</value>
+    <comment>View menu</comment>
+  </data>
+  <data name="Menu_Tools" xml:space="preserve">
+    <value>أدوات</value>
+    <comment>Tools menu</comment>
+  </data>
+  <data name="Menu_Window" xml:space="preserve">
+    <value>نافذة</value>
+    <comment>Window menu</comment>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>مساعدة</value>
+    <comment>Help menu</comment>
+  </data>
+  <data name="Action_DeleteAll" xml:space="preserve">
+    <value>حذف الكل</value>
+    <comment>Delete all items</comment>
+  </data>
+</root>

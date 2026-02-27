@@ -1,0 +1,18 @@
+<UserControl x:Class="XamlDS.Showcases.ItkThemes.Views.Showcase01.Showcase01PanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:itk="http://xamldesignstudio.com"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:XamlDS.Showcases.ItkThemes.Views.Showcase01"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border Style="{StaticResource BodyPanelStyle}" Background="#FF0F0F0F">
+        <Grid>
+            <itk:GridLinePane GridOpacity="0.05"/>
+            <TextBlock Text="Showcase01PanelView" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.2" />
+        </Grid>
+    </Border>
+
+</UserControl>

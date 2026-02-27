@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "Windows": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    },
+    "WSL - Ubuntu": {
+      "commandName": "WSL",
+      "distributionName": "Ubuntu",
+      "environmentVariables": {
+        "DISPLAY": ":0",
+        "DOTNET_ENVIRONMENT": "Development",
+        "AVALONIA_SCREEN_SCALE_FACTOR": "1.25"
+      }
+    },
+    "Linux": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

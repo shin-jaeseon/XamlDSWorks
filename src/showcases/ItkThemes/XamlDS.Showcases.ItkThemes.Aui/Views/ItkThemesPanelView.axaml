@@ -1,0 +1,26 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+						 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+						 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+						 x:Class="XamlDS.Showcases.ItkThemes.Views.ItkThemesPanelView">
+
+	<Border Classes="BodyPanel Bg3">
+		<DockPanel>
+			<ContentControl Classes="ControlsGroupBox" DockPanel.Dock="Bottom">
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+					<RadioButton Classes="Itk" Content="CONTROLS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Controls}" BorderBrush="{DynamicResource AccentABrush}"/>
+					<RadioButton Classes="Itk" Content="SHOWCASE 1" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Showcase01}" BorderBrush="{DynamicResource AccentBBrush}"/>
+					<RadioButton Classes="Itk" Content="SHOWCASE 2" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Showcase02}" BorderBrush="{DynamicResource AccentBBrush}"/>
+					<RadioButton Classes="Itk" Content="SHOWCASE 3" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Showcase03}" BorderBrush="{DynamicResource AccentBBrush}"/>
+					<RadioButton Classes="Itk" Content="OTHER 1" IsEnabled="False"/>
+					<RadioButton Classes="Itk" Content="OTHER 2" IsEnabled="False"/>
+					<RadioButton Classes="Itk" Content="OTHER 3" IsEnabled="False"/>
+					<RadioButton Classes="Itk" Content="OTHER 4" IsEnabled="False"/>
+				</StackPanel>
+			</ContentControl>
+			<ContentControl Content="{Binding CurrentPanel}"/>
+		</DockPanel>
+	</Border>
+
+</UserControl>

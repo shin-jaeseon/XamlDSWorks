@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+										xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<ControlTheme x:Key="ItkButtonTheme" TargetType="Button">
+		<Setter Property="FontSize" Value="13"/>
+		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
+		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
+		<Setter Property="BorderThickness" Value="{StaticResource InputBorderThickness}"/>
+		<Setter Property="Margin" Value="{StaticResource InputControlMargin}"/>
+		<Setter Property="MinHeight" Value="36"/>
+		<Setter Property="MinWidth" Value="36"/>
+		<Setter Property="Padding" Value="14 10"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="CornerRadius" Value="{StaticResource InputBorderCornerRadius}"/>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid Margin="{TemplateBinding Margin}">
+					<Grid.Styles>
+						<Style Selector="TextBlock">
+							<Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+						</Style>
+					</Grid.Styles>
+					<Border x:Name="PART_Bg" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" Margin="1" Opacity="0.2"/>
+					<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="5" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0.1"/>
+					<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="{TemplateBinding CornerRadius}" Margin="1"/>
+					<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover /template/ Border#PART_Bg">
+			<Setter Property="Opacity" Value="0.4"/>
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="#6FFF"/>
+		</Style>
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.2"/>
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>

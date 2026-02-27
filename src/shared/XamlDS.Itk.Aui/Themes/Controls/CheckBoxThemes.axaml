@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<ControlTheme x:Key="ItkCheckBoxBaseTheme" TargetType="CheckBox">
+		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+		<Setter Property="FontSize" Value="13"/>
+		<Setter Property="FontWeight" Value="Medium"/>
+
+		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
+		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
+
+		<Setter Property="Margin" Value="{StaticResource ControlMargin}"/>
+		<Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid Margin="{TemplateBinding Margin}">
+					<Rectangle StrokeThickness="1" RadiusX="6" RadiusY="6" Stroke="{TemplateBinding BorderBrush}" Fill="{TemplateBinding Background}"/>
+					<Rectangle x:Name="PART_Bg" Fill="{TemplateBinding BorderBrush}" RadiusX="4" RadiusY="4" Opacity="0.15" Margin="3"/>
+					<Border x:Name="PART_checkBar" Background="{TemplateBinding BorderBrush}" CornerRadius="2" Margin="5" MinHeight="4" MinWidth="4"/>
+					<ContentPresenter x:Name="PART_content" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.2"/>
+		</Style>
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Rectangle#PART_Bg">
+				<Setter Property="Opacity" Value="0.3"/>
+			</Style>
+		</Style>
+		<Style Selector="^:checked">
+			<Setter Property="Foreground" Value="{StaticResource Bg0Brush}"/>
+			<Style Selector="^ /template/ Rectangle#PART_Bg">
+				<Setter Property="Opacity" Value="0.9"/>
+			</Style>
+			<Style Selector="^ /template/ Border#PART_checkBar">
+				<Setter Property="Background" Value="{TemplateBinding Background}"/>
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="ItkCheckBoxTopDownTheme" TargetType="CheckBox" BasedOn="{StaticResource ItkCheckBoxBaseTheme}">
+		<Setter Property="Padding" Value="10,10,10,14"/>
+		<Style Selector="^ /template/ Border#PART_checkBar">
+			<Setter Property="VerticalAlignment" Value="Bottom"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		</Style>
+
+		<Style Selector="^:checked">
+			<Setter Property="Padding" Value="10,14,10,10"/>
+			<Style Selector="^ /template/ Border#PART_checkBar">
+				<Setter Property="VerticalAlignment" Value="Top"/>
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="ItkCheckBoxLeftRightTheme" TargetType="CheckBox" BasedOn="{StaticResource ItkCheckBoxBaseTheme}">
+		<Setter Property="Padding" Value="18,10,10,10"/>
+		<Setter Property="HorizontalContentAlignment" Value="Right"/>
+		<Style Selector="^ /template/ Border#PART_checkBar">
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+		</Style>
+
+		<Style Selector="^:checked">
+			<Setter Property="Padding" Value="10,10,18,10"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Style Selector="^ /template/ Border#PART_checkBar">
+				<Setter Property="VerticalAlignment" Value="Stretch"/>
+				<Setter Property="HorizontalAlignment" Value="Right"/>
+			</Style>
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>
