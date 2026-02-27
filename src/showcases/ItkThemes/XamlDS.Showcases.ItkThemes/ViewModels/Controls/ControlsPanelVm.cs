@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Buttons;
-using XamlDS.Showcases.ItkThemes.ViewModels.Controls.CheckBoxs;
+using XamlDS.Showcases.ItkThemes.ViewModels.Controls.CheckBoxes;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.RadioButtons;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Sliders;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextBoxs;
@@ -41,8 +41,8 @@ public class ControlsPanelVm : ViewModelBase
                     case "Buttons":
                         CurrentPanel = _serviceProvider.GetRequiredService<ButtonsPanelVm>();
                         break;
-                    case "CheckBoxs":
-                        CurrentPanel = _serviceProvider.GetRequiredService<CheckBoxsPanelVm>();
+                    case "CheckBoxes":
+                        CurrentPanel = _serviceProvider.GetRequiredService<CheckBoxesPanelVm>();
                         break;
                     case "RadioButtons":
                         CurrentPanel = _serviceProvider.GetRequiredService<RadioButtonsPanelVm>();

@@ -1,4 +1,4 @@
-<Styles xmlns="https://github.com/avaloniaui"
+﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
 		<Border Padding="20">
@@ -29,6 +29,5 @@
 		</ResourceDictionary>
 	</Styles.Resources>
 
-	<StyleInclude Source="/Styles/ItkBaseStyles.axaml"/>
-
+	<StyleInclude Source="/Styles/ItkBaseStyle.axaml"/>
 </Styles>

@@ -1,10 +1,11 @@
-<Styles xmlns="https://github.com/avaloniaui"
+﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 	<Styles.Resources>
 		<ResourceDictionary>
 			<x:Boolean x:Key="IsItkTheme">True</x:Boolean>
 			<x:String x:Key="ThemeName">ItkLight</x:String>
+
 			<SolidColorBrush x:Key="Bg0Brush">#FFFF</SolidColorBrush>
 			<SolidColorBrush x:Key="Bg1Brush">#FEEE</SolidColorBrush>
 			<SolidColorBrush x:Key="Bg2Brush">#FDDD</SolidColorBrush>
@@ -23,6 +24,6 @@
 		</ResourceDictionary>
 	</Styles.Resources>
 
-	<StyleInclude Source="/Styles/ItkBaseStyles.axaml"/>
+	<StyleInclude Source="/Styles/ItkBaseStyle.axaml"/>
 
 </Styles>

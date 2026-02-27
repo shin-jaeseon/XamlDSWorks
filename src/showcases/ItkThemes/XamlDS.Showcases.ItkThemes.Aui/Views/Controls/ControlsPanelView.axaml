@@ -10,7 +10,7 @@
 			<ContentControl Classes="ControlsGroupBox" DockPanel.Dock="Left">
 				<StackPanel Orientation="Vertical" VerticalAlignment="Center">
 					<RadioButton Classes="Itk LeftRight" Content="BUTTONS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Buttons}"/>
-					<RadioButton Classes="Itk LeftRight" Content="CHECKBOXS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=CheckBoxs}"/>
+					<RadioButton Classes="Itk LeftRight" Content="CHECKBOXES" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=CheckBoxes}"/>
 					<RadioButton Classes="Itk LeftRight" Content="RADIOBUTTONS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=RadioButtons}"/>
 					<RadioButton Classes="Itk LeftRight" Content="SLIDERS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Sliders}" BorderBrush="{DynamicResource AccentBBrush}"/>
 					<RadioButton Classes="Itk LeftRight" Content="TEXTBOXS" IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=TextBoxs}" BorderBrush="{DynamicResource AccentCBrush}"/>

@@ -3,7 +3,11 @@
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-			 x:Class="XamlDS.Showcases.ItkThemes.Views.Controls.CheckBoxs.CheckBoxsPanelView">
+			 x:Class="XamlDS.Showcases.ItkThemes.Views.Controls.CheckBoxes.CheckBoxesPanelView">
+
+<!--	<UserControl.Styles>
+		<StyleInclude Source="avares://XamlDS.Itk.Aui/Styles/ITKDarkStyles.axaml"/>
+	</UserControl.Styles>-->
 
 	<Border Classes="BodyPanel Bg1">
 		<Border HorizontalAlignment="Center" VerticalAlignment="Center" Classes="BodyPanel Bg3">
@@ -14,23 +18,24 @@
 					<CheckBox Classes="Itk" Content="Topdown" BorderBrush="{DynamicResource AccentCBrush}"/>
 					<CheckBox Classes="Itk" Content="Topdown" />
 				</StackPanel>
-				<StackPanel Orientation="Horizontal">
+				<StackPanel Orientation="Horizontal"> 
 					<StackPanel>
 						<CheckBox Classes="Itk LeftRight" Content="LeftRight" />
 						<CheckBox Classes="Itk LeftRight" Content="LeftRight" />
-						<CheckBox Classes="Itk LeftRight" Content="LeftRight"  BorderBrush="{DynamicResource AccentABrush}"/>
-						<CheckBox Classes="Itk LeftRight" Content="LeftRight"  BorderBrush="{DynamicResource AccentBBrush}"/>
-						<CheckBox Classes="Itk LeftRight" Content="LeftRight"  BorderBrush="{DynamicResource AccentCBrush}"/>
+						<CheckBox Classes="Itk LeftRight" Content="LeftRight" BorderBrush="{DynamicResource AccentABrush}"/>
+						<CheckBox Classes="Itk LeftRight" Content="LeftRight" BorderBrush="{DynamicResource AccentBBrush}"/>
+						<CheckBox Classes="Itk LeftRight" Content="LeftRight" BorderBrush="{DynamicResource AccentCBrush}"/>
 					</StackPanel>
 					<StackPanel>
 						<CheckBox Classes="Itk LeftRight" Content="LeftRight" />
 						<CheckBox Classes="Itk LeftRight" Content="LeftRight" />
-						<CheckBox Classes="Itk LeftRight" Content="LeftRight"  BorderBrush="{DynamicResource AccentABrush}"/>
-						<CheckBox Classes="Itk LeftRight" Content="LeftRight"  BorderBrush="{DynamicResource AccentBBrush}"/>
-						<CheckBox Classes="Itk LeftRight" Content="LeftRight"  BorderBrush="{DynamicResource AccentCBrush}"/>
+						<CheckBox Classes="Itk LeftRight" Content="LeftRight" BorderBrush="{DynamicResource AccentABrush}"/>
+						<CheckBox Classes="Itk LeftRight" Content="LeftRight" BorderBrush="{DynamicResource AccentBBrush}"/>
+						<CheckBox Classes="Itk LeftRight" Content="LeftRight" BorderBrush="{DynamicResource AccentCBrush}"/>
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>
 		</Border>
 	</Border>
+
 </UserControl>

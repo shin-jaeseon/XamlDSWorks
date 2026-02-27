@@ -4,7 +4,7 @@ using XamlDS.Itk;
 using XamlDS.Showcases.ItkThemes.ViewModels;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Buttons;
-using XamlDS.Showcases.ItkThemes.ViewModels.Controls.CheckBoxs;
+using XamlDS.Showcases.ItkThemes.ViewModels.Controls.CheckBoxes;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.RadioButtons;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Sliders;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextBoxs;
@@ -35,7 +35,7 @@ public sealed class ItkThemesLibrary : XamlDSLibrary
 
         // Controls
         services.AddTransient<ButtonsPanelVm>();
-        services.AddTransient<CheckBoxsPanelVm>();
+        services.AddTransient<CheckBoxesPanelVm>();
         services.AddTransient<RadioButtonsPanelVm>();
         services.AddTransient<SlidersPanelVm>();
         services.AddTransient<TextBoxsPanelVm>();
