@@ -29,5 +29,5 @@
 		</ResourceDictionary>
 	</Styles.Resources>
 
-	<StyleInclude Source="/Styles/ItkBaseStyle.axaml"/>
+	<StyleInclude Source="/Styles/ItkBaseStyles.axaml"/>
 </Styles>
