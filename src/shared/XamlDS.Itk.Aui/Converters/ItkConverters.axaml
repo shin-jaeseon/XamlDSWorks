@@ -1,6 +1,7 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:converters="using:XamlDS.Itk.Converters">
 	<converters:TypeNameToIsCheckedConverter x:Key="TypeNameConverter"/>
 	<converters:StringToBoolConverter x:Key="StringToBoolConverter"/>
+	<converters:MultiplyConverter x:Key="MultiplyConverter"/>
 </ResourceDictionary>

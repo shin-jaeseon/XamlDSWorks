@@ -1,0 +1,194 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:XamlDS.Itk.Controls"
+                    xmlns:itk="http://xamldesignstudio.com"
+                    xmlns:gauges="using:XamlDS.Itk.Controls.Gauges">
+
+  <!-- Value to Width Converter for ValueIndicator -->
+  <x:Double x:Key="DefaultGaugeWidth">400</x:Double>
+
+  <!-- LinearGauge Default Theme -->
+  <ControlTheme x:Key="{x:Type controls:LinearGauge}" TargetType="itk:LinearGauge">
+    <Setter Property="MinWidth" Value="100" />
+    <Setter Property="MinHeight" Value="60" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <Grid.RowDefinitions>
+            <!-- Label Row -->
+            <RowDefinition Height="Auto" />
+            <!-- Gauge Content Row -->
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+
+          <!-- Label and Unit (Optional) -->
+          <StackPanel Grid.Row="0"
+                      Orientation="Horizontal"
+                      Spacing="5"
+                      Margin="0,0,0,5"
+                      IsVisible="{TemplateBinding Label, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+            <TextBlock Text="{TemplateBinding Label}"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center" />
+            <TextBlock Text="{TemplateBinding Unit}"
+                       FontSize="11"
+                       Foreground="{DynamicResource TextControlForegroundDisabled}"
+                       VerticalAlignment="Center"
+                       IsVisible="{TemplateBinding Unit, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+          </StackPanel>
+
+          <!-- Gauge Content - Horizontal Orientation -->
+          <Grid Grid.Row="1"
+                IsVisible="{TemplateBinding Orientation, 
+                           Converter={x:Static ObjectConverters.Equal}, 
+                           ConverterParameter={x:Static Orientation.Horizontal}}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Color Bar and Value Indicator Container -->
+            <Grid Grid.Row="0" Height="{TemplateBinding GaugeThickness}">
+              <!-- 1. Color Zones Bar (Background) -->
+              <gauges:LinearGaugeBar 
+                  MinValue="{TemplateBinding MinValue}"
+                  MaxValue="{TemplateBinding MaxValue}"
+                  LowCriticalThreshold="{TemplateBinding LowCriticalThreshold}"
+                  LowWarningThreshold="{TemplateBinding LowWarningThreshold}"
+                  HighWarningThreshold="{TemplateBinding HighWarningThreshold}"
+                  HighCriticalThreshold="{TemplateBinding HighCriticalThreshold}"
+                  NormalBrush="{TemplateBinding NormalBrush}"
+                  WarningBrush="{TemplateBinding WarningBrush}"
+                  CriticalBrush="{TemplateBinding CriticalBrush}"
+                  Orientation="{TemplateBinding Orientation}" />
+
+              <!-- 2. Value Indicator (Overlay) -->
+              <Border Name="PART_ValueIndicator"
+                      Background="{TemplateBinding ValueBrush}"
+                      HorizontalAlignment="Left"
+                      Opacity="0.7"
+                      CornerRadius="2">
+                <Border.Width>
+                  <MultiBinding Converter="{StaticResource MultiplyConverter}">
+                    <Binding RelativeSource="{RelativeSource AncestorType=Grid}" Path="Bounds.Width" />
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ValueIndicatorWidth" />
+                  </MultiBinding>
+                </Border.Width>
+              </Border>
+            </Grid>
+
+            <!-- 3. Scale (Ticks and Labels) -->
+            <gauges:LinearGaugeScale 
+                Grid.Row="1"
+                MinValue="{TemplateBinding MinValue}"
+                MaxValue="{TemplateBinding MaxValue}"
+                Step="{TemplateBinding Step}"
+                TickLength="{TemplateBinding TickLength}"
+                TickBrush="{TemplateBinding TickBrush}"
+                TextBrush="{TemplateBinding TickBrush}"
+                NumberFormat="{TemplateBinding NumberFormat}"
+                Orientation="{TemplateBinding Orientation}"
+                TickOffset="0"
+                LabelOffset="5" />
+          </Grid>
+
+          <!-- Gauge Content - Vertical Orientation -->
+          <Grid Grid.Row="1"
+                IsVisible="{TemplateBinding Orientation, 
+                           Converter={x:Static ObjectConverters.Equal}, 
+                           ConverterParameter={x:Static Orientation.Vertical}}">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Color Bar and Value Indicator Container -->
+            <Grid Grid.Column="0" Width="{TemplateBinding GaugeThickness}">
+              <!-- 1. Color Zones Bar (Background) -->
+              <gauges:LinearGaugeBar 
+                  MinValue="{TemplateBinding MinValue}"
+                  MaxValue="{TemplateBinding MaxValue}"
+                  LowCriticalThreshold="{TemplateBinding LowCriticalThreshold}"
+                  LowWarningThreshold="{TemplateBinding LowWarningThreshold}"
+                  HighWarningThreshold="{TemplateBinding HighWarningThreshold}"
+                  HighCriticalThreshold="{TemplateBinding HighCriticalThreshold}"
+                  NormalBrush="{TemplateBinding NormalBrush}"
+                  WarningBrush="{TemplateBinding WarningBrush}"
+                  CriticalBrush="{TemplateBinding CriticalBrush}"
+                  Orientation="{TemplateBinding Orientation}" />
+
+              <!-- 2. Value Indicator (Overlay) -->
+              <Border Name="PART_ValueIndicatorVertical"
+                      Background="{TemplateBinding ValueBrush}"
+                      VerticalAlignment="Bottom"
+                      Opacity="0.7"
+                      CornerRadius="2">
+                <Border.Height>
+                  <MultiBinding Converter="{StaticResource MultiplyConverter}">
+                    <Binding RelativeSource="{RelativeSource AncestorType=Grid}" Path="Bounds.Height" />
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ValueIndicatorWidth" />
+                  </MultiBinding>
+                </Border.Height>
+              </Border>
+            </Grid>
+
+            <!-- 3. Scale (Ticks and Labels) -->
+            <gauges:LinearGaugeScale 
+                Grid.Column="1"
+                MinValue="{TemplateBinding MinValue}"
+                MaxValue="{TemplateBinding MaxValue}"
+                Step="{TemplateBinding Step}"
+                TickLength="{TemplateBinding TickLength}"
+                TickBrush="{TemplateBinding TickBrush}"
+                TextBrush="{TemplateBinding TickBrush}"
+                NumberFormat="{TemplateBinding NumberFormat}"
+                Orientation="{TemplateBinding Orientation}"
+                TickOffset="0"
+                LabelOffset="5" />
+          </Grid>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
+  <!-- Compact LinearGauge Theme (Smaller, No Labels) -->
+  <ControlTheme x:Key="CompactLinearGauge" TargetType="itk:LinearGauge" BasedOn="{StaticResource {x:Type itk:LinearGauge}}">
+    <Setter Property="MinHeight" Value="30" />
+    <Setter Property="GaugeThickness" Value="12" />
+    <Setter Property="TickLength" Value="6" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid Height="{TemplateBinding GaugeThickness}">
+          <!-- Color Bar -->
+          <gauges:LinearGaugeBar 
+              MinValue="{TemplateBinding MinValue}"
+              MaxValue="{TemplateBinding MaxValue}"
+              LowCriticalThreshold="{TemplateBinding LowCriticalThreshold}"
+              LowWarningThreshold="{TemplateBinding LowWarningThreshold}"
+              HighWarningThreshold="{TemplateBinding HighWarningThreshold}"
+              HighCriticalThreshold="{TemplateBinding HighCriticalThreshold}"
+              NormalBrush="{TemplateBinding NormalBrush}"
+              WarningBrush="{TemplateBinding WarningBrush}"
+              CriticalBrush="{TemplateBinding CriticalBrush}"
+              Orientation="{TemplateBinding Orientation}" />
+
+          <!-- Value Indicator -->
+          <Border Background="{TemplateBinding ValueBrush}"
+                  HorizontalAlignment="Left"
+                  Opacity="0.8"
+                  CornerRadius="2">
+            <Border.Width>
+              <MultiBinding Converter="{StaticResource MultiplyConverter}">
+                <Binding RelativeSource="{RelativeSource AncestorType=Grid}" Path="Bounds.Width" />
+                <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ValueIndicatorWidth" />
+              </MultiBinding>
+            </Border.Width>
+          </Border>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
+</ResourceDictionary>

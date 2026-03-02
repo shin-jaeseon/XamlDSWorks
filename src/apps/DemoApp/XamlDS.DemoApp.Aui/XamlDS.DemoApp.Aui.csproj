@@ -8,6 +8,12 @@
 		<RootNamespace>XamlDS.DemoApp</RootNamespace>
 		<ApplicationIcon>Assets\application.ico</ApplicationIcon>
 	</PropertyGroup>
+	<ItemGroup>
+	  <AvaloniaXaml Remove="ViewModels\**" />
+	  <Compile Remove="ViewModels\**" />
+	  <EmbeddedResource Remove="ViewModels\**" />
+	  <None Remove="ViewModels\**" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia" Version="11.3.11" />
@@ -24,6 +30,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\showcases\ItkControls\XamlDS.Showcases.ItkControls.Aui\XamlDS.Showcases.ItkControls.Aui.csproj" />
 		<ProjectReference Include="..\..\..\showcases\ItkThemes\XamlDS.Showcases.ItkThemes.Aui\XamlDS.Showcases.ItkThemes.Aui.csproj" />
+		<ProjectReference Include="..\..\..\showcases\VitalSignsMonitor\VitalSignsMonitor.Aui\VitalSignsMonitor.Aui.csproj" />
 		<ProjectReference Include="..\XamlDS.DemoApp\XamlDS.DemoApp.csproj" />
 	</ItemGroup>
 
@@ -35,10 +42,6 @@
 
 	<ItemGroup>
 		<Resource Include="Assets\application.ico" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
 </Project>

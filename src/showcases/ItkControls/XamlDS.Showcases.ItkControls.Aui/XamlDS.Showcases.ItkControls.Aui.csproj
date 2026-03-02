@@ -20,5 +20,8 @@
 	  <Compile Update="Views\ItkControlsPanelView.axaml.cs">
 	    <DependentUpon>ItkControlsPanelView.axaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\LinearGauges\LinearGaugesPanelView.axaml.cs">
+	    <DependentUpon>LinearGaugesPanelView.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 </Project>

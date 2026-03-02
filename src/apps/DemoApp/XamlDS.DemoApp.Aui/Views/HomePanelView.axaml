@@ -21,7 +21,7 @@
 			<WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 				<Button DataContext="{Binding OpenItkThemesMainPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
 				<Button DataContext="{Binding OpenItkControlsMainPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
-				<Button Content="Demo 03"/>
+				<Button DataContext="{Binding OpenVitalSignsMonitorPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
 				<Button Content="Demo 04"/>
 				<Button Content="Demo 05"/>
 			</WrapPanel>

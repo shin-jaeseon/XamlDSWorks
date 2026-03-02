@@ -55,6 +55,12 @@
 		<Style Selector="^.Bg3">
 			<Setter Property="Background" Value="{StaticResource Bg3Brush}"/>
 		</Style>
+
+		<Style Selector="^.BodyPanel">
+			<Setter Property="Margin" Value="3"/>
+			<Setter Property="Padding" Value="3"/>
+			<Setter Property="CornerRadius" Value="6"/>
+		</Style>
 	</Style>
 
 	<Style Selector="Grid, DockPanel, StackPanel, WrapPanel">
@@ -69,14 +75,6 @@
 		</Style>
 		<Style Selector="^.Bg3">
 			<Setter Property="Background" Value="{StaticResource Bg3Brush}"/>
-		</Style>
-	</Style>
-
-	<Style Selector="Border">
-		<Style Selector="^.BodyPanel">
-			<Setter Property="Margin" Value="2"/>
-			<Setter Property="Padding" Value="2"/>
-			<Setter Property="CornerRadius" Value="6"/>
 		</Style>
 	</Style>
 

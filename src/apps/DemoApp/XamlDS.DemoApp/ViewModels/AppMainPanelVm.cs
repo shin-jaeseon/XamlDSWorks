@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using VitalSignsMonitor.ViewModels;
 using XamlDS.Showcases.ItkControls.ViewModels;
 using XamlDS.Showcases.ItkThemes.ViewModels;
 using XamlDS.ViewModels;
@@ -42,6 +43,9 @@ public sealed class AppMainPanelVm : ViewModelBase
                         break;
                     case "ItkThemes":
                         CurrentPanel = _currentScope.ServiceProvider.GetRequiredService<ItkThemesPanelVm>();
+                        break;
+                    case "VitalSignsMonitor":
+                        CurrentPanel = _currentScope.ServiceProvider.GetRequiredService<VitalSignsMonitorPanelVm>();
                         break;
                     default:
                         throw new ArgumentException("Invalid CurrentPanelName");

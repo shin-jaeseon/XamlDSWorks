@@ -13,7 +13,7 @@ public class ControlsPanelVm : ViewModelBase
 {
     private IServiceProvider _serviceProvider;
     private ViewModelBase? _currentPanel;
-    private string _currentPanelName = "";
+    private string _currentPanelName = string.Empty;
 
     public ControlsPanelVm(IServiceProvider serviceProvider)
     {

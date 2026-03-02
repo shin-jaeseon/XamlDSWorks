@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\showcases\ItkControls\XamlDS.Showcases.ItkControls\XamlDS.Showcases.ItkControls.csproj" />
     <ProjectReference Include="..\..\..\showcases\ItkThemes\XamlDS.Showcases.ItkThemes\XamlDS.Showcases.ItkThemes.csproj" />
+    <ProjectReference Include="..\..\..\showcases\VitalSignsMonitor\VitalSignsMonitor\VitalSignsMonitor.csproj" />
   </ItemGroup>
 
 </Project>

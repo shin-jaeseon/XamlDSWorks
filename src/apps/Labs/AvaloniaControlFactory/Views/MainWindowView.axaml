@@ -1,0 +1,42 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:controls="using:AvaloniaControlFactory.Controls"
+		xmlns:local="using:AvaloniaControlFactory.Views" Background="Gray"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		x:Class="AvaloniaControlFactory.Views.MainWindowView"
+		Title="MainWindowView">
+	<!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Background="Yellow">
+	<controls:LinearGaugeBar MinValue="0" MaxValue="100" LowCriticalThreshold="10" LowWarningThreshold="20"
+	HighWarningThreshold="80" HighCriticalThreshold="90" NormalBrush="Green"
+	WarningBrush="Yellow" CriticalBrush="Red" Orientation="Vertical" Width="20" Height="128" />
+
+	<Border Background="DarkBlue">
+	<controls:LinearGaugeScale Width="200" Height="50" MinValue="0" MaxValue="100" Step="10"
+	TickLength="10" TickBrush="Black" TextBrush="Black"/>
+	</Border>
+
+	<Border Background="DarkCyan">
+	<controls:LinearGaugeScale Width="200" Height="50" MinValue="0" MaxValue="1" Step="0.1" NumberFormat="F2"/>
+	</Border>
+
+	<Border Background="DarkMagenta" Opacity="0.25">
+	<controls:LinearGaugeScale Width="50" Height="200" MinValue="0" MaxValue="200" Step="20" Orientation="Vertical" />
+	</Border>
+	<Border VerticalAlignment="Center">
+	<controls:LinearGaugeScale MinValue="0" MaxValue="200" Step="20" Orientation="Vertical" />
+	</Border>
+	</StackPanel>-->
+	<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+		<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Background="Yellow" >
+			<controls:LinearGaugeBar MinValue="0" MaxValue="200" Height="10" Orientation="Horizontal"/>
+			<controls:LinearGaugeScale MinValue="0" MaxValue="200" Step="20" Orientation="Horizontal"/>
+		</StackPanel>
+<!--		<Border VerticalAlignment="Center" HorizontalAlignment="Center" Background="Green" >
+			<controls:LinearGaugeScale MinValue="0" MaxValue="200" Step="20" Orientation="Vertical"/>
+		</Border>-->
+	</StackPanel>
+
+
+</Window>

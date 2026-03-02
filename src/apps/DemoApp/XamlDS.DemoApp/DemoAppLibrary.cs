@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VitalSignsMonitor;
 using XamlDS.DemoApp.ViewModels;
 using XamlDS.DemoApp.ViewModels.Commands;
 using XamlDS.Showcases.ItkControls;
@@ -17,6 +18,9 @@ public sealed class DemoAppLibrary : XamlDSLibrary
         var itkControlsLib = new ItkControlsLibrary();
         itkControlsLib.Register(hostBuilder);
 
+        var vitalSignsMonitorLib = new VitalSignsMonitorLibrary();
+        vitalSignsMonitorLib.Register(hostBuilder);
+
         base.Register(hostBuilder);
     }
 
@@ -32,5 +36,6 @@ public sealed class DemoAppLibrary : XamlDSLibrary
         services.AddTransient<OpenHomePanelCommandVm>();
         services.AddTransient<OpenItkControlsMainPanelCommandVm>();
         services.AddTransient<OpenItkThemesMainPanelCommandVm>();
+        services.AddTransient<OpenVitalSignsMonitorPanelCommandVm>();
     }
 }

@@ -1,7 +1,7 @@
-using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using Avalonia.Markup.Xaml;
+using VitalSignsMonitor.ViewModels;
+using VitalSignsMonitor.Views;
 using XamlDS.DemoApp.ViewModels;
 using XamlDS.Showcases.ItkControls.ViewModels;
 using XamlDS.Showcases.ItkControls.Views;
@@ -19,6 +19,7 @@ public partial class AppWindowView : Window
         this.DataTemplates.Add(new FuncDataTemplate<HomePanelVm>((value, namescope) => new HomePanelView()));
         this.DataTemplates.Add(new FuncDataTemplate<ItkControlsPanelVm>((value, namescope) => new ItkControlsPanelView()));
         this.DataTemplates.Add(new FuncDataTemplate<ItkThemesPanelVm>((value, namescope) => new ItkThemesPanelView()));
+        this.DataTemplates.Add(new FuncDataTemplate<VitalSignsMonitorPanelVm>((value, namescope) => new VitalSignsMonitorPanelView()));
 
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
     }

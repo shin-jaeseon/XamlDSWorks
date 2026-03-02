@@ -5,6 +5,9 @@
     <Project Path="src/apps/DemoApp/XamlDS.DemoApp.Wpf/XamlDS.DemoApp.Wpf.csproj" Id="f30a2342-3bdb-4fee-ad89-23322f94fcc4" />
     <Project Path="src/apps/DemoApp/XamlDS.DemoApp/XamlDS.DemoApp.csproj" Id="2bf64391-d2a1-4715-b5b1-24eaa92eb11c" />
   </Folder>
+  <Folder Name="/Apps/Labs/">
+    <Project Path="src/apps/Labs/AvaloniaControlFactory/AvaloniaControlFactory.csproj" Id="0800d368-ca45-4378-8de0-f7cd3e218215" />
+  </Folder>
   <Folder Name="/Shared/">
     <Project Path="src/shared/XamlDS.Core/XamlDS.Core.csproj" />
     <Project Path="src/shared/XamlDS.Itk.Aui/XamlDS.Itk.Aui.csproj" />
@@ -21,5 +24,10 @@
     <Project Path="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/XamlDS.Showcases.ItkThemes.Aui.csproj" Id="dccaa0c5-1beb-4b81-be2c-f860edd070cc" />
     <Project Path="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Wpf/XamlDS.Showcases.ItkThemes.Wpf.csproj" Id="0f8a8614-c82f-4894-a818-bbf346b9045b" />
     <Project Path="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes/XamlDS.Showcases.ItkThemes.csproj" Id="af2018c7-9b2c-4960-887c-e65a8b8952c1" />
+  </Folder>
+  <Folder Name="/Showcases/VitalSignsMonitor/">
+    <Project Path="src/showcases/VitalSignsMonitor/VitalSignsMonitor.Aui/VitalSignsMonitor.Aui.csproj" Id="34607a31-c59d-4d15-904a-6cfacdc4fc17" />
+    <Project Path="src/showcases/VitalSignsMonitor/VitalSignsMonitor.Wpf/VitalSignsMonitor.Wpf.csproj" Id="6631d975-465a-44e4-a15a-0153d838cfa4" />
+    <Project Path="src/showcases/VitalSignsMonitor/VitalSignsMonitor/VitalSignsMonitor.csproj" Id="3a68ff79-4f24-4841-befd-6ab85b11b027" />
   </Folder>
 </Solution>

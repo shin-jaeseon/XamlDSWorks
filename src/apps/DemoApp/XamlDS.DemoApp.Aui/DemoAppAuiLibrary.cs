@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VitalSignsMonitor.Aui;
 using XamlDS.Showcases.ItkControls;
 using XamlDS.Showcases.ItkThemes;
 
@@ -17,6 +18,9 @@ internal sealed class DemoAppAuiLibrary : XamlDSLibrary
 
         var itkThemesLib = new ItkThemesAuiLibrary();
         itkThemesLib.Register(hostBuilder);
+
+        var vitalSignsMonitorAuiLib = new VitalSignsMonitorAuiLibrary();
+        vitalSignsMonitorAuiLib.Register(hostBuilder);
 
         base.Register(hostBuilder);
     }

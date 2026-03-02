@@ -27,6 +27,7 @@
 		<ResourceInclude Source="/Themes/Controls/CheckBoxThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/ContentControlThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/RadioButtonThemes.axaml"/>
+		<ResourceInclude Source="/Themes/Controls/Gauges/LinearGaugeThemes.axaml"/>
 		<ResourceInclude Source="/Themes/TemplatedControls/TextFieldThemes.axaml"/>
 	</ResourceDictionary.MergedDictionaries>
 
