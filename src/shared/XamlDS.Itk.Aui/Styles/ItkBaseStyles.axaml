@@ -99,7 +99,7 @@
 
 	<Style Selector="itk|TextField">
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
-		<Setter Property="Theme" Value="{StaticResource TextFieldTheme}"/>
+		<Setter Property="Theme" Value="{StaticResource HorizontalTextFieldTheme}"/>
 	</Style>
 
 	<Style Selector="itk|GridLinePane">
