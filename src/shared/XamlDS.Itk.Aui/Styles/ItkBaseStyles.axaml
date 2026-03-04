@@ -98,7 +98,12 @@
 	</Style>
 
 	<Style Selector="itk|TextField">
+		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
 		<Setter Property="Theme" Value="{StaticResource TextFieldTheme}"/>
+	</Style>
+
+	<Style Selector="itk|GridLinePane">
+		<Setter Property="GridLineBrush" Value="{StaticResource Fg0Brush}"/>
 	</Style>
 
 </Styles>

@@ -3,21 +3,22 @@
 
 	<ControlTheme x:Key="ItkCheckBoxBaseTheme" TargetType="CheckBox">
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+		<Setter Property="MinHeight" Value="{StaticResource InputControlMinHeight}"/>
+		<Setter Property="MinWidth" Value="{StaticResource InputControlMinWidth}"/>
+		<Setter Property="Margin" Value="{StaticResource InputControlMargin}"/>
+		<Setter Property="CornerRadius" Value="{StaticResource InputControlCornerRadius}"/>
 		<Setter Property="FontSize" Value="13"/>
 		<Setter Property="FontWeight" Value="Medium"/>
-
 		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
 		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
 		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
 
-		<Setter Property="Margin" Value="{StaticResource ControlMargin}"/>
-		<Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid Margin="{TemplateBinding Margin}">
+				<Grid>
 					<Rectangle StrokeThickness="1" RadiusX="6" RadiusY="6" Stroke="{TemplateBinding BorderBrush}" Fill="{TemplateBinding Background}"/>
 					<Rectangle x:Name="PART_Bg" Fill="{TemplateBinding BorderBrush}" RadiusX="4" RadiusY="4" Opacity="0.15" Margin="3"/>
 					<Border x:Name="PART_checkBar" Background="{TemplateBinding BorderBrush}" CornerRadius="2" Margin="5" MinHeight="4" MinWidth="4"/>
@@ -45,14 +46,14 @@
 	</ControlTheme>
 
 	<ControlTheme x:Key="ItkCheckBoxTopDownTheme" TargetType="CheckBox" BasedOn="{StaticResource ItkCheckBoxBaseTheme}">
-		<Setter Property="Padding" Value="10,10,10,14"/>
+		<Setter Property="Padding" Value="8,8,8,12"/>
 		<Style Selector="^ /template/ Border#PART_checkBar">
 			<Setter Property="VerticalAlignment" Value="Bottom"/>
 			<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		</Style>
 
 		<Style Selector="^:checked">
-			<Setter Property="Padding" Value="10,14,10,10"/>
+			<Setter Property="Padding" Value="8,12,8,8"/>
 			<Style Selector="^ /template/ Border#PART_checkBar">
 				<Setter Property="VerticalAlignment" Value="Top"/>
 			</Style>
@@ -60,7 +61,7 @@
 	</ControlTheme>
 
 	<ControlTheme x:Key="ItkCheckBoxLeftRightTheme" TargetType="CheckBox" BasedOn="{StaticResource ItkCheckBoxBaseTheme}">
-		<Setter Property="Padding" Value="18,10,10,10"/>
+		<Setter Property="Padding" Value="16,8,8,8"/>
 		<Setter Property="HorizontalContentAlignment" Value="Right"/>
 		<Style Selector="^ /template/ Border#PART_checkBar">
 			<Setter Property="VerticalAlignment" Value="Stretch"/>
@@ -68,7 +69,7 @@
 		</Style>
 
 		<Style Selector="^:checked">
-			<Setter Property="Padding" Value="10,10,18,10"/>
+			<Setter Property="Padding" Value="8,8,16,8"/>
 			<Setter Property="HorizontalContentAlignment" Value="Left"/>
 			<Style Selector="^ /template/ Border#PART_checkBar">
 				<Setter Property="VerticalAlignment" Value="Stretch"/>

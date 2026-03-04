@@ -16,14 +16,29 @@
 			<SolidColorBrush x:Key="Bg2Brush">#F222</SolidColorBrush>
 			<SolidColorBrush x:Key="Bg3Brush">#F333</SolidColorBrush>
 
+			<SolidColorBrush x:Key="Bg0A1Brush">#1000</SolidColorBrush>
+			<SolidColorBrush x:Key="Bg0A2Brush">#2000</SolidColorBrush>
+			<SolidColorBrush x:Key="Bg0A3Brush">#3000</SolidColorBrush>
+			<SolidColorBrush x:Key="Bg0A4Brush">#4000</SolidColorBrush>
+
 			<SolidColorBrush x:Key="Fg0Brush">#FFFF</SolidColorBrush>
 			<SolidColorBrush x:Key="Fg1Brush">#FEEE</SolidColorBrush>
 			<SolidColorBrush x:Key="Fg2Brush">#FDDD</SolidColorBrush>
 			<SolidColorBrush x:Key="Fg3Brush">#FCCC</SolidColorBrush>
 
+			<SolidColorBrush x:Key="Fg0A1Brush">#1FFF</SolidColorBrush>
+			<SolidColorBrush x:Key="Fg0A2Brush">#2FFF</SolidColorBrush>
+			<SolidColorBrush x:Key="Fg0A3Brush">#3FFF</SolidColorBrush>
+			<SolidColorBrush x:Key="Fg0A4Brush">#4FFF</SolidColorBrush>
+
 			<SolidColorBrush x:Key="AccentABrush">Cyan</SolidColorBrush>
 			<SolidColorBrush x:Key="AccentBBrush">Orange</SolidColorBrush>
 			<SolidColorBrush x:Key="AccentCBrush">#adff2f</SolidColorBrush>
+
+			<SolidColorBrush x:Key="NormalStateBrush">Lime</SolidColorBrush>    <!-- Green -->
+			<SolidColorBrush x:Key="WarningStateBrush">#FFA500</SolidColorBrush>  <!-- Orange -->
+			<SolidColorBrush x:Key="ErrorStateBrush">#FF6B6B</SolidColorBrush>    <!-- Light Red -->
+			<SolidColorBrush x:Key="CriticalStateBrush">#DC143C</SolidColorBrush> <!-- Crimson/Dark Red -->
 
 			<SolidColorBrush x:Key="InputControlBorderBrush">#FFFF</SolidColorBrush>
 		</ResourceDictionary>

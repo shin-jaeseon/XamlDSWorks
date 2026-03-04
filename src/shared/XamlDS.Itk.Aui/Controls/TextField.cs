@@ -1,7 +1,7 @@
-﻿using System.Globalization;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Data.Converters;
+using System.Globalization;
 
 namespace XamlDS.Itk.Controls;
 
@@ -45,6 +45,9 @@ public class TextField : TemplatedControl
     /// </summary>
     public static readonly StyledProperty<double> ValueWidthProperty =
         AvaloniaProperty.Register<TextField, double>(nameof(ValueWidth), defaultValue: 100.0);
+
+    public static readonly StyledProperty<double> SuffixWidthProperty =
+        AvaloniaProperty.Register<TextField, double>(nameof(SuffixWidth), defaultValue: 50.0);
 
     /// <summary>
     /// Defines the <see cref="ShowLabel"/> property.
@@ -146,6 +149,12 @@ public class TextField : TemplatedControl
     {
         get => GetValue(ValueWidthProperty);
         set => SetValue(ValueWidthProperty, value);
+    }
+
+    public double SuffixWidth
+    {
+        get => GetValue(SuffixWidthProperty);
+        set => SetValue(SuffixWidthProperty, value);
     }
 
     /// <summary>

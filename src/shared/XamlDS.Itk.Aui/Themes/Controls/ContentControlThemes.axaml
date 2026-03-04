@@ -8,11 +8,13 @@
 		<Setter Property="CornerRadius" Value="{StaticResource ControlsGroupBoxCornerRadius}"/>
 		<Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="0"/>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Border Margin="{TemplateBinding Margin}" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1">
+				<Grid>
+					<Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"/>
 					<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}"/>
-				</Border>
+				</Grid>
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>

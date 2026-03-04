@@ -5,20 +5,22 @@
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
 		<Setter Property="FontSize" Value="13"/>
 		<Setter Property="FontWeight" Value="Medium"/>
+		<Setter Property="MinHeight" Value="32.0"/>
+		<Setter Property="MinWidth" Value="32.0"/>
 
 		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
 		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
 		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
 
-		<Setter Property="Margin" Value="3"/>
+		<Setter Property="Margin" Value="{StaticResource InputControlMargin}"/>
 		<Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid Margin="{TemplateBinding Margin}">
-					<Border x:Name="PART_Bg" Background="{TemplateBinding BorderBrush}" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0.15"/>
+				<Grid>
+					<Border x:Name="PART_Bg" Background="{TemplateBinding BorderBrush}" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0.15" Margin="0"/>
 					<Border x:Name="PART_checkBar" Background="{TemplateBinding BorderBrush}" CornerRadius="2" Margin="3" MinHeight="4" MinWidth="4"/>
 					<ContentPresenter x:Name="PART_content" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
 				</Grid>
@@ -45,14 +47,14 @@
 	</ControlTheme>
 
 	<ControlTheme x:Key="ItkRadioButtonTopDownTheme" TargetType="RadioButton" BasedOn="{StaticResource ItkRadioButtonBaseTheme}">
-		<Setter Property="Padding" Value="8,6,8,10"/>
+		<Setter Property="Padding" Value="8,4,8,8"/>
 		<Style Selector="^ /template/ Border#PART_checkBar">
 			<Setter Property="VerticalAlignment" Value="Bottom"/>
 			<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		</Style>
 
 		<Style Selector="^:checked">
-			<Setter Property="Padding" Value="8,10,8,6"/>
+			<Setter Property="Padding" Value="8,8,8,4"/>
 			<Style Selector="^ /template/ Border#PART_checkBar">
 				<Setter Property="VerticalAlignment" Value="Top"/>
 			</Style>
@@ -60,7 +62,7 @@
 	</ControlTheme>
 
 	<ControlTheme x:Key="ItkRadioButtonLeftRightTheme" TargetType="RadioButton" BasedOn="{StaticResource ItkRadioButtonBaseTheme}">
-		<Setter Property="Padding" Value="18,8,12,8"/>
+		<Setter Property="Padding" Value="12,6,8,6"/>
 		<Setter Property="HorizontalContentAlignment" Value="Right"/>
 		<Style Selector="^ /template/ Border#PART_checkBar">
 			<Setter Property="VerticalAlignment" Value="Stretch"/>
@@ -68,7 +70,7 @@
 		</Style>
 
 		<Style Selector="^:checked">
-			<Setter Property="Padding" Value="12,8,18,8"/>
+			<Setter Property="Padding" Value="8,6,12,6"/>
 			<Setter Property="HorizontalContentAlignment" Value="Left"/>
 			<Style Selector="^ /template/ Border#PART_checkBar">
 				<Setter Property="VerticalAlignment" Value="Stretch"/>

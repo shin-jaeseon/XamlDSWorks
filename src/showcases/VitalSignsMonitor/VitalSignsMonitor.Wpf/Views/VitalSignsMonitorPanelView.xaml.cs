@@ -1,3 +1,5 @@
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,15 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace VitalSignsMonitor.Wpf;
+namespace VitalSignsMonitor.Views;
 /// <summary>
-/// Interaction logic for UserControl1.xaml
+/// Interaction logic for VitalSignsMonitorPanelView.xaml
 /// </summary>
-public partial class UserControl1 : UserControl
+public partial class VitalSignsMonitorPanelView : UserControl
 {
-    public UserControl1()
+    public VitalSignsMonitorPanelView()
     {
         InitializeComponent();
     }
 }
-

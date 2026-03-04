@@ -2,10 +2,65 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:itk="http://xamldesignstudio.com"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 x:Class="XamlDS.Showcases.ItkControls.Views.TextFields.TextFieldsPanelView">
 
 	<Border Classes="BodyPanel Bg1">
-		<TextBlock Text="TextFieldsPanelView" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.6"/>
+		<ScrollViewer>
+			<Grid>
+				<itk:GridLinePane GridOpacity="0.05" GridSpacing="48" Margin="4"/>
+				<StackPanel>
+					<Border Width="960" Height="194" Margin="24,48,24,24">
+						<StackPanel VerticalAlignment="Bottom">
+							<TextBlock Text="XamlDS.Itk.Controls" Margin="0,0,0,8" Opacity="0.5" Foreground="{StaticResource AccentABrush}"/>
+							<TextBlock Text="TextField" FontSize="32" FontWeight="Bold" Margin="0,0,0,12"/>
+							<TextBlock TextWrapping="Wrap" FontSize="16" Opacity="0.75" Text="TextField is a flexible display control for showing formatted text values with optional labels, prefixes, and suffixes. It's designed to display read-only data in a consistent, professional format across your application."/>
+						</StackPanel>
+					</Border>
+					<Border Width="960" Height="528" Background="#2888" Margin="24">
+						<Border Width="336" HorizontalAlignment="Left" Background="#4888" VerticalAlignment="Top" Margin="48,48,48,0" Padding="8">
+							<StackPanel>
+								<StackPanel.Styles>
+									<Style Selector="itk|TextField">
+										<Setter Property="LabelWidth" Value="140"/>
+										<Setter Property="SuffixWidth" Value="40"/>
+									</Style>
+								</StackPanel.Styles>
+
+								<!-- ELECTRICAL Section -->
+								<TextBlock Text="ELECTRICAL" FontSize="11" FontWeight="SemiBold" Opacity="0.5" Margin="0,0,0,4"/>
+								<itk:TextField Label="Output Voltage" Value="{Binding OutputVoltage}" Status="{Binding VoltageStatus}" Prefix="L1-L2" Suffix="V" NumberFormat="F1"/>
+								<itk:TextField Label="Output Current" Value="{Binding OutputCurrent}" Status="{Binding CurrentStatus}" Prefix="L1" Suffix="A" NumberFormat="F1"/>
+								<itk:TextField Label="Frequency" Value="{Binding Frequency}" Status="{Binding FrequencyStatus}" Suffix="Hz" NumberFormat="F2"/>
+								<itk:TextField Label="Active Power" Value="{Binding ActivePower}" Status="{Binding ActivePowerStatus}" Suffix="kW" NumberFormat="F1"/>
+								<itk:TextField Label="Reactive Power" Value="{Binding ReactivePower}" Status="{Binding ReactivePowerStatus}" Suffix="kVAr" NumberFormat="F1"/>
+
+								<!-- ENGINE Section -->
+								<TextBlock Text="ENGINE" FontSize="11" FontWeight="SemiBold" Opacity="0.5" Margin="0,12,0,4"/>
+								<itk:TextField Label="Engine Speed" Value="{Binding EngineSpeed}" Status="{Binding EngineSpeedStatus}" Suffix="RPM" NumberFormat="F0"/>
+								<itk:TextField Label="Engine Temperature" Value="{Binding EngineTemperature}" Status="{Binding EngineTemperatureStatus}" Prefix="Coolant" Suffix="°C" NumberFormat="F1"/>
+								<itk:TextField Label="Oil Pressure" Value="{Binding OilPressure}" Status="{Binding OilPressureStatus}" Suffix="bar" NumberFormat="F1"/>
+
+								<!-- STATUS Section -->
+								<TextBlock Text="STATUS" FontSize="11" FontWeight="SemiBold" Opacity="0.5" Margin="0,12,0,4"/>
+								<itk:TextField Label="Fuel Level" Value="{Binding FuelLevel}" Status="{Binding FuelLevelStatus}" Suffix="%" NumberFormat="F1"/>
+								<itk:TextField Label="Running Hours" Value="{Binding RunningHours}" Suffix="hrs" NumberFormat="F1"/>
+							</StackPanel>
+						</Border>
+					</Border>
+					<Border Width="960" Height="432" Background="#2888" Margin="24">
+
+					</Border>
+					<Border Width="960" Height="480" Background="#2888" Margin="24">
+
+					</Border>
+
+					<Border Width="960" Height="480" Background="#2888" Margin="24,24,24,48">
+
+					</Border>
+				</StackPanel>
+			</Grid>
+		</ScrollViewer>
 	</Border>
 </UserControl>

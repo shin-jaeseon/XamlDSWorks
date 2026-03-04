@@ -1,10 +1,11 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
-						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-						 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-						 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-						 xmlns:viewModels="using:XamlDS.DemoApp.ViewModels"
-						 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-						 x:Class="XamlDS.DemoApp.Views.HomePanelView" x:DataType="viewModels:HomePanelVm">
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:itk="http://xamldesignstudio.com"
+			 xmlns:viewModels="using:XamlDS.DemoApp.ViewModels"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:Class="XamlDS.DemoApp.Views.HomePanelView" x:DataType="viewModels:HomePanelVm">
 
 	<UserControl.Styles>
 		<Style Selector="Button">
@@ -15,17 +16,20 @@
 	</UserControl.Styles>
 
 	<Border Classes="BodyPanel Bg1">
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-			<TextBlock Text="XamlDS Demo" FontSize="24" HorizontalAlignment="Left" Margin="8,0,0,8" Opacity="0.5" FontFamily="{StaticResource GlobalFontFamily}" FontWeight="Medium"/>
-			<TextBlock Text="Industrial Touch Kit(Itk)" FontSize="16" HorizontalAlignment="Left" Margin="8,0,0,8"/>
-			<WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-				<Button DataContext="{Binding OpenItkThemesMainPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
-				<Button DataContext="{Binding OpenItkControlsMainPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
-				<Button DataContext="{Binding OpenVitalSignsMonitorPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
-				<Button Content="Demo 04"/>
-				<Button Content="Demo 05"/>
-			</WrapPanel>
-		</StackPanel>
+		<Grid>
+			<itk:GridLinePane GridOpacity="0.05"/>
+			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+				<TextBlock Text="XamlDS Demo" FontSize="24" HorizontalAlignment="Left" Margin="8,0,0,8" Opacity="0.5" FontFamily="{StaticResource GlobalFontFamily}" FontWeight="Medium"/>
+				<TextBlock Text="Industrial Touch Kit(Itk)" FontSize="16" HorizontalAlignment="Left" Margin="8,0,0,8"/>
+				<WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+					<Button DataContext="{Binding OpenItkThemesMainPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
+					<Button DataContext="{Binding OpenItkControlsMainPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
+					<Button DataContext="{Binding OpenVitalSignsMonitorPanelCvm}" Content="{Binding DisplayName}" Command="{Binding Command}"/>
+					<Button Content="Demo 04"/>
+					<Button Content="Demo 05"/>
+				</WrapPanel>
+			</StackPanel>
+		</Grid>
 	</Border>
 
 </UserControl>

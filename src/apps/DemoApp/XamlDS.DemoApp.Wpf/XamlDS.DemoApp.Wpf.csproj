@@ -13,6 +13,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\..\showcases\ItkControls\XamlDS.Showcases.ItkControls.Wpf\XamlDS.Showcases.ItkControls.Wpf.csproj" />
 	  <ProjectReference Include="..\..\..\showcases\ItkThemes\XamlDS.Showcases.ItkThemes.Wpf\XamlDS.Showcases.ItkThemes.Wpf.csproj" />
+	  <ProjectReference Include="..\..\..\showcases\VitalSignsMonitor\VitalSignsMonitor.Wpf\VitalSignsMonitor.Wpf.csproj" />
 	  <ProjectReference Include="..\XamlDS.DemoApp\XamlDS.DemoApp.csproj" />
 	</ItemGroup>
 

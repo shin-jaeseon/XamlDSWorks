@@ -11,15 +11,19 @@
 		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans Arabic
 	</FontFamily>
 
-	<Thickness x:Key="ControlMargin">3.0</Thickness>
-	<Thickness x:Key="ControlPadding">3.0</Thickness>
-	<CornerRadius x:Key="ControlCornerRadius">4.0</CornerRadius>
+	<Thickness x:Key="ControlMargin">4.0</Thickness>
+	<Thickness x:Key="ControlPadding">4.0</Thickness>
+	<CornerRadius x:Key="ControlCornerRadius">3.0</CornerRadius>
 
+	<x:Double x:Key="InputControlMinWidth">40.0</x:Double>
+	<x:Double x:Key="InputControlMinHeight">40.0</x:Double>
 	<Thickness x:Key="InputBorderThickness">1.0</Thickness>
-	<Thickness x:Key="InputControlMargin">3.0</Thickness>
+	<Thickness x:Key="InputControlMargin">4.0</Thickness>
+	<Thickness x:Key="InputControlPadding">8.0</Thickness>
+	<CornerRadius x:Key="InputControlCornerRadius">6.0</CornerRadius>
 	<CornerRadius x:Key="InputBorderCornerRadius">4.0</CornerRadius>
 
-	<Thickness x:Key="ControlsGroupBoxMargin">3.0</Thickness>
+	<Thickness x:Key="ControlsGroupBoxMargin">4.0</Thickness>
 	<CornerRadius x:Key="ControlsGroupBoxCornerRadius">6.0</CornerRadius>
 
 	<ResourceDictionary.MergedDictionaries>
@@ -28,7 +32,7 @@
 		<ResourceInclude Source="/Themes/Controls/ContentControlThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/RadioButtonThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/Gauges/LinearGaugeThemes.axaml"/>
-		<ResourceInclude Source="/Themes/TemplatedControls/TextFieldThemes.axaml"/>
+		<ResourceInclude Source="/Themes/Controls/TextFieldThemes.axaml"/>
 	</ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

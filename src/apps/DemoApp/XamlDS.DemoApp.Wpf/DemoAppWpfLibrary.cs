@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VitalSignsMonitor;
 using XamlDS.Showcases.ItkControls;
 using XamlDS.Showcases.ItkThemes;
 
@@ -12,11 +13,14 @@ internal sealed class DemoAppWpfLibrary : XamlDSLibrary
         var demoAppLib = new DemoAppLibrary();
         demoAppLib.Register(hostBuilder);
 
-        var itkControlsLib = new ItkControlsWpfLibrary();
-        itkControlsLib.Register(hostBuilder);
+        var itkControlsWpfLib = new ItkControlsWpfLibrary();
+        itkControlsWpfLib.Register(hostBuilder);
 
-        var itkThemesLib = new ItkThemesWpfLibrary();
-        itkThemesLib.Register(hostBuilder);
+        var itkThemesWpfLib = new ItkThemesWpfLibrary();
+        itkThemesWpfLib.Register(hostBuilder);
+
+        var vitalSignsMonitorWpfLib = new VitalSignsMonitorWpfLibrary();
+        vitalSignsMonitorWpfLib.Register(hostBuilder);
 
         base.Register(hostBuilder);
     }

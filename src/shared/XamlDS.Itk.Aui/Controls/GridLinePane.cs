@@ -1,6 +1,6 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
+﻿using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Media;
 
 namespace XamlDS.Itk.Controls;
 
@@ -30,77 +30,77 @@ public enum GridOrigin
 /// </summary>
 public class GridLinePane : Control
 {
+    /// <summary>
+    /// Defines the <see cref="GridOpacity"/> property.
+    /// </summary>
+    public static readonly StyledProperty<double> GridOpacityProperty =
+        AvaloniaProperty.Register<GridLinePane, double>(
+            nameof(GridOpacity),
+            defaultValue: 0.25,
+            defaultBindingMode: Avalonia.Data.BindingMode.OneWay);
+
+    /// <summary>
+    /// Defines the <see cref="GridSpacing"/> property.
+    /// </summary>
+    public static readonly StyledProperty<double> GridSpacingProperty =
+        AvaloniaProperty.Register<GridLinePane, double>(
+            nameof(GridSpacing),
+            defaultValue: 64.0,
+            defaultBindingMode: Avalonia.Data.BindingMode.OneWay);
+
+    /// <summary>
+    /// Defines the <see cref="GridThickness"/> property.
+    /// </summary>
+    public static readonly StyledProperty<double> GridThicknessProperty =
+        AvaloniaProperty.Register<GridLinePane, double>(
+            nameof(GridThickness),
+            defaultValue: 1.0,
+            defaultBindingMode: Avalonia.Data.BindingMode.OneWay);
+
+    /// <summary>
+    /// Defines the <see cref="GridLineBrush"/> property.
+    /// </summary>
+    public static readonly StyledProperty<IBrush?> GridLineBrushProperty =
+        AvaloniaProperty.Register<GridLinePane, IBrush?>(
+            nameof(GridLineBrush),
+            defaultValue: Brushes.LightGray,
+            defaultBindingMode: Avalonia.Data.BindingMode.OneWay);
+
+    /// <summary>
+    /// Defines the <see cref="Origin"/> property.
+    /// </summary>
+    public static readonly StyledProperty<GridOrigin> OriginProperty =
+        AvaloniaProperty.Register<GridLinePane, GridOrigin>(
+            nameof(Origin),
+            defaultValue: GridOrigin.Center,
+            defaultBindingMode: Avalonia.Data.BindingMode.OneWay);
+
+    /// <summary>
+    /// Defines the <see cref="SnapToDevicePixels"/> property.
+    /// </summary>
+    public static readonly StyledProperty<bool> SnapToDevicePixelsProperty =
+        AvaloniaProperty.Register<GridLinePane, bool>(
+            nameof(SnapToDevicePixels),
+            defaultValue: true,
+            defaultBindingMode: Avalonia.Data.BindingMode.OneWay);
+
     static GridLinePane()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(GridLinePane), new FrameworkPropertyMetadata(typeof(GridLinePane)));
+        AffectsRender<GridLinePane>(
+            GridOpacityProperty,
+            GridSpacingProperty,
+            GridThicknessProperty,
+            GridLineBrushProperty,
+            OriginProperty,
+            SnapToDevicePixelsProperty);
     }
-
-    /// <summary>
-    /// Opacity applied to grid lines (0.0 - 1.0).
-    /// </summary>
-    public static readonly DependencyProperty GridOpacityProperty =
-        DependencyProperty.Register(
-            nameof(GridOpacity),
-            typeof(double),
-            typeof(GridLinePane),
-            new FrameworkPropertyMetadata(0.25d, FrameworkPropertyMetadataOptions.AffectsRender));
-
-    /// <summary>
-    /// Spacing between grid lines in device-independent units.
-    /// </summary>
-    public static readonly DependencyProperty GridSpacingProperty =
-        DependencyProperty.Register(
-            nameof(GridSpacing),
-            typeof(double),
-            typeof(GridLinePane),
-            new FrameworkPropertyMetadata(64.0d, FrameworkPropertyMetadataOptions.AffectsRender));
-
-    /// <summary>
-    /// Thickness of grid lines.
-    /// </summary>
-    public static readonly DependencyProperty GridThicknessProperty =
-        DependencyProperty.Register(
-            nameof(GridThickness),
-            typeof(double),
-            typeof(GridLinePane),
-            new FrameworkPropertyMetadata(1.0d, FrameworkPropertyMetadataOptions.AffectsRender));
-
-    /// <summary>
-    /// Brush used to draw grid lines.
-    /// </summary>
-    public static readonly DependencyProperty GridLineBrushProperty =
-        DependencyProperty.Register(
-            nameof(GridLineBrush),
-            typeof(Brush),
-            typeof(GridLinePane),
-            new FrameworkPropertyMetadata(Brushes.LightGray, FrameworkPropertyMetadataOptions.AffectsRender));
-
-    /// <summary>
-    /// Reference origin for the grid (Center or LeftTop).
-    /// </summary>
-    public static readonly DependencyProperty OriginProperty =
-        DependencyProperty.Register(
-            nameof(Origin),
-            typeof(GridOrigin),
-            typeof(GridLinePane),
-            new FrameworkPropertyMetadata(GridOrigin.Center, FrameworkPropertyMetadataOptions.AffectsRender));
-
-    /// <summary>
-    /// When true, grid line coordinates will be snapped to the device pixel grid for crisper rendering.
-    /// </summary>
-    public static readonly DependencyProperty SnapToDevicePixelsProperty =
-        DependencyProperty.Register(
-            nameof(SnapToDevicePixels),
-            typeof(bool),
-            typeof(GridLinePane),
-            new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.AffectsRender));
 
     /// <summary>
     /// Gets or sets the opacity applied to grid lines.
     /// </summary>
     public double GridOpacity
     {
-        get => (double)GetValue(GridOpacityProperty);
+        get => GetValue(GridOpacityProperty);
         set => SetValue(GridOpacityProperty, value);
     }
 
@@ -109,7 +109,7 @@ public class GridLinePane : Control
     /// </summary>
     public double GridSpacing
     {
-        get => (double)GetValue(GridSpacingProperty);
+        get => GetValue(GridSpacingProperty);
         set => SetValue(GridSpacingProperty, value);
     }
 
@@ -118,16 +118,16 @@ public class GridLinePane : Control
     /// </summary>
     public double GridThickness
     {
-        get => (double)GetValue(GridThicknessProperty);
+        get => GetValue(GridThicknessProperty);
         set => SetValue(GridThicknessProperty, value);
     }
 
     /// <summary>
     /// Gets or sets the brush used for grid lines.
     /// </summary>
-    public Brush GridLineBrush
+    public IBrush? GridLineBrush
     {
-        get => (Brush)GetValue(GridLineBrushProperty);
+        get => GetValue(GridLineBrushProperty);
         set => SetValue(GridLineBrushProperty, value);
     }
 
@@ -136,7 +136,7 @@ public class GridLinePane : Control
     /// </summary>
     public GridOrigin Origin
     {
-        get => (GridOrigin)GetValue(OriginProperty);
+        get => GetValue(OriginProperty);
         set => SetValue(OriginProperty, value);
     }
 
@@ -145,13 +145,13 @@ public class GridLinePane : Control
     /// </summary>
     public bool SnapToDevicePixels
     {
-        get => (bool)GetValue(SnapToDevicePixelsProperty);
+        get => GetValue(SnapToDevicePixelsProperty);
         set => SetValue(SnapToDevicePixelsProperty, value);
     }
 
     // --- Geometry cache fields ---
     private StreamGeometry? _cachedGeometry;
-    private Size _cachedSize = Size.Empty;
+    private Size _cachedSize = default;
     private double _cachedSpacing = double.NaN;
     private double _cachedScaleX = double.NaN;
     private double _cachedScaleY = double.NaN;
@@ -208,36 +208,34 @@ public class GridLinePane : Control
             for (double x = originX; x <= width; x += spacing)
             {
                 double sx = SnapCoordLocal(x, scaleX, snap);
-                ctx.BeginFigure(new Point(sx, SnapCoordLocal(0, scaleY, snap)), false, false);
-                ctx.LineTo(new Point(sx, SnapCoordLocal(height, scaleY, snap)), true, false);
+                ctx.BeginFigure(new Point(sx, SnapCoordLocal(0, scaleY, snap)), false);
+                ctx.LineTo(new Point(sx, SnapCoordLocal(height, scaleY, snap)));
             }
 
             // Vertical lines to the left
             for (double x = originX - spacing; x >= 0; x -= spacing)
             {
                 double sx = SnapCoordLocal(x, scaleX, snap);
-                ctx.BeginFigure(new Point(sx, SnapCoordLocal(0, scaleY, snap)), false, false);
-                ctx.LineTo(new Point(sx, SnapCoordLocal(height, scaleY, snap)), true, false);
+                ctx.BeginFigure(new Point(sx, SnapCoordLocal(0, scaleY, snap)), false);
+                ctx.LineTo(new Point(sx, SnapCoordLocal(height, scaleY, snap)));
             }
 
             // Horizontal lines downward
             for (double y = originY; y <= height; y += spacing)
             {
                 double sy = SnapCoordLocal(y, scaleY, snap);
-                ctx.BeginFigure(new Point(SnapCoordLocal(0, scaleX, snap), sy), false, false);
-                ctx.LineTo(new Point(SnapCoordLocal(width, scaleX, snap), sy), true, false);
+                ctx.BeginFigure(new Point(SnapCoordLocal(0, scaleX, snap), sy), false);
+                ctx.LineTo(new Point(SnapCoordLocal(width, scaleX, snap), sy));
             }
 
             // Horizontal lines upward
             for (double y = originY - spacing; y >= 0; y -= spacing)
             {
                 double sy = SnapCoordLocal(y, scaleY, snap);
-                ctx.BeginFigure(new Point(SnapCoordLocal(0, scaleX, snap), sy), false, false);
-                ctx.LineTo(new Point(SnapCoordLocal(width, scaleX, snap), sy), true, false);
+                ctx.BeginFigure(new Point(SnapCoordLocal(0, scaleX, snap), sy), false);
+                ctx.LineTo(new Point(SnapCoordLocal(width, scaleX, snap), sy));
             }
         }
-
-        geometry.Freeze();
 
         // Store cache
         _cachedGeometry = geometry;
@@ -251,15 +249,15 @@ public class GridLinePane : Control
 
     /// <summary>
     /// Renders the grid lines into the control's drawing context.
-    /// Uses StreamGeometry for batching and freezes resources for better performance.
+    /// Uses StreamGeometry for batching for better performance.
     /// </summary>
-    /// <param name="drawingContext">The drawing context.</param>
-    protected override void OnRender(DrawingContext drawingContext)
+    /// <param name="context">The drawing context.</param>
+    public override void Render(DrawingContext context)
     {
-        base.OnRender(drawingContext);
+        base.Render(context);
 
-        double width = ActualWidth;
-        double height = ActualHeight;
+        double width = Bounds.Width;
+        double height = Bounds.Height;
         if (width <= 0 || height <= 0)
             return;
 
@@ -267,10 +265,16 @@ public class GridLinePane : Control
         if (spacing <= 0.0)
             return;
 
-        // DPI scale for snapping
-        var dpi = VisualTreeHelper.GetDpi(this);
-        double scaleX = dpi.DpiScaleX;
-        double scaleY = dpi.DpiScaleY;
+        // Get render scaling for pixel snapping
+        var visualRoot = this.VisualRoot;
+        double scaleX = 1.0;
+        double scaleY = 1.0;
+
+        if (visualRoot is TopLevel topLevel)
+        {
+            scaleX = topLevel.RenderScaling;
+            scaleY = topLevel.RenderScaling;
+        }
 
         bool snap = SnapToDevicePixels;
 
@@ -280,25 +284,28 @@ public class GridLinePane : Control
         if (_cachedGeometry == null)
             return;
 
-        // Prepare brush + pen (pen can vary independently of geometry)
-        Brush baseBrush = GridLineBrush ?? Brushes.Transparent;
-        Brush brush = baseBrush.Clone();
-        brush.Opacity = Math.Max(0.0, Math.Min(1.0, GridOpacity));
-        brush.Freeze();
+        // Prepare brush + pen
+        IBrush? baseBrush = GridLineBrush ?? Brushes.Transparent;
 
-        Pen pen = new Pen(brush, Math.Max(0.0, GridThickness));
-        pen.Freeze();
+        // Create immutable brush with opacity
+        IBrush? renderBrush = baseBrush;
+        double opacity = Math.Clamp(GridOpacity, 0.0, 1.0);
 
-        drawingContext.DrawGeometry(null, pen, _cachedGeometry);
+        if (baseBrush is ISolidColorBrush solidBrush)
+        {
+            var color = solidBrush.Color;
+            renderBrush = new SolidColorBrush(
+                Color.FromArgb(
+                    (byte)(color.A * opacity),
+                    color.R,
+                    color.G,
+                    color.B));
+        }
+
+        var pen = new Pen(renderBrush, Math.Max(0.0, GridThickness));
+
+        context.DrawGeometry(null, pen, _cachedGeometry);
     }
-
-    //private static double SnapCoord(double value, double scale, bool snap)
-    //{
-    //    if (!snap)
-    //        return value;
-    //    // Round to nearest device pixel then convert back to device-independent units
-    //    return Math.Round(value * scale) / scale;
-    //}
 
     private static bool AreClose(double a, double b)
     {
