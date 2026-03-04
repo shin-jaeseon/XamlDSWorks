@@ -4,7 +4,6 @@ using XamlDS.Showcases.ItkThemes.ViewModels.Controls.CheckBoxes;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.RadioButtons;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Sliders;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextBoxs;
-using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextFields;
 using XamlDS.ViewModels;
 
 namespace XamlDS.Showcases.ItkThemes.ViewModels.Controls;
@@ -52,9 +51,6 @@ public class ControlsPanelVm : ViewModelBase
                         break;
                     case "TextBoxs":
                         CurrentPanel = _serviceProvider.GetRequiredService<TextBoxsPanelVm>();
-                        break;
-                    case "TextFields":
-                        CurrentPanel = _serviceProvider.GetRequiredService<TextFieldsPanelVm>();
                         break;
                     default:
                         throw new ArgumentException("Invalid CurrentPanelName");

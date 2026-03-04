@@ -8,7 +8,6 @@ using XamlDS.Showcases.ItkThemes.ViewModels.Controls.CheckBoxes;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.RadioButtons;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Sliders;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextBoxs;
-using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextFields;
 using XamlDS.Showcases.ItkThemes.ViewModels.Showcase01;
 using XamlDS.Showcases.ItkThemes.ViewModels.Showcase02;
 using XamlDS.Showcases.ItkThemes.ViewModels.Showcase03;
@@ -39,6 +38,5 @@ public sealed class ItkThemesLibrary : XamlDSLibrary
         services.AddTransient<RadioButtonsPanelVm>();
         services.AddTransient<SlidersPanelVm>();
         services.AddTransient<TextBoxsPanelVm>();
-        services.AddTransient<TextFieldsPanelVm>();
     }
 }

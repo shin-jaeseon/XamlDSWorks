@@ -16,6 +16,7 @@
         <entry key="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/Views/Controls/CheckBoxes/CheckBoxesPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
         <entry key="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/Views/Controls/CheckBoxs/CheckBoxsPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
         <entry key="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/Views/Controls/ControlsPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
+        <entry key="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/Views/Controls/TextFields/TextFieldsPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
       </map>
     </option>
   </component>

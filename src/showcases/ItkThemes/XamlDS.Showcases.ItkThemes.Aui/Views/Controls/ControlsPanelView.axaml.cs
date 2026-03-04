@@ -5,13 +5,11 @@ using XamlDS.Showcases.ItkThemes.ViewModels.Controls.CheckBoxes;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.RadioButtons;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Sliders;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextBoxs;
-using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextFields;
 using XamlDS.Showcases.ItkThemes.Views.Controls.Buttons;
 using XamlDS.Showcases.ItkThemes.Views.Controls.CheckBoxes;
 using XamlDS.Showcases.ItkThemes.Views.Controls.RadioButtons;
 using XamlDS.Showcases.ItkThemes.Views.Controls.Sliders;
 using XamlDS.Showcases.ItkThemes.Views.Controls.TextBoxs;
-using XamlDS.Showcases.ItkThemes.Views.Controls.TextFields;
 
 namespace XamlDS.Showcases.ItkThemes.Views.Controls;
 
@@ -26,6 +24,5 @@ public partial class ControlsPanelView : UserControl
         this.DataTemplates.Add(new FuncDataTemplate<RadioButtonsPanelVm>((value, namescope) => new RadioButtonsPanelView()));
         this.DataTemplates.Add(new FuncDataTemplate<SlidersPanelVm>((value, namescope) => new SlidersPanelView()));
         this.DataTemplates.Add(new FuncDataTemplate<TextBoxsPanelVm>((value, namescope) => new TextBoxsPanelView()));
-        this.DataTemplates.Add(new FuncDataTemplate<TextFieldsPanelVm>((value, namescope) => new TextFieldsPanelView()));
     }
 }
