@@ -16,9 +16,9 @@
 		<PackageReference Include="Avalonia" Version="11.3.11" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Compile Update="Views\ItkThemesPanelView.axaml.cs">
-	    <DependentUpon>ItkThemesPanelView.axaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Update="Views\**\*.axaml.cs">
+            <DependentUpon>%(Filename).axaml</DependentUpon>
+        </Compile>
+    </ItemGroup>
 </Project>
