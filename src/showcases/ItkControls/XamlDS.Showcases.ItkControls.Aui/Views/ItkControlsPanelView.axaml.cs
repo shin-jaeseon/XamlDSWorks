@@ -17,9 +17,13 @@ public partial class ItkControlsPanelView : UserControl
     {
         InitializeComponent();
 
-        this.DataTemplates.Add(new FuncDataTemplate<TextFieldsPanelVm>((value, namescope) => new TextFieldsPanelView()));
-        this.DataTemplates.Add(new FuncDataTemplate<LinearGaugesPanelVm>((value, namescope) => new LinearGaugesPanelView()));
-        this.DataTemplates.Add(new FuncDataTemplate<RadialGaugesPanelVm>((value, namescope) => new RadialGaugesPanelView()));
-        this.DataTemplates.Add(new FuncDataTemplate<CircularGaugesPanelVm>((value, namescope) => new CircularGaugesPanelView()));
+        this.DataTemplates.Add(
+            new FuncDataTemplate<TextFieldsPanelVm>((value, namescope) => new TextFieldsPanelView()));
+        this.DataTemplates.Add(
+            new FuncDataTemplate<LinearGaugesPanelVm>((value, namescope) => new LinearGaugesPanelView()));
+        this.DataTemplates.Add(
+            new FuncDataTemplate<RadialGaugesPanelVm>((value, namescope) => new RadialGaugesPanelView()));
+        this.DataTemplates.Add(
+            new FuncDataTemplate<CircularGaugesPanelVm>((value, namescope) => new CircularGaugesPanelView()));
     }
 }

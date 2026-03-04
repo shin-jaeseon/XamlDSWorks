@@ -13,5 +13,6 @@
 
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="avares://XamlDS.Itk.Aui/Styles/ItkDarkStyles.axaml"/>
     </Application.Styles>
 </Application>

@@ -6,6 +6,13 @@
         <entry key="src/apps/DemoApp/XamlDS.DemoApp.Aui/App.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
         <entry key="src/shared/XamlDS.Itk.Aui/Styles/ITKBaseStyles.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
         <entry key="src/shared/XamlDS.Itk.Aui/Styles/ITKDarkStyles.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
+        <entry key="src/shared/XamlDS.Itk.Aui/Styles/ItkBaseStyles.axaml" value="src/apps/Labs/AvaloniaControlFactory/AvaloniaControlFactory.csproj" />
+        <entry key="src/shared/XamlDS.Itk.Aui/Styles/ItkDarkStyles.axaml" value="src/apps/Labs/AvaloniaControlFactory/AvaloniaControlFactory.csproj" />
+        <entry key="src/showcases/ItkControls/XamlDS.Showcases.ItkControls.Aui/Views/CircularGauges/CircularGaugesPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
+        <entry key="src/showcases/ItkControls/XamlDS.Showcases.ItkControls.Aui/Views/ItkControlsPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
+        <entry key="src/showcases/ItkControls/XamlDS.Showcases.ItkControls.Aui/Views/LinearGauges/LinearGaugesPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
+        <entry key="src/showcases/ItkControls/XamlDS.Showcases.ItkControls.Aui/Views/RadialGauges/RadialGaugesPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
+        <entry key="src/showcases/ItkControls/XamlDS.Showcases.ItkControls.Aui/Views/TextFields/TextFieldsPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
         <entry key="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/Views/Controls/CheckBoxes/CheckBoxesPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
         <entry key="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/Views/Controls/CheckBoxs/CheckBoxsPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
         <entry key="src/showcases/ItkThemes/XamlDS.Showcases.ItkThemes.Aui/Views/Controls/ControlsPanelView.axaml" value="src/apps/DemoApp/XamlDS.DemoApp.Aui/XamlDS.DemoApp.Aui.csproj" />
