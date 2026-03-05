@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
-using XamlDS.Input;
+using XamlDS.Itk.Input;
 
-namespace XamlDS.ViewModels;
+namespace XamlDS.Itk.ViewModels;
 
 /// <summary>
 /// Command ViewModel base class

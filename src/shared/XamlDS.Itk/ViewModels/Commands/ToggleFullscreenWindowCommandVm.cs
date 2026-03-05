@@ -1,4 +1,4 @@
-﻿namespace XamlDS.ViewModels.Commands;
+﻿namespace XamlDS.Itk.ViewModels.Commands;
 
 public abstract class ToggleFullscreenWindowCommandVm : CommandVm
 {

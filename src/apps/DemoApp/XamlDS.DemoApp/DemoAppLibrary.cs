@@ -8,7 +8,7 @@ using XamlDS.Showcases.ItkThemes;
 
 namespace XamlDS.DemoApp;
 
-public sealed class DemoAppLibrary : XamlDSLibrary
+public sealed class DemoAppLibrary : XamlDS.Itk.XamlDSLibrary
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {

@@ -1,5 +1,5 @@
 ﻿using XamlDS.Itk.Resources;
-using XamlDS.ViewModels;
+using XamlDS.Itk.ViewModels;
 
 namespace XamlDS.DemoApp.ViewModels.Commands;
 

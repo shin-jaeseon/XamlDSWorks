@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using XamlDS.Itk.ResourceKeys;
-using XamlDS.ViewModels;
+﻿using XamlDS.Itk.ResourceKeys;
 
 namespace XamlDS.Itk.ViewModels;
 

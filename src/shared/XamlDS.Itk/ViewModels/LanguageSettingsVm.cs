@@ -1,8 +1,7 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Globalization;
 using XamlDS.Itk.Messages;
-using XamlDS.Services;
-using XamlDS.ViewModels;
+using XamlDS.Itk.Services;
 
 namespace XamlDS.Itk.ViewModels;
 

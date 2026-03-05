@@ -6,7 +6,7 @@ using XamlDS.Showcases.ItkThemes;
 
 namespace XamlDS.DemoApp;
 
-internal sealed class DemoAppWpfLibrary : XamlDSLibrary
+internal sealed class DemoAppWpfLibrary : XamlDS.Itk.XamlDSLibrary
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {

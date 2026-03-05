@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using VitalSignsMonitor.ViewModels;
-using XamlDS;
 using XamlDS.Itk;
 
 namespace VitalSignsMonitor;

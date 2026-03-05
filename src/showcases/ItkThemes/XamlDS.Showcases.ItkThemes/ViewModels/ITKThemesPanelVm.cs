@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using XamlDS.Itk.ViewModels;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls;
 using XamlDS.Showcases.ItkThemes.ViewModels.Showcase01;
 using XamlDS.Showcases.ItkThemes.ViewModels.Showcase02;
 using XamlDS.Showcases.ItkThemes.ViewModels.Showcase03;
-using XamlDS.ViewModels;
 
 namespace XamlDS.Showcases.ItkThemes.ViewModels;
 

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using VitalSignsMonitor.ViewModels;
+using XamlDS.Itk.ViewModels;
 using XamlDS.Showcases.ItkControls.ViewModels;
 using XamlDS.Showcases.ItkThemes.ViewModels;
-using XamlDS.ViewModels;
 
 namespace XamlDS.DemoApp.ViewModels;
 

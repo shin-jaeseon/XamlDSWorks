@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using XamlDS.Itk.ViewModels;
 using XamlDS.Showcases.ItkControls.ViewModels.CircularGauges;
 using XamlDS.Showcases.ItkControls.ViewModels.LinearGauges;
 using XamlDS.Showcases.ItkControls.ViewModels.RadialGauges;
 using XamlDS.Showcases.ItkControls.ViewModels.TextFields;
-using XamlDS.ViewModels;
 
 namespace XamlDS.Showcases.ItkControls.ViewModels;
 

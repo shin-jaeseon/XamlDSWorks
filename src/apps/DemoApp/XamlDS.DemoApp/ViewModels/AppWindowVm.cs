@@ -1,5 +1,4 @@
 ﻿using XamlDS.Itk.ViewModels;
-using XamlDS.ViewModels;
 
 namespace XamlDS.DemoApp.ViewModels;
 

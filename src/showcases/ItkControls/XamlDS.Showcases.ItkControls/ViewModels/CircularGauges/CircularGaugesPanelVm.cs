@@ -1,4 +1,4 @@
-﻿using XamlDS.ViewModels;
+﻿using XamlDS.Itk.ViewModels;
 
 namespace XamlDS.Showcases.ItkControls.ViewModels.CircularGauges;
 

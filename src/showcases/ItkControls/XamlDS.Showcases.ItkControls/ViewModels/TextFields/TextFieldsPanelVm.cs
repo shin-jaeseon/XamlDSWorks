@@ -1,5 +1,5 @@
-﻿using XamlDS.Showcases.ItkControls.Services;
-using XamlDS.ViewModels;
+﻿using XamlDS.Itk.ViewModels;
+using XamlDS.Showcases.ItkControls.Services;
 
 namespace XamlDS.Showcases.ItkControls.ViewModels.TextFields;
 

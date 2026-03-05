@@ -9,7 +9,6 @@
     <Project Path="src/apps/Labs/AvaloniaControlFactory/AvaloniaControlFactory.csproj" Id="0800d368-ca45-4378-8de0-f7cd3e218215" />
   </Folder>
   <Folder Name="/Shared/">
-    <Project Path="src/shared/XamlDS.Core/XamlDS.Core.csproj" />
     <Project Path="src/shared/XamlDS.Itk.Aui/XamlDS.Itk.Aui.csproj" />
     <Project Path="src/shared/XamlDS.Itk.Wpf/XamlDS.Itk.Wpf.csproj" />
     <Project Path="src/shared/XamlDS.Itk/XamlDS.Itk.csproj" />

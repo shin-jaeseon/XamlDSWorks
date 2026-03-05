@@ -8,13 +8,11 @@ public sealed class ItkLibrary : XamlDSLibrary
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {
-        var coreLib = new CoreLibrary();
-        coreLib.Register(hostBuilder);
-
         base.Register(hostBuilder);
     }
     protected override void AddServices(IServiceCollection services)
     {
+        services.AddSingleton<Services.IMessenger, Services.Messenger>();
         services.AddSingleton<LanguageSettingsVm>();
     }
 }

@@ -1,6 +1,4 @@
-﻿using XamlDS.ViewModels;
-
-namespace XamlDS.Itk.ViewModels.Metrics;
+﻿namespace XamlDS.Itk.ViewModels.Metrics;
 
 public enum MetricStatus
 {

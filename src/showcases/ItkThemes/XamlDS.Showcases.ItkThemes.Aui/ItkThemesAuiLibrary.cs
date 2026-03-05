@@ -1,13 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using XamlDS.Itk;
 
 namespace XamlDS.Showcases.ItkThemes;
 
-public sealed class ItkThemesAuiLibrary : XamlDSLibrary
+public sealed class ItkThemesAuiLibrary : XamlDS.Itk.XamlDSLibrary
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {

@@ -1,7 +1,6 @@
 ﻿using XamlDS.DemoApp.ViewModels.Commands;
 using XamlDS.Itk.ViewModels;
-using XamlDS.ViewModels;
-using XamlDS.ViewModels.Commands;
+using XamlDS.Itk.ViewModels.Commands;
 
 namespace XamlDS.DemoApp.ViewModels;
 

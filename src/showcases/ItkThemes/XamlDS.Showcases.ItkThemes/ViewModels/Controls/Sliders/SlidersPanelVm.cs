@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using XamlDS.ViewModels;
+﻿using XamlDS.Itk.ViewModels;
 
 namespace XamlDS.Showcases.ItkThemes.ViewModels.Controls.Sliders;
 

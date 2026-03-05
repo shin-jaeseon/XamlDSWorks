@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Hosting;
 using XamlDS.Itk.ViewModels;
 using XamlDS.Itk.ViewModels.Commands;
-using XamlDS.ViewModels.Commands;
 
 namespace XamlDS.Itk;
 

@@ -14,7 +14,7 @@ using XamlDS.Showcases.ItkThemes.ViewModels.Showcase03;
 
 namespace XamlDS.Showcases.ItkThemes;
 
-public sealed class ItkThemesLibrary : XamlDSLibrary
+public sealed class ItkThemesLibrary : XamlDS.Itk.XamlDSLibrary
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {

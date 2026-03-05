@@ -9,7 +9,7 @@ using XamlDS.Showcases.ItkControls.ViewModels.TextFields;
 
 namespace XamlDS.Showcases.ItkControls;
 
-public sealed class ItkControlsLibrary : XamlDSLibrary
+public sealed class ItkControlsLibrary : XamlDS.Itk.XamlDSLibrary
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {

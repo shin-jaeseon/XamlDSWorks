@@ -5,7 +5,7 @@ using Avalonia.Media;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using XamlDS.Itk.Messages;
-using XamlDS.Services;
+using XamlDS.Itk.Services;
 
 namespace XamlDS.Itk.Aui;
 

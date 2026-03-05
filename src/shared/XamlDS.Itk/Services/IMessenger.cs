@@ -1,4 +1,4 @@
-﻿namespace XamlDS.Services;
+﻿namespace XamlDS.Itk.Services;
 
 /// <summary>
 /// Provides a messaging service for loosely coupled communication between components.

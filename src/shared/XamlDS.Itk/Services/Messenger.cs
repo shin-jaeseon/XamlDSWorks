@@ -1,4 +1,4 @@
-﻿namespace XamlDS.Services;
+﻿namespace XamlDS.Itk.Services;
 
 public sealed class Messenger : IMessenger
 {

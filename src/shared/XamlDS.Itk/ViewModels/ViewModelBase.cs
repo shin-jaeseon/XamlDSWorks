@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace XamlDS.ViewModels;
+namespace XamlDS.Itk.ViewModels;
 
 /// <summary>
 /// Base class for all ViewModel classes, implementing INotifyPropertyChanged.

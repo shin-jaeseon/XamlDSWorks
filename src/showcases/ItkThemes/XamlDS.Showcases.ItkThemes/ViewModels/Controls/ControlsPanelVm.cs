@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using XamlDS.Itk.ViewModels;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Buttons;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.CheckBoxes;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.RadioButtons;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.Sliders;
 using XamlDS.Showcases.ItkThemes.ViewModels.Controls.TextBoxs;
-using XamlDS.ViewModels;
 
 namespace XamlDS.Showcases.ItkThemes.ViewModels.Controls;
 

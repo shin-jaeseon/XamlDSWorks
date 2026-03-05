@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
-using XamlDS.Services;
+using XamlDS.Itk.Services;
 
 namespace XamlDS.Itk.ViewModels;
 
