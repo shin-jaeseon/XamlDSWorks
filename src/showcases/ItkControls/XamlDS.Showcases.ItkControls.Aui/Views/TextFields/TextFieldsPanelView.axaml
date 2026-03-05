@@ -13,9 +13,10 @@
 				<StackPanel>
 					<Border Width="960" Height="194" Margin="24,48,24,24">
 						<StackPanel VerticalAlignment="Bottom">
-							<TextBlock Text="XamlDS.Itk.Controls" Margin="0,0,0,8" Opacity="0.5"
-									   Foreground="{StaticResource AccentABrush}" />
-							<TextBlock Text="TextField" FontSize="32" FontWeight="Bold" Margin="0,0,0,12" />
+							<StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+								<TextBlock Text="TextField" FontSize="32" FontWeight="Bold"/>
+								<TextBlock Text="XamlDS.Itk.Controls.TextField" Margin="8,0,0,4" FontWeight="Bold" Opacity="0.75" Foreground="{DynamicResource AccentABrush}" VerticalAlignment="Bottom" />
+							</StackPanel>
 							<TextBlock TextWrapping="Wrap" FontSize="16" Opacity="0.75"
 									   Text="TextField is a flexible display control for showing formatted text values with optional labels, prefixes, and suffixes. It's designed to display read-only data in a consistent, professional format across your application." />
 						</StackPanel>
