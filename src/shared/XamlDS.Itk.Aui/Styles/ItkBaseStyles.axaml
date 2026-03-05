@@ -100,6 +100,12 @@
 	<Style Selector="itk|TextField">
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
 		<Setter Property="Theme" Value="{StaticResource HorizontalTextFieldTheme}"/>
+		<Style Selector="^.VerticalX2">
+			<Setter Property="Theme" Value="{StaticResource VerticalX2TextFieldTheme}"/>
+		</Style>
+		<Style Selector="^.VerticalX4">
+			<Setter Property="Theme" Value="{StaticResource VerticalX4TextFieldTheme}"/>
+		</Style>
 	</Style>
 
 	<Style Selector="itk|GridLinePane">

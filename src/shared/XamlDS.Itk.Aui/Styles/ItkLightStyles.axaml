@@ -15,6 +15,7 @@
 			<SolidColorBrush x:Key="Bg0A2Brush">#2FFF</SolidColorBrush>
 			<SolidColorBrush x:Key="Bg0A3Brush">#3FFF</SolidColorBrush>
 			<SolidColorBrush x:Key="Bg0A4Brush">#4FFF</SolidColorBrush>
+			<SolidColorBrush x:Key="Bg0A5Brush">#5FFF</SolidColorBrush>
 
 			<SolidColorBrush x:Key="Fg0Brush">#F000</SolidColorBrush>
 			<SolidColorBrush x:Key="Fg1Brush">#F111</SolidColorBrush>
@@ -25,9 +26,10 @@
 			<SolidColorBrush x:Key="Fg0A2Brush">#2000</SolidColorBrush>
 			<SolidColorBrush x:Key="Fg0A3Brush">#3000</SolidColorBrush>
 			<SolidColorBrush x:Key="Fg0A4Brush">#4000</SolidColorBrush>
+			<SolidColorBrush x:Key="Fg0A5Brush">#5000</SolidColorBrush>
 
 			<SolidColorBrush x:Key="AccentABrush">#FF006969</SolidColorBrush>
-			<SolidColorBrush x:Key="AccentBBrush">#ffcb410b</SolidColorBrush>
+			<SolidColorBrush x:Key="AccentBBrush">Green</SolidColorBrush>
 			<SolidColorBrush x:Key="AccentCBrush">#648c11</SolidColorBrush>
 
 			<SolidColorBrush x:Key="NormalStateBrush">Green</SolidColorBrush>    <!-- Green -->
