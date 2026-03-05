@@ -10,6 +10,9 @@
 		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans TC,
 		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans Arabic
 	</FontFamily>
+	<FontFamily x:Key="GlobalMonoFontFamily">
+		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans Mono
+	</FontFamily>
 
 	<Thickness x:Key="ControlMargin">4.0</Thickness>
 	<Thickness x:Key="ControlPadding">4.0</Thickness>

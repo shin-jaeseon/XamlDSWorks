@@ -16,13 +16,13 @@
 				<DockPanel>
 					<TextBlock DockPanel.Dock="Left" Text="{TemplateBinding Label}" Width="{TemplateBinding LabelWidth}" Opacity="0.75" FontSize="12"
 							   VerticalAlignment="Center" TextAlignment="Right" Margin="0,0,8,0" IsVisible="{TemplateBinding ShowLabel}"/>
-					<TextBlock DockPanel.Dock="Left" Text="{TemplateBinding Prefix}" VerticalAlignment="Center" Margin="0,0,8,0"  FontSize="12"
+					<TextBlock DockPanel.Dock="Left" Text="{TemplateBinding Prefix}" VerticalAlignment="Center" Margin="0,0,8,0" FontSize="12"
 							   IsVisible="{Binding Prefix, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"/>
 					<TextBlock DockPanel.Dock="Right" Text="{TemplateBinding Suffix}" Width="{TemplateBinding SuffixWidth}" VerticalAlignment="Center" Margin="8,0,0,0"
 							   IsVisible="{Binding Suffix, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"/>
-					<Border Background="{TemplateBinding Background}" Padding="8,4,8,0" CornerRadius="4">
+					<Border Background="{TemplateBinding Background}" Padding="8,0,8,0" CornerRadius="4">
 						<TextBlock x:Name="PART_Value" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ValueString}" FontWeight="SemiBold"
-								   Foreground="{TemplateBinding Foreground}"  FontFamily="Consolas"
+								   Foreground="{TemplateBinding Foreground}" FontFamily="{StaticResource GlobalMonoFontFamily}"
 								   HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Left"/>
 					</Border>
 
@@ -77,7 +77,6 @@
 	<ControlTheme x:Key="VerticalX2TextFieldTheme" TargetType="itk:TextField" BasedOn="{StaticResource VerticalBaseTextFieldTheme}">
 		<Setter Property="Width" Value="144"/>
 		<Setter Property="SuffixWidth" Value="28"/>
-
 		<Setter Property="Template">
 			<ControlTemplate>
 				<StackPanel>
@@ -86,15 +85,15 @@
 						<TextBlock Text="{TemplateBinding Prefix}" VerticalAlignment="Center" Margin="8,0,0,0" FontSize="12"
 								   IsVisible="{Binding Prefix, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"/>
 					</StackPanel>
-					<Border Background="{TemplateBinding Background}" Padding="8,4,8,0" CornerRadius="4">
+					<Border Background="{TemplateBinding Background}" Padding="8,0,8,0" CornerRadius="4">
 						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-							<TextBlock x:Name="PART_Value" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ValueString}" FontWeight="SemiBold" FontSize="22"
-									   Foreground="{TemplateBinding Foreground}"  FontFamily="Consolas" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Left"/>
-							<TextBlock x:Name="PART_Suffix" Text="{TemplateBinding Suffix}" VerticalAlignment="Bottom" Margin="8,0,0,3" FontSize="12" Width="{TemplateBinding SuffixWidth}" Opacity="0.5"
-									   IsVisible="{Binding Suffix, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+							<TextBlock x:Name="PART_Value" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ValueString}"
+									   FontWeight="SemiBold" FontSize="22" FontFamily="{StaticResource GlobalMonoFontFamily}"
+									   Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Left"/>
+							<TextBlock x:Name="PART_Suffix" Text="{TemplateBinding Suffix}" VerticalAlignment="Bottom" Margin="8,0,0,2" Width="{TemplateBinding SuffixWidth}"
+									    FontSize="12" Opacity="0.5" IsVisible="{Binding Suffix, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"/>
 						</StackPanel>
 					</Border>
-
 				</StackPanel>
 			</ControlTemplate>
 		</Setter>
@@ -103,8 +102,6 @@
 	<ControlTheme x:Key="VerticalX4TextFieldTheme" TargetType="itk:TextField" BasedOn="{StaticResource VerticalBaseTextFieldTheme}">
 		<Setter Property="Width" Value="220"/>
 		<Setter Property="SuffixWidth" Value="44"/>
-		<Setter Property="LabelWidth" Value="90"/>
-
 		<Setter Property="Template">
 			<ControlTemplate>
 				<StackPanel>
@@ -113,15 +110,16 @@
 						<TextBlock Text="{TemplateBinding Prefix}" VerticalAlignment="Center" Margin="8,0,0,0" FontSize="14"
 								   IsVisible="{Binding Prefix, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"/>
 					</StackPanel>
-					<Border Background="{TemplateBinding Background}" Padding="8,4,8,0" CornerRadius="4">
+					<Border Background="{TemplateBinding Background}" Padding="8,0,8,0" CornerRadius="4">
 						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-							<TextBlock x:Name="PART_Value" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ValueString}" FontWeight="SemiBold" FontSize="42" Margin="0,4,0,0"
-									   Foreground="{TemplateBinding Foreground}"  FontFamily="Consolas" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Left"/>
-							<TextBlock x:Name="PART_Suffix" Text="{TemplateBinding Suffix}" VerticalAlignment="Bottom" Margin="8,0,0,10" FontSize="18" Width="{TemplateBinding SuffixWidth}" Opacity="0.5" FontWeight="Bold"
+							<TextBlock x:Name="PART_Value" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ValueString}"
+									   FontWeight="SemiBold" FontSize="42" FontFamily="{StaticResource GlobalMonoFontFamily}"
+									   Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Left"/>
+							<TextBlock x:Name="PART_Suffix" Text="{TemplateBinding Suffix}" VerticalAlignment="Bottom" Margin="8,0,0,8"
+									   FontSize="18" Width="{TemplateBinding SuffixWidth}" Opacity="0.5" FontWeight="Bold"
 									   IsVisible="{Binding Suffix, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"/>
 						</StackPanel>
 					</Border>
-
 				</StackPanel>
 			</ControlTemplate>
 		</Setter>
