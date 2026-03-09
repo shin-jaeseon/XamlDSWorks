@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:itk="http://xamldesignstudio.com"
+					xmlns:controls="using:XamlDS.Itk.Views.Panels">
+
+	<ControlTheme x:Key="{x:Type controls:StackPanelView}" TargetType="controls:StackPanelView">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<StackPanel Name="PART_StackPanel" Orientation="{Binding Orientation, Converter={StaticResource ItkOrientationToOrientation}}"/>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+</ResourceDictionary>

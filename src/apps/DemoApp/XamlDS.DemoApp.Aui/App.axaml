@@ -3,13 +3,13 @@
              xmlns:converters="clr-namespace:XamlDS.Itk.Converters;assembly=XamlDS.Itk.Aui"
              x:Class="XamlDS.DemoApp.App">
 
-    <Application.Resources>
+<!--    <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://XamlDS.Itk.Aui/Converters/ItkConverters.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </Application.Resources>
+    </Application.Resources>-->
 
     <Application.Styles>
         <FluentTheme />

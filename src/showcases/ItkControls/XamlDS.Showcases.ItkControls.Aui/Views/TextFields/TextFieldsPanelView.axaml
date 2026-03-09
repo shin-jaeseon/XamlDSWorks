@@ -23,7 +23,7 @@
 					</Border>
 					<Border Width="960" Height="480" Background="#2888" Margin="24">
 						<StackPanel Orientation="Horizontal">
-							<Border Width="288" HorizontalAlignment="Left" Background="#4888" VerticalAlignment="Top"
+							<Border Width="288" HorizontalAlignment="Left" Background="#4888" VerticalAlignment="Top" DataContext="{Binding PowerGeneratorPane}"
 									Margin="48,48,48,0" Padding="8">
 								<StackPanel>
 									<StackPanel.Styles>
@@ -70,7 +70,7 @@
 						</StackPanel>
 					</Border>
 					<Border Width="960" Height="432" Background="#2888" Margin="24">
-						<Border Width="480" HorizontalAlignment="Left" Background="#4888" VerticalAlignment="Top" Margin="48" Padding="8">
+						<Border Width="480" HorizontalAlignment="Left" Background="#4888" VerticalAlignment="Top" Margin="48" Padding="8" DataContext="{Binding PowerGeneratorPane}">
 							<StackPanel>
 								<!-- ELECTRICAL Section -->
 								<TextBlock Text="ELECTRICAL" FontSize="11" FontWeight="SemiBold" Opacity="0.5" Margin="3" />
@@ -113,7 +113,7 @@
 						</Border>
 					</Border>
 					<Border Width="960" Height="528" Background="#2888" Margin="24,24,24,96">
-						<Border Width="720" HorizontalAlignment="Left" Background="#4888" VerticalAlignment="Top" Margin="48" Padding="8">
+						<Border Width="720" HorizontalAlignment="Left" Background="#4888" VerticalAlignment="Top" Margin="48" Padding="8" DataContext="{Binding PowerGeneratorPane}">
 							<StackPanel>
 								<!-- ELECTRICAL Section -->
 								<TextBlock Text="ELECTRICAL" FontSize="11" FontWeight="SemiBold" Opacity="0.5" Margin="3" />

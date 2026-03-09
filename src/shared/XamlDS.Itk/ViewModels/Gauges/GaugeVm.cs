@@ -1,5 +1,6 @@
 ﻿using XamlDS.Itk.Formatters;
 using XamlDS.Itk.Operators;
+using XamlDS.Itk.Units;
 
 namespace XamlDS.Itk.ViewModels.Gauges;
 
@@ -15,9 +16,9 @@ public enum GaugeStatus
 public class GaugeVm : ViewModelBase
 {
     private readonly string _name;
+    private readonly NumericUnit _unit;
     private string _label = string.Empty;
     private double _value;
-    private double _rawValue;
     private IValueFormatter<double> _formatter;
     private IPrecisionOperator _precisionOperator;
     private double _minValue = 0;
@@ -27,15 +28,20 @@ public class GaugeVm : ViewModelBase
     private double? _thresholdLowCritical = null;
     private double? _thresholdHighCritical = null;
     private bool _isEnabled = true;
+    private double? _nominalValue = null;
+    private bool _showNominalMarker = true;
 
-    public GaugeVm(string name, IValueFormatter<double>? formatter = null, IPrecisionOperator? precisionOperator = null)
+    public GaugeVm(string name, NumericUnit unit, IValueFormatter<double>? formatter = null, IPrecisionOperator? precisionOperator = null)
     {
         _name = name;
+        _unit = unit;
         _formatter = formatter ?? DefaultFormatter<double>.Instance;
         _precisionOperator = precisionOperator ?? IdentityOperator.Instance;
     }
 
     public string Name => _name;
+
+    public NumericUnit Unit => _unit;
 
     public string Label
     {
@@ -107,7 +113,6 @@ public class GaugeVm : ViewModelBase
         get => _value;
         set
         {
-            _rawValue = value;
             value = _precisionOperator.Apply(value);
             if (SetProperty(ref _value, value))
             {
@@ -247,5 +252,35 @@ public class GaugeVm : ViewModelBase
                 OnPropertyChanged(nameof(Status));
             }
         }
+    }
+
+    /// <summary>
+    /// Gets or sets the nominal (rated) value for this gauge.
+    /// This represents the center/target value for normal operation.
+    /// </summary>
+    public double? NominalValue
+    {
+        get => _nominalValue;
+        set
+        {
+            value = value.HasValue ? _precisionOperator.Apply(value.Value) : (double?)null;
+            if (value.HasValue)
+            {
+                if (value.Value < MinValue || value.Value > MaxValue)
+                    throw new ArgumentException($"NominalValue ({value.Value}) must be between MinValue ({MinValue}) and MaxValue ({MaxValue})");
+            }
+
+            SetProperty(ref _nominalValue, value);
+        }
+    }
+
+    /// <summary>
+    /// Gets or sets whether to show the nominal value marker on the gauge.
+    /// Default is true when NominalValue is set.
+    /// </summary>
+    public bool ShowNominalMarker
+    {
+        get => _showNominalMarker;
+        set => SetProperty(ref _showNominalMarker, value);
     }
 }

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\shared\XamlDS.Itk.Aui\XamlDS.Itk.Aui.csproj" />
+    <ProjectReference Include="..\..\..\shared\XamlDS.Itk.Simulators\XamlDS.Itk.Simulators.csproj" />
+  </ItemGroup>
+
+</Project>

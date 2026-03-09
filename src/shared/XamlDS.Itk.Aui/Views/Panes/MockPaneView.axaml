@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:itk="http://xamldesignstudio.com"
+					xmlns:controls="using:XamlDS.Itk">
+
+	<ControlTheme x:Key="{x:Type controls:MockPaneView}" TargetType="controls:MockPaneView">
+		<Setter Property="Width" Value="{Binding Width}"/>
+		<Setter Property="Height" Value="{Binding Height}"/>
+		<Setter Property="Margin" Value="1"/>
+		<Setter Property="Background" Value="{StaticResource Fg0Brush}"/>
+		<!--<Setter Property="BorderBrush" Value="{StaticResource Fg0A1Brush}"/>-->
+		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid>
+					<Rectangle Fill="{TemplateBinding Background}" Opacity="0.1" Stroke="#FFFF" StrokeThickness="4"/>
+					<itk:GridLinePane Opacity="0.1" Margin="1"/>
+					<TextBlock Text="{Binding Label}" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Threading;
+﻿namespace XamlDS.Itk.Simulators.Power;
 
-namespace XamlDS.Showcases.ItkControls.Services;
 
 /// <summary>
 /// Simulates real-time power generator monitoring data with random fluctuations.
@@ -13,16 +11,21 @@ public class PowerGeneratorSimulator : IDisposable
     private bool _disposed;
 
     // Base values for simulation
-    private double _outputVoltage = 380.0;
-    private double _outputCurrent = 125.5;
-    private double _frequency = 60.0;
-    private double _activePower = 85.4;
-    private double _reactivePower = 32.1;
-    private double _engineSpeed = 1800.0;
-    private double _engineTemperature = 82.5;
-    private double _oilPressure = 4.2;
-    private double _fuelLevel = 75.0;
+    private double _outputVoltage;
+    private double _outputCurrent;
+    private double _frequency;
+    private double _activePower;
+    private double _reactivePower;
+    private double _engineSpeed;
+    private double _engineTemperature;
+    private double _oilPressure;
+    private double _fuelLevel;
     private double _runningHours = 1245.5;
+
+    /// <summary>
+    /// Gets the generator specification used by this simulator.
+    /// </summary>
+    public PowerGeneratorSpecification Specification { get; }
 
     /// <summary>
     /// Event raised when generator data is updated.
@@ -33,8 +36,22 @@ public class PowerGeneratorSimulator : IDisposable
     /// Initializes a new instance of the PowerGeneratorSimulator class.
     /// </summary>
     /// <param name="updateIntervalMs">Update interval in milliseconds (default: 1000ms)</param>
-    public PowerGeneratorSimulator(int updateIntervalMs = 1000)
+    /// <param name="specification">Generator specification (default: Industrial100kW60Hz)</param>
+    public PowerGeneratorSimulator(int updateIntervalMs = 1000, PowerGeneratorSpecification? specification = null)
     {
+        Specification = specification ?? PowerGeneratorSpecification.Industrial100kW60Hz;
+
+        // Initialize values from specification
+        _outputVoltage = Specification.VoltageNominal;
+        _outputCurrent = Specification.CurrentNominal;
+        _frequency = Specification.RatedFrequency;
+        _activePower = Specification.ActivePowerNominal;
+        _reactivePower = Specification.ReactivePowerNominal;
+        _engineSpeed = Specification.EngineSpeedNominal;
+        _engineTemperature = Specification.EngineTemperatureNominal;
+        _oilPressure = Specification.OilPressureNominal;
+        _fuelLevel = Specification.FuelLevelNominal;
+
         _timer = new Timer(OnTimerTick, null, updateIntervalMs, updateIntervalMs);
     }
 
@@ -43,14 +60,22 @@ public class PowerGeneratorSimulator : IDisposable
         if (_disposed) return;
 
         // Simulate realistic fluctuations
-        _outputVoltage = FluctuateValue(_outputVoltage, 380.0, 0.5, 370.0, 390.0);
-        _outputCurrent = FluctuateValue(_outputCurrent, 125.5, 2.0, 100.0, 150.0);
-        _frequency = FluctuateValue(_frequency, 60.0, 0.02, 59.5, 60.5);
-        _activePower = FluctuateValue(_activePower, 85.4, 1.5, 70.0, 100.0);
-        _reactivePower = FluctuateValue(_reactivePower, 32.1, 1.0, 20.0, 45.0);
-        _engineSpeed = FluctuateValue(_engineSpeed, 1800.0, 5.0, 1750.0, 1850.0);
-        _engineTemperature = FluctuateValue(_engineTemperature, 82.5, 0.8, 70.0, 105.0);
-        _oilPressure = FluctuateValue(_oilPressure, 4.2, 0.1, 2.5, 5.5);
+        _outputVoltage = FluctuateValue(_outputVoltage, Specification.VoltageNominal, 0.5,
+            Specification.VoltageWarningLow, Specification.VoltageWarningHigh);
+        _outputCurrent = FluctuateValue(_outputCurrent, Specification.CurrentNominal, 2.0,
+            100.0, Specification.CurrentCritical);
+        _frequency = FluctuateValue(_frequency, Specification.RatedFrequency, 0.02,
+            Specification.FrequencyCriticalLow, Specification.FrequencyCriticalHigh);
+        _activePower = FluctuateValue(_activePower, Specification.ActivePowerNominal, 1.5,
+            70.0, Specification.ActivePowerCritical);
+        _reactivePower = FluctuateValue(_reactivePower, Specification.ReactivePowerNominal, 1.0,
+            20.0, Specification.ReactivePowerCritical);
+        _engineSpeed = FluctuateValue(_engineSpeed, Specification.EngineSpeedNominal, 5.0,
+            Specification.EngineSpeedWarningLow, Specification.EngineSpeedWarningHigh);
+        _engineTemperature = FluctuateValue(_engineTemperature, Specification.EngineTemperatureNominal, 0.8,
+            70.0, 105.0);
+        _oilPressure = FluctuateValue(_oilPressure, Specification.OilPressureNominal, 0.1,
+            2.5, 5.5);
         _fuelLevel = Math.Max(0, _fuelLevel - 0.01); // Gradually decrease
         _runningHours += 0.0002778; // ~1 second in hours
 
@@ -77,12 +102,12 @@ public class PowerGeneratorSimulator : IDisposable
     {
         // Add random change
         var change = (_random.NextDouble() - 0.5) * 2 * maxChange;
-        
+
         // Gradually move toward target
         var toTarget = (target - current) * 0.1;
-        
+
         var newValue = current + change + toTarget;
-        
+
         // Clamp to min/max
         return Math.Clamp(newValue, min, max);
     }
@@ -116,21 +141,21 @@ public class PowerGeneratorSimulator : IDisposable
     /// </summary>
     public void ResetToNormal()
     {
-        _outputVoltage = 380.0;
-        _outputCurrent = 125.5;
-        _frequency = 60.0;
-        _activePower = 85.4;
-        _reactivePower = 32.1;
-        _engineSpeed = 1800.0;
-        _engineTemperature = 82.5;
-        _oilPressure = 4.2;
-        _fuelLevel = 75.0;
+        _outputVoltage = Specification.VoltageNominal;
+        _outputCurrent = Specification.CurrentNominal;
+        _frequency = Specification.RatedFrequency;
+        _activePower = Specification.ActivePowerNominal;
+        _reactivePower = Specification.ReactivePowerNominal;
+        _engineSpeed = Specification.EngineSpeedNominal;
+        _engineTemperature = Specification.EngineTemperatureNominal;
+        _oilPressure = Specification.OilPressureNominal;
+        _fuelLevel = Specification.FuelLevelNominal;
     }
 
     public void Dispose()
     {
         if (_disposed) return;
-        
+
         _disposed = true;
         _timer?.Dispose();
     }

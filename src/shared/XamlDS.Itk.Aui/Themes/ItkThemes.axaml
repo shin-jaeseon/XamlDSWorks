@@ -30,12 +30,18 @@
 	<CornerRadius x:Key="ControlsGroupBoxCornerRadius">6.0</CornerRadius>
 
 	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="/Converters/ItkConverters.axaml"/>
+
 		<ResourceInclude Source="/Themes/Controls/ButtonThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/CheckBoxThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/ContentControlThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/RadioButtonThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/Gauges/LinearGaugeThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/TextFieldThemes.axaml"/>
+		<ResourceInclude Source="/Views/Panels/DockPanelView.axaml"/>
+		<ResourceInclude Source="/Views/Panels/StackPanelView.axaml"/>
+		<ResourceInclude Source="/Views/Panes/TextPaneView.axaml"/>
+		<ResourceInclude Source="/Views/Panes/MockPaneView.axaml"/>
 	</ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

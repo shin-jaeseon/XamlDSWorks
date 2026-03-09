@@ -6,6 +6,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using XamlDS.Itk.ViewModels.ExtendedProperties;
 
 namespace XamlDS.Itk.ViewModels;
 
@@ -17,6 +18,7 @@ namespace XamlDS.Itk.ViewModels;
 public abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
 {
     private bool _disposed;
+    private List<ExtendedViewModelProperty>? _extendedProperties;
 
     /// <summary>
     /// Event triggered when a property value changes.
@@ -53,6 +55,23 @@ public abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
         return true;
     }
 
+    /// <summary>
+    /// Registers an extended property for automatic disposal.
+    /// Internal use only - called by ExtendedProperty classes.
+    /// Raises PropertyChanged event with "Ex_{PropertyName}" format for View CodeBehind usage.
+    /// </summary>
+    internal void RegisterExtendedProperty(ExtendedViewModelProperty property)
+    {
+        _extendedProperties ??= new List<ExtendedViewModelProperty>();
+        if (!_extendedProperties.Contains(property))
+        {
+            _extendedProperties.Add(property);
+        }
+
+        // Notify View CodeBehind that an extended property has been registered
+        this.OnPropertyChanged(string.Format("Ex_{0}", property.PropertyName));
+    }
+
     public void Dispose()
     {
         Dispose(true);
@@ -62,6 +81,21 @@ public abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
     protected virtual void Dispose(bool disposing)
     {
         if (_disposed) return;
+
+        if (disposing)
+        {
+            // Dispose all registered extended properties
+            if (_extendedProperties != null)
+            {
+                foreach (var prop in _extendedProperties)
+                {
+                    prop.Dispose();
+                }
+                _extendedProperties.Clear();
+                _extendedProperties = null;
+            }
+        }
+
         _disposed = true;
     }
 

@@ -12,10 +12,6 @@
 		<ProjectReference Include="..\XamlDS.Showcases.ItkThemes\XamlDS.Showcases.ItkThemes.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Avalonia" Version="11.3.11" />
-	</ItemGroup>
-
     <ItemGroup>
         <Compile Update="Views\**\*.axaml.cs">
             <DependentUpon>%(Filename).axaml</DependentUpon>

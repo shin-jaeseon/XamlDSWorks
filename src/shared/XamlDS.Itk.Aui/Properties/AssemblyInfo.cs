@@ -7,6 +7,8 @@
 [assembly: XmlnsDefinition("http://xamldesignstudio.com", "XamlDS.Itk.Controls.Gauges")]
 [assembly: XmlnsDefinition("http://xamldesignstudio.com", "XamlDS.Itk.AttachedProperties")]
 [assembly: XmlnsDefinition("http://xamldesignstudio.com", "XamlDS.Itk.Converters")]
+[assembly: XmlnsDefinition("http://xamldesignstudio.com", "XamlDS.Itk.Views")]
+[assembly: XmlnsDefinition("http://xamldesignstudio.com", "XamlDS.Itk.Views.Panels")]
 
 // Optional: Add prefix for convenience
 [assembly: XmlnsPrefix("http://xamldesignstudio.com", "itk")]

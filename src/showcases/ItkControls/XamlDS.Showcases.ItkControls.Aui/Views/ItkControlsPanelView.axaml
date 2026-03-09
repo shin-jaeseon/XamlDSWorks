@@ -11,6 +11,8 @@
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                     <RadioButton Classes="Itk LeftRight" Content="TEXTFIELDS"
                                  IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=TextFields}" />
+                    <RadioButton Classes="Itk LeftRight" Content="NUMERIC FIELDS"
+                                 IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=NumericFields}" />
                     <RadioButton Classes="Itk LeftRight" Content="LINEAR GAUGES"
                                  IsChecked="{Binding CurrentPanelName, Converter={StaticResource StringToBoolConverter}, ConverterParameter=LinearGauges}"
                                  BorderBrush="{DynamicResource AccentABrush}" />

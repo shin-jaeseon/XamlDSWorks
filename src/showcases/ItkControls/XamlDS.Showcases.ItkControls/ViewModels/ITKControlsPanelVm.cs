@@ -2,6 +2,7 @@
 using XamlDS.Itk.ViewModels;
 using XamlDS.Showcases.ItkControls.ViewModels.CircularGauges;
 using XamlDS.Showcases.ItkControls.ViewModels.LinearGauges;
+using XamlDS.Showcases.ItkControls.ViewModels.NumericFields;
 using XamlDS.Showcases.ItkControls.ViewModels.RadialGauges;
 using XamlDS.Showcases.ItkControls.ViewModels.TextFields;
 
@@ -40,8 +41,11 @@ public class ItkControlsPanelVm : ViewModelBase
                     case "TextFields":
                         CurrentPanel = _serviceProvider.GetRequiredService<TextFieldsPanelVm>();
                         break;
+                    case "NumericFields":
+                        CurrentPanel = _serviceProvider.GetRequiredService<NumericFieldsPanelVm>();
+                        break;
                     case "LinearGauges":
-                        CurrentPanel = _serviceProvider.GetRequiredService<LinearGaugesPanelVm>();
+                        CurrentPanel = _serviceProvider.GetRequiredService<LinearGaugesDemoPanelVm>();
                         break;
                     case "RadialGauges":
                         CurrentPanel = _serviceProvider.GetRequiredService<RadialGaugesPanelVm>();

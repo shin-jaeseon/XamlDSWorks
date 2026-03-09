@@ -6,6 +6,7 @@ public partial class TextFieldView : UserControl
 {
     public TextFieldView()
     {
+        var g = new Grid();
         InitializeComponent();
     }
 }

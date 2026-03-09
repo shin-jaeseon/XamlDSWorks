@@ -4,4 +4,5 @@
 	<converters:TypeNameToIsCheckedConverter x:Key="TypeNameConverter"/>
 	<converters:StringToBoolConverter x:Key="StringToBoolConverter"/>
 	<converters:MultiplyConverter x:Key="MultiplyConverter"/>
+	<converters:ItkOrientationToOrientation x:Key="ItkOrientationToOrientation"/>
 </ResourceDictionary>
