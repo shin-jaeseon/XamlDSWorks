@@ -38,10 +38,14 @@
 		<ResourceInclude Source="/Themes/Controls/RadioButtonThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/Gauges/LinearGaugeThemes.axaml"/>
 		<ResourceInclude Source="/Themes/Controls/TextFieldThemes.axaml"/>
-		<ResourceInclude Source="/Views/Panels/DockPanelView.axaml"/>
-		<ResourceInclude Source="/Views/Panels/StackPanelView.axaml"/>
-		<ResourceInclude Source="/Views/Panes/TextPaneView.axaml"/>
+		<ResourceInclude Source="/Views/Layouts/DockPanelView.axaml"/>
+		<ResourceInclude Source="/Views/Layouts/StackPanelView.axaml"/>
+		<ResourceInclude Source="/Views/Panes/ContentPaneView.axaml"/>
 		<ResourceInclude Source="/Views/Panes/MockPaneView.axaml"/>
+
+		<ResourceInclude Source="/Views/Selectors/SelectableItemView.axaml"/>
+		<ResourceInclude Source="/Views/Selectors/SingleSelectorPanelView.axaml"/>
+		<ResourceInclude Source="/Views/Selectors/MultiSelectorPanelView.axaml"/>
 	</ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

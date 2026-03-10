@@ -1,14 +1,13 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:itk="http://xamldesignstudio.com"
-					xmlns:controls="using:XamlDS.Itk">
+					xmlns:controls="using:XamlDS.Itk.Views.Panes">
 
 	<ControlTheme x:Key="{x:Type controls:MockPaneView}" TargetType="controls:MockPaneView">
 		<Setter Property="Width" Value="{Binding Width}"/>
 		<Setter Property="Height" Value="{Binding Height}"/>
 		<Setter Property="Margin" Value="1"/>
 		<Setter Property="Background" Value="{StaticResource Fg0Brush}"/>
-		<!--<Setter Property="BorderBrush" Value="{StaticResource Fg0A1Brush}"/>-->
 		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
 		<Setter Property="Template">
 			<ControlTemplate>

@@ -1,6 +1,4 @@
-﻿using XamlDS.Itk.ViewModels.Panels;
-
-namespace XamlDS.Itk.ViewModels.Gauges;
+﻿namespace XamlDS.Itk.ViewModels.Gauges;
 
 public enum GaugeStyle
 {

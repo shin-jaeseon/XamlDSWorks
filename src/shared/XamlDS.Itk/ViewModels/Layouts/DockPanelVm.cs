@@ -1,6 +1,6 @@
 ﻿using XamlDS.Itk.ViewModels.ExtendedProperties;
 
-namespace XamlDS.Itk.ViewModels.Panels;
+namespace XamlDS.Itk.ViewModels.Layouts;
 
 
 public class DockPanelVm : PanelVm<ViewModelBase>

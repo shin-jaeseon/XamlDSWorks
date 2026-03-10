@@ -1,6 +1,6 @@
 ﻿using XamlDS.Itk.Enums;
 
-namespace XamlDS.Itk.ViewModels.Panels;
+namespace XamlDS.Itk.ViewModels.Layouts;
 
 public class StackPanelVm : PanelVm<ViewModelBase>
 {

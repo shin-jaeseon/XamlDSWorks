@@ -1,11 +1,14 @@
 ﻿using XamlDS.Itk.Enums;
-using XamlDS.Itk.ViewModels.Panels;
+using XamlDS.Itk.ViewModels.Layouts;
 using XamlDS.Itk.ViewModels.Panes;
+using XamlDS.Itk.ViewModels.Selectors;
 
 namespace LayoutWork.ViewModels;
 
 public class AppWindowVm : DockPanelVm
 {
+    private readonly ContentPaneVm _currentPane;
+
     public AppWindowVm()
     {
         var bottomBar = new DockPanelVm();
@@ -18,11 +21,20 @@ public class AppWindowVm : DockPanelVm
         bottomRight.Add(new MockPaneVm { Label = "OPTIONS", Width = 96, Height = 48 });
         bottomBar.AddRight(bottomRight);
 
-        bottomBar.Add(new MockPaneVm { Label = "Status", Height = 48 });
+        var selectorPanel = new SingleSelectorPanelVm<String> { Layout = SelectorLayout.Horizontal };
+        selectorPanel.Add("Option 1", "Option 1");
+        selectorPanel.Add("Option 2", "Option 2");
+
+        bottomBar.Add(selectorPanel);
 
         AddBottom(bottomBar);
         AddLeft(new MockPaneVm { Label = "Sidebar", Width = 256 });
         AddRight(new MockPaneVm { Label = "Right", Width = 256 });
-        Add(new MockPaneVm { Label = "Center" });
+
+        _currentPane = new ContentPaneVm();
+        _currentPane.Content = new MockPaneVm { Label = "Current" };
+        Add(CurrentPane);
     }
+
+    public ContentPaneVm CurrentPane => _currentPane;
 }

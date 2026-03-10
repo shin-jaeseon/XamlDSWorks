@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace XamlDS.Itk.ViewModels.Panels;
+namespace XamlDS.Itk.ViewModels;
 
 public abstract class PanelVm<T> : ViewModelBase where T : class
 {

@@ -1,12 +1,13 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:controls="using:XamlDS.Itk.Views.Panels">
+					xmlns:controls="using:XamlDS.Itk.Views.Selectors">
 
-	<ControlTheme x:Key="{x:Type controls:DockPanelView}" TargetType="controls:DockPanelView">
+	<ControlTheme x:Key="{x:Type controls:SelectableItemView}" TargetType="controls:SelectableItemView">
 		<Setter Property="Template">
 			<ControlTemplate>
-				<DockPanel Name="PART_DockPanel" LastChildFill="True"/>
+				<TextBlock Text="{Binding Label}" />
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>
+
 </ResourceDictionary>

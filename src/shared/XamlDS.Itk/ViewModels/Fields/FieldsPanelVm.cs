@@ -1,6 +1,4 @@
-﻿using XamlDS.Itk.ViewModels.Panels;
-
-namespace XamlDS.Itk.ViewModels.Fields;
+﻿namespace XamlDS.Itk.ViewModels.Fields;
 
 
 public enum FieldStyle

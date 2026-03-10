@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:controls="using:XamlDS.Itk.Views.Selectors">
+
+
+	<ControlTheme x:Key="{x:Type controls:SingleSelectorPanelView}" TargetType="controls:SingleSelectorPanelView">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border x:Name="PART_layoutContainer">
+					<TextBlock Text="Single Selector Panel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+</ResourceDictionary>

@@ -2,6 +2,6 @@
 
 namespace XamlDS.Itk.Views.Panes;
 
-public class MockPaneView : TemplatedControl
+public class ContentPaneView : TemplatedControl
 {
 }
