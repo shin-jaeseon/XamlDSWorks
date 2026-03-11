@@ -26,9 +26,8 @@ public enum SelectionAction
     Removed
 }
 
-public interface ISelectorPanelVm
+public interface ISelectorPanelVm : INotifyPropertyChanged
 {
-    event PropertyChangedEventHandler? PropertyChanged;
     bool IsSingleSelector { get; }
     SelectorPanelLayout Layout { get; set; }
     ThemeAccentColor BorderBrush { get; set; }

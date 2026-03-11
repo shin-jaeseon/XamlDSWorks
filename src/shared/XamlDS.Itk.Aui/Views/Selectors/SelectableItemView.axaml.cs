@@ -24,53 +24,6 @@ public class SelectableItemView : TemplatedControl
     public static readonly StyledProperty<VerticalAlignment> VerticalContentAlignmentProperty =
         AvaloniaProperty.Register<SelectableItemView, VerticalAlignment>(nameof(VerticalContentAlignment), defaultValue: VerticalAlignment.Bottom);
 
-    public SelectableItemView()
-    {
-        LayoutProperty.Changed.AddClassHandler<SelectableItemView>((sender, e) => sender.UpdateTheme());
-        IsSingleSelectorProperty.Changed.AddClassHandler<SelectableItemView>((sender, e) => sender.UpdateTheme());
-    }
-
-    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
-    {
-        base.OnAttachedToVisualTree(e);
-        UpdateTheme();
-    }
-
-    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
-    {
-        base.OnPropertyChanged(change);
-
-        if (change.Property == DataContextProperty)
-        {
-            var oldDataContext = change.OldValue;
-            OnDataContextChanged(this, EventArgs.Empty, oldDataContext);
-        }
-        else if (change.Property == SelectedProperty)
-        {
-            PseudoClasses.Set(":selected", change.GetNewValue<bool>());
-        }
-    }
-
-    private void OnDataContextChanged(object? sender, EventArgs e, object? oldValue)
-    {
-        if (oldValue is ISelectableItem oldSelectableItem)
-        {
-            oldSelectableItem.PropertyChanged -= ViewModel_PropertyChanged;
-        }
-        if (DataContext is ISelectableItem selectableItem)
-        {
-            selectableItem.PropertyChanged += ViewModel_PropertyChanged;
-        }
-    }
-
-    private void ViewModel_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
-    {
-        if (DataContext is ISelectableItem selectableItem)
-        {
-            Selected = selectableItem.Selected;
-        }
-    }
-
     public bool IsSingleSelector
     {
         get => GetValue(IsSingleSelectorProperty);
@@ -101,7 +54,27 @@ public class SelectableItemView : TemplatedControl
         set => SetValue(VerticalContentAlignmentProperty, value);
     }
 
-    private void UpdateTheme()
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        UpdateSelectorClasses();
+    }
+
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+
+        if (change.Property == SelectedProperty)
+        {
+            PseudoClasses.Set(":selected", change.GetNewValue<bool>());
+        }
+        else if (change.Property == IsSingleSelectorProperty || change.Property == LayoutProperty)
+        {
+            UpdateSelectorClasses();
+        }
+    }
+
+    private void UpdateSelectorClasses()
     {
         if (IsSingleSelector)
         {
@@ -132,24 +105,8 @@ public class SelectableItemView : TemplatedControl
                 PseudoClasses.Set(":wrapLayout", true);
                 break;
             default:
-                PseudoClasses.Set(":horizontalLayout", true);
-                PseudoClasses.Set(":verticalLayout", false);
-                PseudoClasses.Set(":wrapLayout", false);
                 break;
         }
-
-        //var themeKey = Layout switch
-        //{
-        //    SelectorPanelLayout.Horizontal => "SelectableItemViewHorizontalTheme",
-        //    SelectorPanelLayout.Vertical => "SelectableItemViewVerticalTheme",
-        //    SelectorPanelLayout.Wrap => "SelectableItemViewHorizontalTheme",
-        //    _ => "SelectableItemViewHorizontalTheme"
-        //};
-
-        //if (Application.Current?.TryGetResource(themeKey, ActualThemeVariant, out var theme) == true && theme is ControlTheme controlTheme)
-        //{
-        //    Theme = controlTheme;
-        //}
     }
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)

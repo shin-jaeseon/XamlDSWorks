@@ -34,6 +34,14 @@ public class MultiSelectionChangedEventArgs<T> : EventArgs
 public class MultiSelectorPanelVm<T> : SelectorPanelVm<T>
 {
     private ObservableCollection<T> _selectedItems = new ObservableCollection<T>();
+    private ReadOnlyObservableCollection<T> _readOnlySelectedItems;
+
+    public MultiSelectorPanelVm()
+    {
+        _readOnlySelectedItems = new ReadOnlyObservableCollection<T>(_selectedItems);
+    }
+
+    public ReadOnlyObservableCollection<T> SelectedItems => _readOnlySelectedItems;
 
     public override bool IsSingleSelector => false;
 
@@ -41,8 +49,6 @@ public class MultiSelectorPanelVm<T> : SelectorPanelVm<T>
     /// Event raised when the selected items collection changes.
     /// </summary>
     public event EventHandler<MultiSelectionChangedEventArgs<T>>? SelectionChanged;
-
-    public ObservableCollection<T> SelectedItems => _selectedItems;
 
     /// <summary>
     /// Toggles the selection state of the specified item in the selector panel.
@@ -96,6 +102,11 @@ public class MultiSelectorPanelVm<T> : SelectorPanelVm<T>
         SelectionChanged?.Invoke(this, new MultiSelectionChangedEventArgs<T>(item, action, _selectedItems));
     }
 
+    protected override void OnSelectableItemClicked(object? sender, SelectableItemClickedEventArgs<T> e)
+    {
+        ToggleItem(e.Value);
+    }
+
     protected override void Dispose(bool disposing)
     {
         if (disposing)
@@ -107,13 +118,8 @@ public class MultiSelectorPanelVm<T> : SelectorPanelVm<T>
                     disposableChild.Dispose();
                 }
             }
-            SelectedItems.Clear();
+            _selectedItems.Clear();
         }
         base.Dispose(disposing);
-    }
-
-    protected override void OnSelectableItemClicked(object? sender, SelectableItemClickedEventArgs<T> e)
-    {
-        ToggleItem(e.Value);
     }
 }

@@ -4,7 +4,7 @@
 
 	<ControlTheme x:Key="{x:Type controls:SelectableItemView}" TargetType="controls:SelectableItemView">
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
-		<Setter Property="FontSize" Value="13"/>
+		<Setter Property="FontSize" Value="12"/>
 		<Setter Property="FontWeight" Value="Medium"/>
 		<Setter Property="MinHeight" Value="32.0"/>
 		<Setter Property="MinWidth" Value="32.0"/>
@@ -17,6 +17,8 @@
 		<Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
+
+		<Setter Property="Selected" Value="{Binding Selected}"/>
 
 		<Style Selector="^:horizontalLayout">
 			<Setter Property="Template">

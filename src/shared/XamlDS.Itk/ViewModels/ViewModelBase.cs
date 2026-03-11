@@ -10,6 +10,7 @@ using XamlDS.Itk.ViewModels.ExtendedProperties;
 
 namespace XamlDS.Itk.ViewModels;
 
+
 /// <summary>
 /// Base class for all ViewModel classes, implementing INotifyPropertyChanged.
 /// Provides methods for property change notification and value setting,

@@ -2,7 +2,7 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:controls="using:XamlDS.Itk.Views.Selectors">
 
-	<ControlTheme x:Key="{x:Type controls:MultiSelectorPanelView}" TargetType="controls:MultiSelectorPanelView">
+	<ControlTheme x:Key="{x:Type controls:SelectorPanelView}" TargetType="controls:SelectorPanelView">
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
 		<Setter Property="FontSize" Value="13"/>
 		<Setter Property="FontWeight" Value="Medium"/>
@@ -14,12 +14,16 @@
 		<Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
 		<Setter Property="Padding" Value="0"/>
+
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Border x:Name="PART_layoutHost"
-						Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1">
-				</Border>
+				<Grid>
+					<Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"/>
+					<ContentPresenter x:Name="PART_layoutHost"/>
+				</Grid>
+
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>
+
 </ResourceDictionary>

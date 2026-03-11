@@ -25,11 +25,14 @@ public class AppWindowVm : DockPanelVm
         singleSelectorPanel.Add("Option 1", "Option1");
         singleSelectorPanel.Add("Option 2", "Option2");
         singleSelectorPanel.Add("Option 3", "Option3");
+        singleSelectorPanel.SelectItem("Option2");
 
         var multiSelectorPanel = new MultiSelectorPanelVm<String> { Layout = SelectorPanelLayout.Horizontal };
         multiSelectorPanel.Add("Option A", "OptionA");
         multiSelectorPanel.Add("Option B", "OptionB");
         multiSelectorPanel.Add("Option C", "OptionC");
+        multiSelectorPanel.ToggleItem("OptionA");
+        multiSelectorPanel.ToggleItem("OptionC");
 
         var selectorsPanel = new StackPanelVm { Orientation = ItkOrientation.Horizontal };
         selectorsPanel.Add(singleSelectorPanel);

@@ -36,7 +36,7 @@ public class SingleSelectorPanelVm<T> : SelectorPanelVm<T>
     public T? SelectedItem
     {
         get => _selectedItem;
-        set => SetProperty(ref _selectedItem, value);
+        protected set => SetProperty(ref _selectedItem, value);
     }
 
     /// <summary>

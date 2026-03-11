@@ -44,8 +44,7 @@
 		<ResourceInclude Source="/Views/Panes/MockPaneView.axaml"/>
 
 		<ResourceInclude Source="/Views/Selectors/SelectableItemView.axaml"/>
-		<ResourceInclude Source="/Views/Selectors/SingleSelectorPanelView.axaml"/>
-		<ResourceInclude Source="/Views/Selectors/MultiSelectorPanelView.axaml"/>
+		<ResourceInclude Source="/Views/Selectors/SelectorPanelView.axaml"/>
 	</ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

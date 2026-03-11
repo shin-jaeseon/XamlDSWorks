@@ -22,16 +22,7 @@ public partial class AppWindowView : Window
         this.DataTemplates.Add(new FuncDataTemplate<ContentPaneVm>((value, namescope) => new ContentPaneView()));
 
         // Match any SingleSelectorPanelVm<T> regardless of T
-        this.DataTemplates.Add(new FuncDataTemplate(
-            data => data?.GetType().IsGenericType == true &&
-                    data.GetType().GetGenericTypeDefinition() == typeof(SingleSelectorPanelVm<>),
-            (data, namescope) => new SingleSelectorPanelView()));
-
-        // Match any MultiSelectorPanelVm<T> regardless of T
-        this.DataTemplates.Add(new FuncDataTemplate(
-            data => data?.GetType().IsGenericType == true &&
-                    data.GetType().GetGenericTypeDefinition() == typeof(MultiSelectorPanelVm<>),
-            (data, namescope) => new MultiSelectorPanelView()));
+        this.DataTemplates.Add(new FuncDataTemplate(data => data is ISelectorPanelVm, (data, namescope) => new SelectorPanelView()));
     }
 }
 

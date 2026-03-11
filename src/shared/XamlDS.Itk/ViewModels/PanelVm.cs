@@ -2,6 +2,7 @@
 
 namespace XamlDS.Itk.ViewModels;
 
+
 public abstract class PanelVm<T> : ViewModelBase where T : class
 {
     private readonly ObservableCollection<T> _children = new ObservableCollection<T>();
