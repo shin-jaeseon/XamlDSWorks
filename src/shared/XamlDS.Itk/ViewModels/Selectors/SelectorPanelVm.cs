@@ -1,12 +1,13 @@
-﻿using XamlDS.Itk.Themes;
+﻿using System.ComponentModel;
+using XamlDS.Itk.Themes;
 
 namespace XamlDS.Itk.ViewModels.Selectors;
 
-public enum SelectorLayout
+public enum SelectorPanelLayout
 {
     Horizontal,
     Vertical,
-    Wrapping,
+    Wrap,
 }
 
 /// <summary>
@@ -25,12 +26,22 @@ public enum SelectionAction
     Removed
 }
 
-public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>
+public interface ISelectorPanelVm
 {
-    private SelectorLayout _layout = SelectorLayout.Horizontal;
-    private ThemeAccentColor _borderBrush = ThemeAccentColor.Default;
+    event PropertyChangedEventHandler? PropertyChanged;
+    bool IsSingleSelector { get; }
+    SelectorPanelLayout Layout { get; set; }
+    ThemeAccentColor BorderBrush { get; set; }
+}
 
-    public SelectorLayout Layout
+
+public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>, ISelectorPanelVm
+{
+    private SelectorPanelLayout _layout = SelectorPanelLayout.Horizontal;
+    private ThemeAccentColor _borderBrush = ThemeAccentColor.Default;
+    public abstract bool IsSingleSelector { get; }
+
+    public SelectorPanelLayout Layout
     {
         get => _layout;
         set => SetProperty(ref _layout, value);
@@ -53,7 +64,10 @@ public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>
         }
 
         var itemVm = new SelectableItemVm<T>(item) { Label = label };
+        itemVm.Clicked += OnSelectableItemClicked;
         AddChild(itemVm);
         return this;
     }
+
+    protected abstract void OnSelectableItemClicked(object? sender, SelectableItemClickedEventArgs<T> e);
 }

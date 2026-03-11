@@ -26,6 +26,8 @@ public class SingleSelectorPanelVm<T> : SelectorPanelVm<T>
 {
     private T? _selectedItem;
 
+    public override bool IsSingleSelector => true;
+
     /// <summary>
     /// Event raised when the selected item changes.
     /// </summary>
@@ -79,5 +81,10 @@ public class SingleSelectorPanelVm<T> : SelectorPanelVm<T>
     protected virtual void OnSelectionChanged(T? previousItem, T? newItem)
     {
         SelectionChanged?.Invoke(this, new SelectionChangedEventArgs<T>(previousItem, newItem));
+    }
+
+    protected override void OnSelectableItemClicked(object? sender, SelectableItemClickedEventArgs<T> e)
+    {
+        SelectItem(e.Value);
     }
 }

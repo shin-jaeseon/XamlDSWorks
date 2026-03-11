@@ -1,28 +1,25 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:XamlDS.Itk.Views.Selectors">
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:controls="using:XamlDS.Itk.Views.Selectors">
 
-  <!--
-    Additional resources 
-    Using Control Themes:
-         https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
-    Using Theme Variants:
-         https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
-  -->
-  
-  <Design.PreviewWith>
-    <StackPanel Width="400" Spacing="10">      
-        <StackPanel Background="{DynamicResource SystemRegionBrush}">
-          <controls:MultiSelectorPanelView />
-        </StackPanel>
-    </StackPanel>
-  </Design.PreviewWith>
- 
-  <ControlTheme x:Key="{x:Type controls:MultiSelectorPanelView}" TargetType="controls:MultiSelectorPanelView">
-    <Setter Property="Template">
-      <ControlTemplate>
-        <TextBlock Text="Templated Control" />
-      </ControlTemplate>
-    </Setter>
-  </ControlTheme>
+	<ControlTheme x:Key="{x:Type controls:MultiSelectorPanelView}" TargetType="controls:MultiSelectorPanelView">
+		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+		<Setter Property="FontSize" Value="13"/>
+		<Setter Property="FontWeight" Value="Medium"/>
+
+		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
+		<Setter Property="Margin" Value="{StaticResource ControlMargin}"/>
+		<Setter Property="CornerRadius" Value="{StaticResource ControlsGroupBoxCornerRadius}"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border x:Name="PART_layoutHost"
+						Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1">
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
 </ResourceDictionary>

@@ -4,10 +4,21 @@
 
 
 	<ControlTheme x:Key="{x:Type controls:SingleSelectorPanelView}" TargetType="controls:SingleSelectorPanelView">
+		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
+		<Setter Property="FontSize" Value="13"/>
+		<Setter Property="FontWeight" Value="Medium"/>
+
+		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
+		<Setter Property="Margin" Value="{StaticResource ControlMargin}"/>
+		<Setter Property="CornerRadius" Value="{StaticResource ControlsGroupBoxCornerRadius}"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="0"/>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Border x:Name="PART_layoutContainer">
-					<TextBlock Text="Single Selector Panel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<Border x:Name="PART_layoutHost"
+						Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1">
 				</Border>
 			</ControlTemplate>
 		</Setter>

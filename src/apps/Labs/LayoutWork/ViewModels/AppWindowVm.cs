@@ -21,11 +21,21 @@ public class AppWindowVm : DockPanelVm
         bottomRight.Add(new MockPaneVm { Label = "OPTIONS", Width = 96, Height = 48 });
         bottomBar.AddRight(bottomRight);
 
-        var selectorPanel = new SingleSelectorPanelVm<String> { Layout = SelectorLayout.Horizontal };
-        selectorPanel.Add("Option 1", "Option 1");
-        selectorPanel.Add("Option 2", "Option 2");
+        var singleSelectorPanel = new SingleSelectorPanelVm<String> { Layout = SelectorPanelLayout.Horizontal };
+        singleSelectorPanel.Add("Option 1", "Option1");
+        singleSelectorPanel.Add("Option 2", "Option2");
+        singleSelectorPanel.Add("Option 3", "Option3");
 
-        bottomBar.Add(selectorPanel);
+        var multiSelectorPanel = new MultiSelectorPanelVm<String> { Layout = SelectorPanelLayout.Horizontal };
+        multiSelectorPanel.Add("Option A", "OptionA");
+        multiSelectorPanel.Add("Option B", "OptionB");
+        multiSelectorPanel.Add("Option C", "OptionC");
+
+        var selectorsPanel = new StackPanelVm { Orientation = ItkOrientation.Horizontal };
+        selectorsPanel.Add(singleSelectorPanel);
+        selectorsPanel.Add(multiSelectorPanel);
+
+        bottomBar.Add(selectorsPanel);
 
         AddBottom(bottomBar);
         AddLeft(new MockPaneVm { Label = "Sidebar", Width = 256 });

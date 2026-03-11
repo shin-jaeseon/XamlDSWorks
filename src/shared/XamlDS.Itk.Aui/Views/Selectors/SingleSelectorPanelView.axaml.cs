@@ -8,22 +8,20 @@ namespace XamlDS.Itk.Views.Selectors;
 
 public class SingleSelectorPanelView : TemplatedControl
 {
-    private object? _viewModel;
-    private SelectorLayout _layout = SelectorLayout.Horizontal;
-    private Border? _layoutContainer;
-    private Panel? _panel;
+    private Border? _layoutHost;
+    private ISelectorPanelVm? _selectorPanelVm;
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e);
 
         // Get the PART_layoutContainer from the template
-        _layoutContainer = e.NameScope.Find<Border>("PART_layoutContainer");
+        _layoutHost = e.NameScope.Find<Border>("PART_layoutHost");
 
         // Apply children if DataContext is already set
-        if (_viewModel != null && _layoutContainer != null)
+        if (_selectorPanelVm != null && _layoutHost != null)
         {
-            RebuildChildren();
+            RebuildControls(_selectorPanelVm);
         }
     }
 
@@ -39,64 +37,77 @@ public class SingleSelectorPanelView : TemplatedControl
 
     private void OnDataContextChanged(object? sender, EventArgs e)
     {
+        if (_selectorPanelVm != null)
+        {
+            _selectorPanelVm.PropertyChanged -= ViewModel_PropertyChanged;
+            _selectorPanelVm = null;
+            _layoutHost?.Child = null; // Clear layout if DataContext is not correct
+        }
+
         // Check for SingleSelectorPanelVm<any type>
-        if (DataContext?.GetType().IsGenericType == true &&
+        if (DataContext is ISelectorPanelVm &&
             DataContext.GetType().GetGenericTypeDefinition() == typeof(SingleSelectorPanelVm<>))
         {
-            _viewModel = DataContext;
-
-            // Use dynamic to access Layout property regardless of generic type parameter
-            _layout = ((dynamic)DataContext).Layout;
-            RebuildChildren();
+            _selectorPanelVm = (ISelectorPanelVm)DataContext;
+            _selectorPanelVm!.PropertyChanged += ViewModel_PropertyChanged;
+            RebuildControls(_selectorPanelVm);
         }
-        else
+        else if (DataContext != null)
         {
-            _viewModel = null;
-            _layoutContainer?.Child = null; // Clear layout if DataContext is not correct
-
+            throw new InvalidOperationException("DataContext must be of type SingleSelectorPanelVm<T>");
         }
     }
 
-    private void RebuildChildren()
+    private void ViewModel_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
-        if (_viewModel == null || _layoutContainer == null)
+        if (e.PropertyName == "Layout")
+        {
+            RebuildControls(_selectorPanelVm!);
+        }
+    }
+
+    private void RebuildControls(ISelectorPanelVm selectorPanelVm)
+    {
+        if (_layoutHost == null)
             return;
 
-        SetLayoutPanel();
+        var panel = CreateLayoutPanel(selectorPanelVm);
 
         // Add all children from ViewModel
-        var children = ((dynamic)_viewModel).Children as System.Collections.IList;
+        var children = ((dynamic)selectorPanelVm).Children as System.Collections.IList;
         foreach (var child in children!)
         {
-            var childView = CreateViewForChild(child);
-            _panel!.Children.Add(childView);
+            var childView = CreateViewForChild(selectorPanelVm, child);
+            panel!.Children.Add(childView);
         }
+        _layoutHost.Child = panel;
     }
 
-    private void SetLayoutPanel()
+    private Panel CreateLayoutPanel(ISelectorPanelVm selectorPanelVm)
     {
-        _layoutContainer!.Child = null;
-
-        switch (_layout)
+        Panel? panel = null;
+        switch (selectorPanelVm.Layout)
         {
-            case SelectorLayout.Horizontal:
-                _panel = new StackPanel { Orientation = Orientation.Horizontal };
+            case SelectorPanelLayout.Horizontal:
+                panel = new StackPanel { Orientation = Orientation.Horizontal };
                 break;
-            case SelectorLayout.Vertical:
-                _panel = new StackPanel { Orientation = Orientation.Vertical };
+            case SelectorPanelLayout.Vertical:
+                panel = new StackPanel { Orientation = Orientation.Vertical };
                 break;
-            case SelectorLayout.Wrapping:
-                _panel = new WrapPanel();
+            case SelectorPanelLayout.Wrap:
+                panel = new WrapPanel();
                 break;
             default:
                 throw new InvalidOperationException("Unknown layout type");
         }
-        _layoutContainer.Child = _panel;
+        return panel;
     }
 
-    private Control CreateViewForChild(object childVm)
+    private Control CreateViewForChild(ISelectorPanelVm selectorPanelVm, object childVm)
     {
         var view = new SelectableItemView();
+        view.Layout = selectorPanelVm.Layout;
+        view.IsSingleSelector = true;
         view.DataContext = childVm;
         return view;
     }

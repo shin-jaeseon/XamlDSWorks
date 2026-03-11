@@ -35,6 +35,8 @@ public class MultiSelectorPanelVm<T> : SelectorPanelVm<T>
 {
     private ObservableCollection<T> _selectedItems = new ObservableCollection<T>();
 
+    public override bool IsSingleSelector => false;
+
     /// <summary>
     /// Event raised when the selected items collection changes.
     /// </summary>
@@ -108,5 +110,10 @@ public class MultiSelectorPanelVm<T> : SelectorPanelVm<T>
             SelectedItems.Clear();
         }
         base.Dispose(disposing);
+    }
+
+    protected override void OnSelectableItemClicked(object? sender, SelectableItemClickedEventArgs<T> e)
+    {
+        ToggleItem(e.Value);
     }
 }
