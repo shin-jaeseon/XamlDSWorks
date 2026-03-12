@@ -5,4 +5,5 @@
 	<converters:StringToBoolConverter x:Key="StringToBoolConverter"/>
 	<converters:MultiplyConverter x:Key="MultiplyConverter"/>
 	<converters:ItkOrientationToOrientation x:Key="ItkOrientationToOrientation"/>
+	<converters:ThemeAccentBrushToResourceConverter x:Key="ThemeAccentBrushConverter"/>
 </ResourceDictionary>

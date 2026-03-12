@@ -1,13 +1,9 @@
 ﻿namespace XamlDS.Itk.Themes;
 
-public enum ThemeAccentColor
+public enum ThemeAccentBrush
 {
     Default = 0,
-    Blue,
-    Orange,
-    Purple,
-    Teal,
-    Pink,
-    Cyan,
-    Lime
+    AccentA,
+    AccentB,
+    AccentC,
 }

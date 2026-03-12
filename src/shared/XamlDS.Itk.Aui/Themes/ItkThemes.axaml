@@ -14,19 +14,27 @@
 		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans Mono
 	</FontFamily>
 
+	<!-- Controls -->
 	<Thickness x:Key="ControlMargin">4.0</Thickness>
 	<Thickness x:Key="ControlPadding">4.0</Thickness>
-	<CornerRadius x:Key="ControlCornerRadius">3.0</CornerRadius>
+	<CornerRadius x:Key="ControlCornerRadius">6.0</CornerRadius>
+	
 
-	<x:Double x:Key="InputControlMinWidth">40.0</x:Double>
-	<x:Double x:Key="InputControlMinHeight">40.0</x:Double>
-	<Thickness x:Key="InputBorderThickness">1.0</Thickness>
-	<Thickness x:Key="InputControlMargin">4.0</Thickness>
-	<Thickness x:Key="InputControlPadding">8.0</Thickness>
-	<CornerRadius x:Key="InputControlCornerRadius">6.0</CornerRadius>
-	<CornerRadius x:Key="InputBorderCornerRadius">4.0</CornerRadius>
+	<!-- Input controls -->
+	<x:Double x:Key="InputFontSize">13</x:Double>
+	<x:Double x:Key="InputMinWidth">40.0</x:Double>
+	<x:Double x:Key="InputMinHeight">40.0</x:Double>
+	<Thickness x:Key="InputBorderThickness">2.0</Thickness> <!-- Button, RadioButton, CheckBox -->
+	<x:Double x:Key="InputStrokeThickness">2.0</x:Double> <!-- SelectorPanelView -->
+	<Thickness x:Key="InputMargin">4.0</Thickness>
+	<Thickness x:Key="InputPadding">8.0</Thickness>
+	<CornerRadius x:Key="InputCornerRadius">6.0</CornerRadius>
+	<x:Double x:Key="InputRadius">6.0</x:Double> <!-- SelectorPanelView -->
 
-	<Thickness x:Key="ControlsGroupBoxMargin">4.0</Thickness>
+	<!-- Inner Input controls -->
+	<x:Double x:Key="InnerInputRadius">3.0</x:Double> <!-- RadioButton, CheckBox, SelectableItemView -->
+	<Thickness x:Key="InnerInputMargin">5.0</Thickness> <!-- RadioButton, CheckBox, SelectableItemView -->
+	<Thickness x:Key="ControlsGroupBoxMargin">4.0</Thickness> <!-- RadioButton, CheckBox, SelectableItemView -->
 	<CornerRadius x:Key="ControlsGroupBoxCornerRadius">6.0</CornerRadius>
 
 	<ResourceDictionary.MergedDictionaries>
@@ -40,7 +48,7 @@
 		<ResourceInclude Source="/Themes/Controls/TextFieldThemes.axaml"/>
 		<ResourceInclude Source="/Views/Layouts/DockPanelView.axaml"/>
 		<ResourceInclude Source="/Views/Layouts/StackPanelView.axaml"/>
-		<ResourceInclude Source="/Views/Panes/ContentPaneView.axaml"/>
+		<ResourceInclude Source="/Views/Layouts/ContentPanelView.axaml"/>
 		<ResourceInclude Source="/Views/Panes/MockPaneView.axaml"/>
 
 		<ResourceInclude Source="/Views/Selectors/SelectableItemView.axaml"/>

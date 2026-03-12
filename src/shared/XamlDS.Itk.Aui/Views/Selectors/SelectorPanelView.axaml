@@ -6,22 +6,25 @@
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
 		<Setter Property="FontSize" Value="13"/>
 		<Setter Property="FontWeight" Value="Medium"/>
+		<Setter Property="Width" Value="{Binding Width}"/>
+		<Setter Property="Height" Value="{Binding Height}"/>
+		<Setter Property="MinWidth" Value="{StaticResource InputMinWidth}"/>
+		<Setter Property="MinHeight" Value="{StaticResource InputMinHeight}"/>
 
 		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
 		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
-		<Setter Property="Margin" Value="{StaticResource ControlMargin}"/>
-		<Setter Property="CornerRadius" Value="{StaticResource ControlsGroupBoxCornerRadius}"/>
+		<Setter Property="Margin" Value="{StaticResource InputMargin}"/>
+		<Setter Property="CornerRadius" Value="{StaticResource InputCornerRadius}"/>
 		<Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="Padding" Value="0"/>
 
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid>
-					<Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"/>
+				<Panel>
+					<Rectangle Fill="{TemplateBinding Background}" RadiusX="{StaticResource InputRadius}" RadiusY="{StaticResource InputRadius}"
+							   Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{StaticResource InputStrokeThickness}"/>
 					<ContentPresenter x:Name="PART_layoutHost"/>
-				</Grid>
-
+				</Panel>
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>

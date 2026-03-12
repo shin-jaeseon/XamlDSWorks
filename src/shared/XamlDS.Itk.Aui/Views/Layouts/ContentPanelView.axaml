@@ -1,8 +1,10 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:controls="using:XamlDS.Itk.Views.Panes">
+					xmlns:controls="using:XamlDS.Itk.Views.Layouts">
 
-	<ControlTheme x:Key="{x:Type controls:ContentPaneView}" TargetType="controls:ContentPaneView">
+	<ControlTheme x:Key="{x:Type controls:ContentPanelView}" TargetType="controls:ContentPanelView">
+		<Setter Property="Width" Value="{Binding Width}"/>
+		<Setter Property="Height" Value="{Binding Height}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<ContentControl Content="{Binding Content}"/>

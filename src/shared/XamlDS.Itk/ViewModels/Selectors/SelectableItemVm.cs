@@ -11,7 +11,7 @@ public interface ISelectableItem
 
     bool Selected { get; set; }
 
-    ThemeAccentColor BorderBrush { get; set; }
+    ThemeAccentBrush BorderBrush { get; set; }
 }
 
 public class SelectableItemClickedEventArgs<T> : EventArgs
@@ -29,7 +29,7 @@ public class SelectableItemVm<T> : ViewModelBase, ISelectableItem
     private string _label = string.Empty;
     private readonly T _value;
     private bool _selected;
-    private ThemeAccentColor _borderBrush = ThemeAccentColor.Default;
+    private ThemeAccentBrush _borderBrush = ThemeAccentBrush.Default;
 
     public event EventHandler<SelectableItemClickedEventArgs<T>>? Clicked;
 
@@ -52,7 +52,7 @@ public class SelectableItemVm<T> : ViewModelBase, ISelectableItem
         set => SetProperty(ref _selected, value);
     }
 
-    public ThemeAccentColor BorderBrush
+    public ThemeAccentBrush BorderBrush
     {
         get => _borderBrush;
         set => SetProperty(ref _borderBrush, value);

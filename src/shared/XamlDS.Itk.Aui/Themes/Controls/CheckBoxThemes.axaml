@@ -3,10 +3,10 @@
 
 	<ControlTheme x:Key="ItkCheckBoxBaseTheme" TargetType="CheckBox">
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
-		<Setter Property="MinHeight" Value="{StaticResource InputControlMinHeight}"/>
-		<Setter Property="MinWidth" Value="{StaticResource InputControlMinWidth}"/>
-		<Setter Property="Margin" Value="{StaticResource InputControlMargin}"/>
-		<Setter Property="CornerRadius" Value="{StaticResource InputControlCornerRadius}"/>
+		<Setter Property="MinHeight" Value="{StaticResource InputMinHeight}"/>
+		<Setter Property="MinWidth" Value="{StaticResource InputMinWidth}"/>
+		<Setter Property="Margin" Value="{StaticResource InputMargin}"/>
+		<Setter Property="CornerRadius" Value="{StaticResource InputCornerRadius}"/>
 		<Setter Property="FontSize" Value="13"/>
 		<Setter Property="FontWeight" Value="Medium"/>
 		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>

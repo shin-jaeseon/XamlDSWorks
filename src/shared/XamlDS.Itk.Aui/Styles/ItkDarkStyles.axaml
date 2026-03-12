@@ -37,7 +37,6 @@
 			<SolidColorBrush x:Key="AccentBBrush">Lime</SolidColorBrush>
 			<SolidColorBrush x:Key="AccentCBrush">#adff2f</SolidColorBrush>
 
-
 			<SolidColorBrush x:Key="NormalStateBrush">Lime</SolidColorBrush>    <!-- Green -->
 			<SolidColorBrush x:Key="WarningStateBrush">#FFA500</SolidColorBrush>  <!-- Orange -->
 			<SolidColorBrush x:Key="ErrorStateBrush">#FF6B6B</SolidColorBrush>    <!-- Light Red -->

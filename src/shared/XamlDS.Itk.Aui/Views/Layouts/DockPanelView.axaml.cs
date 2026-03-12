@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using System.Collections.Specialized;
@@ -113,10 +114,10 @@ public class DockPanelView : TemplatedControl
     {
         // Use Avalonia's DataTemplate system to create the view
         // This assumes there are DataTemplates registered for ViewModels
-        var view = new ContentControl
+        var view = new ContentPresenter
         {
             Content = childVm,
-            DataContext = childVm
+            DataContext = childVm,
         };
         return view;
     }

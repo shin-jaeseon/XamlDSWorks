@@ -7,6 +7,20 @@ public abstract class PanelVm<T> : ViewModelBase where T : class
 {
     private readonly ObservableCollection<T> _children = new ObservableCollection<T>();
     private readonly ReadOnlyObservableCollection<T> _readonlyChildren;
+    private double _width = double.NaN;
+    private double _height = double.NaN;
+
+    public double Width
+    {
+        get => _width;
+        set => SetProperty(ref _width, value);
+    }
+
+    public double Height
+    {
+        get => _height;
+        set => SetProperty(ref _height, value);
+    }
 
     public PanelVm()
     {

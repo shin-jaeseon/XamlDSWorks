@@ -19,4 +19,10 @@
 		<AvaloniaResource Include="Assets\**" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Views\Layouts\ContentPanelView.axaml.cs">
+	    <DependentUpon>ContentPanelView.axaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>

@@ -4,6 +4,8 @@
 					xmlns:controls="using:XamlDS.Itk.Views.Layouts">
 
 	<ControlTheme x:Key="{x:Type controls:StackPanelView}" TargetType="controls:StackPanelView">
+		<Setter Property="Width" Value="{Binding Width}"/>
+		<Setter Property="Height" Value="{Binding Height}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<StackPanel Name="PART_StackPanel" Orientation="{Binding Orientation, Converter={StaticResource ItkOrientationToOrientation}}"/>

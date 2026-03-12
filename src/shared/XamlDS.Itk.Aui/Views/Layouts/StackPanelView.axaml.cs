@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using System.Collections.Specialized;
@@ -90,14 +91,13 @@ public class StackPanelView : TemplatedControl
 
     private Control CreateViewForChild(ViewModelBase childVm)
     {
-        // Use Avalonia's DataTemplate system to create the view
-        // This assumes there are DataTemplates registered for ViewModels
-        var view = new ContentControl
+        var presenter = new ContentPresenter
         {
             Content = childVm,
-            DataContext = childVm
+            DataContext = childVm,
         };
-        return view;
+        presenter.DataContext = childVm;
+        return presenter;
     }
 
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)

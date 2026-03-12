@@ -4,17 +4,14 @@
 
 	<ControlTheme x:Key="{x:Type controls:SelectableItemView}" TargetType="controls:SelectableItemView">
 		<Setter Property="FontFamily" Value="{StaticResource GlobalFontFamily}"/>
-		<Setter Property="FontSize" Value="12"/>
+		<Setter Property="FontSize" Value="{StaticResource InputFontSize}"/>
 		<Setter Property="FontWeight" Value="Medium"/>
-		<Setter Property="MinHeight" Value="32.0"/>
-		<Setter Property="MinWidth" Value="32.0"/>
 
 		<Setter Property="Background" Value="{StaticResource Bg0Brush}"/>
 		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
-		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
+		<Setter Property="BorderBrush" Value="{Binding BorderBrush, Converter={StaticResource ThemeAccentBrushConverter}}"/>
 
-		<Setter Property="Margin" Value="{StaticResource InputControlMargin}"/>
-		<Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
+		<Setter Property="Margin" Value="{StaticResource InnerInputMargin}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 
@@ -23,16 +20,17 @@
 		<Style Selector="^:horizontalLayout">
 			<Setter Property="Template">
 				<ControlTemplate>
-					<Grid>
-						<Border x:Name="PART_Bg" Background="{TemplateBinding BorderBrush}" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0.15" Margin="0"/>
+					<Panel>
+						<Rectangle x:Name="PART_Bg" Fill="{TemplateBinding BorderBrush}" RadiusX="{StaticResource InnerInputRadius}" RadiusY="{StaticResource InnerInputRadius}" Opacity="0.15"/>
 						<Border x:Name="PART_checkBar" Background="{TemplateBinding BorderBrush}" CornerRadius="2" Margin="3" MinHeight="4" MinWidth="4"/>
 						<TextBlock Text="{Binding Label}"  Margin="{TemplateBinding Padding}"
 								   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-					</Grid>
+					</Panel>
 				</ControlTemplate>
 			</Setter>
 
-			<Setter Property="Padding" Value="8,4,8,8"/>
+			<Setter Property="Padding" Value="8,2,8,10"/>
+
 			<Style Selector="^ /template/ Border#PART_checkBar">
 				<Setter Property="VerticalAlignment" Value="Bottom"/>
 				<Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -49,16 +47,19 @@
 		<Style Selector="^:verticalLayout">
 			<Setter Property="Template">
 				<ControlTemplate>
-					<Grid>
-						<Border x:Name="PART_Bg" Background="{TemplateBinding BorderBrush}" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0.15" Margin="0"/>
+					<Panel>
+						<Rectangle x:Name="PART_Bg" Fill="{TemplateBinding BorderBrush}"
+								   RadiusX="{StaticResource InnerInputRadius}" RadiusY="{StaticResource InnerInputRadius}" Opacity="0.15"/>
 						<Border x:Name="PART_checkBar" Background="{TemplateBinding BorderBrush}" CornerRadius="2" Margin="3" MinHeight="4" MinWidth="4"/>
 						<TextBlock Text="{Binding Label}"  Margin="{TemplateBinding Padding}"
 								   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-					</Grid>
+					</Panel>
 				</ControlTemplate>
 			</Setter>
+
 			<Setter Property="Padding" Value="12,6,8,6"/>
 			<Setter Property="HorizontalContentAlignment" Value="Right"/>
+
 			<Style Selector="^ /template/ Border#PART_checkBar">
 				<Setter Property="VerticalAlignment" Value="Stretch"/>
 				<Setter Property="HorizontalAlignment" Value="Left"/>
@@ -84,7 +85,7 @@
 		</Style>
 		<Style Selector="^:selected">
 			<Setter Property="Foreground" Value="{StaticResource Bg0Brush}"/>
-			<Style Selector="^ /template/ Border#PART_Bg">
+			<Style Selector="^ /template/ Rectangle#PART_Bg">
 				<Setter Property="Opacity" Value="0.9"/>
 			</Style>
 			<Style Selector="^ /template/ Border#PART_checkBar">
@@ -93,38 +94,5 @@
 		</Style>
 
 	</ControlTheme>
-
-	<!--	<ControlTheme x:Key="SelectableItemViewHorizontalTheme" TargetType="controls:SelectableItemView" BasedOn="{StaticResource SelectableItemViewBaseTheme}">
-	<Setter Property="Padding" Value="8,4,8,8"/>
-	<Style Selector="^ /template/ Border#PART_checkBar">
-	<Setter Property="VerticalAlignment" Value="Bottom"/>
-	<Setter Property="HorizontalAlignment" Value="Stretch"/>
-	</Style>
-
-	<Style Selector="^:selected">
-	<Setter Property="Padding" Value="8,8,8,4"/>
-	<Style Selector="^ /template/ Border#PART_checkBar">
-	<Setter Property="VerticalAlignment" Value="Top"/>
-	</Style>
-	</Style>
-	</ControlTheme>
-
-	<ControlTheme x:Key="SelectableItemViewVerticalTheme" TargetType="controls:SelectableItemView" BasedOn="{StaticResource SelectableItemViewBaseTheme}">
-	<Setter Property="Padding" Value="12,6,8,6"/>
-	<Setter Property="HorizontalContentAlignment" Value="Right"/>
-	<Style Selector="^ /template/ Border#PART_checkBar">
-	<Setter Property="VerticalAlignment" Value="Stretch"/>
-	<Setter Property="HorizontalAlignment" Value="Left"/>
-	</Style>
-
-	<Style Selector="^:selected">
-	<Setter Property="Padding" Value="8,6,12,6"/>
-	<Setter Property="HorizontalContentAlignment" Value="Left"/>
-	<Style Selector="^ /template/ Border#PART_checkBar">
-	<Setter Property="VerticalAlignment" Value="Stretch"/>
-	<Setter Property="HorizontalAlignment" Value="Right"/>
-	</Style>
-	</Style>
-	</ControlTheme>-->
 
 </ResourceDictionary>

@@ -30,14 +30,14 @@ public interface ISelectorPanelVm : INotifyPropertyChanged
 {
     bool IsSingleSelector { get; }
     SelectorPanelLayout Layout { get; set; }
-    ThemeAccentColor BorderBrush { get; set; }
+    ThemeAccentBrush BorderBrush { get; set; }
 }
 
 
 public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>, ISelectorPanelVm
 {
     private SelectorPanelLayout _layout = SelectorPanelLayout.Horizontal;
-    private ThemeAccentColor _borderBrush = ThemeAccentColor.Default;
+    private ThemeAccentBrush _borderBrush = ThemeAccentBrush.Default;
     public abstract bool IsSingleSelector { get; }
 
     public SelectorPanelLayout Layout
@@ -46,13 +46,13 @@ public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>, ISelect
         set => SetProperty(ref _layout, value);
     }
 
-    public ThemeAccentColor BorderBrush
+    public ThemeAccentBrush BorderBrush
     {
         get => _borderBrush;
         set => SetProperty(ref _borderBrush, value);
     }
 
-    public SelectorPanelVm<T> Add(string label, T item)
+    public SelectorPanelVm<T> Add(string label, T item, ThemeAccentBrush borderBrush = ThemeAccentBrush.Default)
     {
         foreach (var child in Children)
         {
@@ -63,6 +63,7 @@ public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>, ISelect
         }
 
         var itemVm = new SelectableItemVm<T>(item) { Label = label };
+        itemVm.BorderBrush = borderBrush;
         itemVm.Clicked += OnSelectableItemClicked;
         AddChild(itemVm);
         return this;

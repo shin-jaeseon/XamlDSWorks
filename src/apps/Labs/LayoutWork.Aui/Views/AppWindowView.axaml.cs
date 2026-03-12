@@ -1,5 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Controls.Templates;
+using XamlDS.Itk.ViewModels;
 using XamlDS.Itk.ViewModels.Layouts;
 using XamlDS.Itk.ViewModels.Panes;
 using XamlDS.Itk.ViewModels.Selectors;
@@ -19,7 +20,7 @@ public partial class AppWindowView : Window
         this.DataTemplates.Add(new FuncDataTemplate<DockPanelVm>((value, namescope) => new DockPanelView()));
         this.DataTemplates.Add(new FuncDataTemplate<StackPanelVm>((value, namescope) => new StackPanelView()));
         this.DataTemplates.Add(new FuncDataTemplate<MockPaneVm>((value, namescope) => new MockPaneView()));
-        this.DataTemplates.Add(new FuncDataTemplate<ContentPaneVm>((value, namescope) => new ContentPaneView()));
+        this.DataTemplates.Add(new FuncDataTemplate<ContentPanelVm>((value, namescope) => new ContentPanelView()));
 
         // Match any SingleSelectorPanelVm<T> regardless of T
         this.DataTemplates.Add(new FuncDataTemplate(data => data is ISelectorPanelVm, (data, namescope) => new SelectorPanelView()));

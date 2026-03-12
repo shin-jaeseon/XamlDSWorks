@@ -12,8 +12,8 @@
 		<Setter Property="Foreground" Value="{StaticResource Fg0Brush}"/>
 		<Setter Property="BorderBrush" Value="{StaticResource Fg0Brush}"/>
 
-		<Setter Property="Margin" Value="{StaticResource InputControlMargin}"/>
-		<Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
+		<Setter Property="Margin" Value="{StaticResource InputMargin}"/>
+		<Setter Property="CornerRadius" Value="{StaticResource InputCornerRadius}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 
