@@ -23,6 +23,9 @@
 	  <Compile Update="Views\Layouts\ContentPanelView.axaml.cs">
 	    <DependentUpon>ContentPanelView.axaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\Panels\MockPanelView.axaml.cs">
+	    <DependentUpon>MockPanelView.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

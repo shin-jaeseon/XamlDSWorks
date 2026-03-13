@@ -143,4 +143,6 @@ public class DockPanelView : TemplatedControl
             OnDataContextChanged(this, EventArgs.Empty);
         }
     }
+
+
 }

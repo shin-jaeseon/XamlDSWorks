@@ -1,8 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.Markup.Xaml;
-using LayoutWork.Aui;
+using LayoutWork.Aui.Views;
 using LayoutWork.ViewModels;
 using Microsoft.Extensions.Hosting;
+using XamlDS.Itk;
 using XamlDS.Itk.Aui;
 
 namespace LayoutWork;
@@ -15,6 +16,7 @@ public partial class App : Application
 
     public override void Initialize()
     {
+        ItkDataTemplates.ApplyTo(this);
         AvaloniaXamlLoader.Load(this);
     }
 

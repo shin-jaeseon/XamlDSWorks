@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Microsoft.Extensions.Hosting;
 using System;
+using XamlDS.Itk;
 
 namespace LayoutWork;
 
@@ -14,13 +15,17 @@ internal class Program
     {
         var builder = Host.CreateApplicationBuilder(args);
 
+        var ItkAuiLib = new ItkAuiLibrary();
+        ItkAuiLib.Register(builder);
+
         var layoutWorkLib = new LayoutWork.LayoutWorkLibrary();
         layoutWorkLib.Register(builder);
 
+        var layoutWorkAuiLib = new LayoutWorkAuiLibrary();
+        layoutWorkAuiLib.Register(builder);
+
         var host = builder.Build();
         host.Start();
-
-        // Make the host available to the Avalonia Application
         App.Host = host;
 
         BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);

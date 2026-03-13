@@ -55,7 +55,7 @@ public class SingleSelectorPanelVm<T> : SelectorPanelVm<T>
         bool found = false;
         T? previousItem = _selectedItem;
 
-        foreach (var child in Children)
+        foreach (var child in Items)
         {
             child.Selected = EqualityComparer<T>.Default.Equals(child.Value, item);
             if (child.Selected)

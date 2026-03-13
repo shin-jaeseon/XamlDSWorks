@@ -1,8 +1,8 @@
-﻿using XamlDS.Itk.ViewModels.Panes;
+﻿using XamlDS.Itk.ViewModels.Panels;
 
 namespace LayoutWork.ViewModels;
 
-public class AppBottomBarVm : MockPaneVm
+public class AppBottomBarVm : MockPanelVm
 {
     public AppBottomBarVm()
     {

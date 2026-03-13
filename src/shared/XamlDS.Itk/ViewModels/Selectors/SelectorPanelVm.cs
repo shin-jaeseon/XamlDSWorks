@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using XamlDS.Itk.Themes;
 
 namespace XamlDS.Itk.ViewModels.Selectors;
@@ -33,12 +34,26 @@ public interface ISelectorPanelVm : INotifyPropertyChanged
     ThemeAccentBrush BorderBrush { get; set; }
 }
 
-
-public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>, ISelectorPanelVm
+/// <summary>
+/// Special-purpose panel view model for selection controls.
+/// Manages SelectableItemVm instances internally and provides a restricted API.
+/// </summary>
+/// <typeparam name="T">The type of value associated with each selectable item.</typeparam>
+public abstract class SelectorPanelVm<T> : PanelVm, ISelectorPanelVm
 {
+    private readonly ObservableCollection<SelectableItemVm<T>> _items = new();
+    private readonly ReadOnlyObservableCollection<SelectableItemVm<T>> _readonlyItems;
     private SelectorPanelLayout _layout = SelectorPanelLayout.Horizontal;
     private ThemeAccentBrush _borderBrush = ThemeAccentBrush.Default;
+
     public abstract bool IsSingleSelector { get; }
+
+    protected SelectorPanelVm()
+    {
+        _readonlyItems = new ReadOnlyObservableCollection<SelectableItemVm<T>>(_items);
+    }
+
+    public ReadOnlyObservableCollection<SelectableItemVm<T>> Items => _readonlyItems;
 
     public SelectorPanelLayout Layout
     {
@@ -54,9 +69,9 @@ public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>, ISelect
 
     public SelectorPanelVm<T> Add(string label, T item, ThemeAccentBrush borderBrush = ThemeAccentBrush.Default)
     {
-        foreach (var child in Children)
+        foreach (var existingItem in _items)
         {
-            if (EqualityComparer<T>.Default.Equals(child.Value, item))
+            if (EqualityComparer<T>.Default.Equals(existingItem.Value, item))
             {
                 throw new InvalidOperationException($"{item} already exists in the selector panel.");
             }
@@ -65,9 +80,51 @@ public abstract class SelectorPanelVm<T> : PanelVm<SelectableItemVm<T>>, ISelect
         var itemVm = new SelectableItemVm<T>(item) { Label = label };
         itemVm.BorderBrush = borderBrush;
         itemVm.Clicked += OnSelectableItemClicked;
-        AddChild(itemVm);
+        _items.Add(itemVm);
         return this;
     }
 
+    public void Remove(T item)
+    {
+        var itemVm = _items.FirstOrDefault(x =>
+            EqualityComparer<T>.Default.Equals(x.Value, item));
+
+        if (itemVm != null)
+        {
+            itemVm.Clicked -= OnSelectableItemClicked;
+            _items.Remove(itemVm);
+        }
+    }
+
     protected abstract void OnSelectableItemClicked(object? sender, SelectableItemClickedEventArgs<T> e);
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            foreach (var item in _items)
+            {
+                item.Clicked -= OnSelectableItemClicked;
+                item.Dispose();
+            }
+        }
+        base.Dispose(disposing);
+    }
+}
+
+public abstract class SelectorExPanelVm<T> : ContentsPanelVm<SelectableItemVm<T>>, ISelectorPanelVm
+{
+    private SelectorPanelLayout _layout = SelectorPanelLayout.Horizontal;
+    private ThemeAccentBrush _borderBrush = ThemeAccentBrush.Default;
+    public abstract bool IsSingleSelector { get; }
+    public SelectorPanelLayout Layout
+    {
+        get => _layout;
+        set => SetProperty(ref _layout, value);
+    }
+    public ThemeAccentBrush BorderBrush
+    {
+        get => _borderBrush;
+        set => SetProperty(ref _borderBrush, value);
+    }
 }

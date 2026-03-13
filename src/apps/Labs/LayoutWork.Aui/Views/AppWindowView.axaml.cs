@@ -1,14 +1,6 @@
 ﻿using Avalonia.Controls;
-using Avalonia.Controls.Templates;
-using XamlDS.Itk.ViewModels;
-using XamlDS.Itk.ViewModels.Layouts;
-using XamlDS.Itk.ViewModels.Panes;
-using XamlDS.Itk.ViewModels.Selectors;
-using XamlDS.Itk.Views.Layouts;
-using XamlDS.Itk.Views.Panes;
-using XamlDS.Itk.Views.Selectors;
 
-namespace LayoutWork.Aui;
+namespace LayoutWork.Aui.Views;
 
 public partial class AppWindowView : Window
 {
@@ -16,14 +8,6 @@ public partial class AppWindowView : Window
     {
         InitializeComponent();
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
-        this.DataTemplates.Add(new FuncDataTemplate<DockPanelVm>((value, namescope) => new DockPanelView()));
-        this.DataTemplates.Add(new FuncDataTemplate<StackPanelVm>((value, namescope) => new StackPanelView()));
-        this.DataTemplates.Add(new FuncDataTemplate<MockPaneVm>((value, namescope) => new MockPaneView()));
-        this.DataTemplates.Add(new FuncDataTemplate<ContentPanelVm>((value, namescope) => new ContentPanelView()));
-
-        // Match any SingleSelectorPanelVm<T> regardless of T
-        this.DataTemplates.Add(new FuncDataTemplate(data => data is ISelectorPanelVm, (data, namescope) => new SelectorPanelView()));
     }
 }
 

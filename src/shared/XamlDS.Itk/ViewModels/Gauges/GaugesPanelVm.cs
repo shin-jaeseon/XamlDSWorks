@@ -7,7 +7,10 @@ public enum GaugeStyle
     Large
 }
 
-public abstract class GaugesPanelVm : PanelVm<GaugeVm>
+/// <summary>
+/// Base panel view model for displaying gauge controls.
+/// </summary>
+public abstract class GaugesPanelVm : ContentsPanelVm<GaugeVm>
 {
     private bool _showGaugeLabel = true;
     private GaugeStyle _gaugeStyle = GaugeStyle.Medium;

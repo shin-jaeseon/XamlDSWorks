@@ -8,7 +8,10 @@ public enum FieldStyle
     Large
 }
 
-public class FieldsPanelVm : PanelVm<FieldVm>
+/// <summary>
+/// Panel view model for displaying field controls.
+/// </summary>
+public class FieldsPanelVm : ContentsPanelVm<FieldVm>
 {
     private bool _showFieldLabel = true;
     private FieldStyle _fieldStyle = FieldStyle.Medium;

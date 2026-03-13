@@ -66,7 +66,7 @@ public class MultiSelectorPanelVm<T> : SelectorPanelVm<T>
         bool found = false;
         bool wasSelected = false;
 
-        foreach (var child in Children)
+        foreach (var child in Items)
         {
             if (EqualityComparer<T>.Default.Equals(child.Value, item))
             {

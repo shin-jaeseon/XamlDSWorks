@@ -2,7 +2,7 @@
 using XamlDS.Itk.Themes;
 using XamlDS.Itk.ViewModels;
 using XamlDS.Itk.ViewModels.Layouts;
-using XamlDS.Itk.ViewModels.Panes;
+using XamlDS.Itk.ViewModels.Panels;
 using XamlDS.Itk.ViewModels.Selectors;
 
 namespace LayoutWork.ViewModels;
@@ -14,16 +14,16 @@ public class AppWindowVm : DockPanelVm
     public AppWindowVm()
     {
         _currentPane = new ContentPanelVm();
-        _currentPane.Content = new MockPaneVm { Label = "Current" };
+        _currentPane.Content = new MockPanelVm { Label = "Current" };
 
         var bottomBar = new DockPanelVm();
         var bottomLeft = new StackPanelVm { Orientation = ItkOrientation.Horizontal };
-        bottomLeft.Add(new MockPaneVm { Label = "HOME", Width = 96, Height = 48 });
+        bottomLeft.Add(new MockPanelVm { Label = "HOME", Width = 96, Height = 48 });
         bottomBar.AddLeft(bottomLeft);
 
         var bottomRight = new StackPanelVm { Orientation = ItkOrientation.Horizontal };
-        bottomRight.Add(new MockPaneVm { Label = "EXIT", Width = 96, Height = 48 });
-        bottomRight.Add(new MockPaneVm { Label = "OPTIONS", Width = 96, Height = 48 });
+        bottomRight.Add(new MockPanelVm { Label = "EXIT", Width = 96, Height = 48 });
+        bottomRight.Add(new MockPanelVm { Label = "OPTIONS", Width = 96, Height = 48 });
         bottomBar.AddRight(bottomRight);
 
         var singleSelectorPanel = new SingleSelectorPanelVm<String> { Layout = SelectorPanelLayout.Horizontal };

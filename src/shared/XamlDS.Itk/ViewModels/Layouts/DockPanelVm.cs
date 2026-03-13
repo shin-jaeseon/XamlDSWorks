@@ -2,8 +2,10 @@
 
 namespace XamlDS.Itk.ViewModels.Layouts;
 
-
-public class DockPanelVm : PanelVm<ViewModelBase>
+/// <summary>
+/// Panel view model that arranges children in a dock layout.
+/// </summary>
+public class DockPanelVm : ContentsPanelVm<ViewModelBase>
 {
     public DockPanelVm Add(ViewModelBase child, DockPositon dock = DockPositon.Left)
     {

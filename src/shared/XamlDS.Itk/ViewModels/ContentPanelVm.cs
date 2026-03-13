@@ -7,24 +7,14 @@ public enum ContentPanelStyle
     Card
 }
 
-public class ContentPanelVm : ViewModelBase
+/// <summary>
+/// Panel view model that contains a single content.
+/// </summary>
+public class ContentPanelVm : PanelVm
 {
-    private double _width = double.NaN;
-    private double _height = double.NaN;
     private ContentPanelStyle _style = ContentPanelStyle.Default;
     private object? _content;
 
-    public double Width
-    {
-        get => _width;
-        set => SetProperty(ref _width, value);
-    }
-
-    public double Height
-    {
-        get => _height;
-        set => SetProperty(ref _height, value);
-    }
     public ContentPanelStyle Style
     {
         get => _style;

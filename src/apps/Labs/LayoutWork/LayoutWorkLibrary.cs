@@ -5,7 +5,7 @@ using XamlDS.Itk;
 
 namespace LayoutWork;
 
-public class LayoutWorkLibrary : XamlDSLibrary
+public class LayoutWorkLibrary : ItkLibraryBase
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {

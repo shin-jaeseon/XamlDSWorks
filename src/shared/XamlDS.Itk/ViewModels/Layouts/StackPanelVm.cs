@@ -2,7 +2,10 @@
 
 namespace XamlDS.Itk.ViewModels.Layouts;
 
-public class StackPanelVm : PanelVm<ViewModelBase>
+/// <summary>
+/// Panel view model that arranges children in a stack layout.
+/// </summary>
+public class StackPanelVm : ContentsPanelVm<ViewModelBase>
 {
     private ItkOrientation _orientation = ItkOrientation.Vertical;
 

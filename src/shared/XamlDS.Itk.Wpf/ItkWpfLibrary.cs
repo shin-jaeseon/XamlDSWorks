@@ -5,7 +5,7 @@ using XamlDS.Itk.ViewModels.Commands;
 
 namespace XamlDS.Itk;
 
-public sealed class ItkWpfLibrary : XamlDSLibrary
+public sealed class ItkWpfLibrary : ItkLibraryBase
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {

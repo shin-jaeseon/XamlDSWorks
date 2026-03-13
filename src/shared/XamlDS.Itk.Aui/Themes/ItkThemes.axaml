@@ -49,7 +49,7 @@
 		<ResourceInclude Source="/Views/Layouts/DockPanelView.axaml"/>
 		<ResourceInclude Source="/Views/Layouts/StackPanelView.axaml"/>
 		<ResourceInclude Source="/Views/Layouts/ContentPanelView.axaml"/>
-		<ResourceInclude Source="/Views/Panes/MockPaneView.axaml"/>
+		<ResourceInclude Source="/Views/Panels/MockPanelView.axaml"/>
 
 		<ResourceInclude Source="/Views/Selectors/SelectableItemView.axaml"/>
 		<ResourceInclude Source="/Views/Selectors/SelectorPanelView.axaml"/>

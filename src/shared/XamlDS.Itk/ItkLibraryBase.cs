@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace XamlDS.Itk;
 
-public abstract class XamlDSLibrary
+public abstract class ItkLibraryBase
 {
     private static readonly List<string> _registeredlibraries = new();
 
@@ -17,5 +17,5 @@ public abstract class XamlDSLibrary
         AddServices(hostBuilder.Services);
     }
 
-    protected abstract void AddServices(IServiceCollection services);
+    protected virtual void AddServices(IServiceCollection services) { }
 }

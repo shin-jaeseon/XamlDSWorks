@@ -1,0 +1,15 @@
+﻿using Microsoft.Extensions.Hosting;
+
+namespace XamlDS.Itk;
+
+public abstract class ItkAuiLibraryBase : ItkLibraryBase
+{
+    public override void Register(HostApplicationBuilder hostBuilder)
+    {
+        base.Register(hostBuilder);
+        AddViewTemplates();
+    }
+
+    protected virtual void AddViewTemplates() { }
+
+}

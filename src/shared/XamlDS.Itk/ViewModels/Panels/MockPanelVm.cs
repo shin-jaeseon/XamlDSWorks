@@ -1,6 +1,6 @@
-﻿namespace XamlDS.Itk.ViewModels.Panes;
+﻿namespace XamlDS.Itk.ViewModels.Panels;
 
-public class MockPaneVm : ViewModelBase
+public class MockPanelVm : ViewModelBase
 {
     private string _label = string.Empty;
     private double _width = double.NaN;

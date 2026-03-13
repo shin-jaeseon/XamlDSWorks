@@ -6,7 +6,7 @@ using XamlDS.Itk.ViewModels.Gauges;
 
 namespace XamlDS.Itk;
 
-public sealed class ItkLibrary : XamlDSLibrary
+public sealed class ItkLibrary : ItkLibraryBase
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {

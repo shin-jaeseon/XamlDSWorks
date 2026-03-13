@@ -89,11 +89,11 @@ public class SelectorPanelView : TemplatedControl
         var panel = CreateLayoutPanel(selectorPanelVm);
 
         // Add all children from ViewModel
-        var children = ((dynamic)selectorPanelVm).Children as System.Collections.IList;
-        foreach (var child in children!)
+        var items = ((dynamic)selectorPanelVm).Items as System.Collections.IList;
+        foreach (var itemVm in items!)
         {
-            var childView = CreateViewForChild(selectorPanelVm, child);
-            panel!.Children.Add(childView);
+            var itemView = CreateViewForChild(selectorPanelVm, itemVm);
+            panel!.Children.Add(itemView);
         }
         _layoutHost.Content = panel;
     }
