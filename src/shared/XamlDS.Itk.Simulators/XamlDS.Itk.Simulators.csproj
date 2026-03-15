@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\XamlDS.Itk\XamlDS.Itk.csproj" />
+  </ItemGroup>
+
 </Project>

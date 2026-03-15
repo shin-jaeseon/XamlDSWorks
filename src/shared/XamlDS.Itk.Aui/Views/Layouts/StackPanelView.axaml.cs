@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using System.Collections.Specialized;
@@ -91,12 +90,10 @@ public class StackPanelView : TemplatedControl
 
     private Control CreateViewForChild(ViewModelBase childVm)
     {
-        var presenter = new ContentPresenter
+        var presenter = new ViewPresenter
         {
-            Content = childVm,
             DataContext = childVm,
         };
-        presenter.DataContext = childVm;
         return presenter;
     }
 

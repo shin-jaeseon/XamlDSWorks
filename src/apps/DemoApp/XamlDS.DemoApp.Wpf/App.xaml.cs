@@ -13,6 +13,11 @@ namespace XamlDS.DemoApp.Wpf;
 /// </summary>
 public partial class App : Application
 {
+    public App()
+    {
+        InitializeComponent();
+    }
+
     protected override void OnStartup(StartupEventArgs e)
     {
         var builder = Host.CreateApplicationBuilder(e.Args);

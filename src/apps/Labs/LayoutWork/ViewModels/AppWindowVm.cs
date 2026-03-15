@@ -9,12 +9,12 @@ namespace LayoutWork.ViewModels;
 
 public class AppWindowVm : DockPanelVm
 {
-    private readonly ContentPanelVm _currentPane;
+    private readonly ContentPanelVm _currentPanel;
 
     public AppWindowVm()
     {
-        _currentPane = new ContentPanelVm();
-        _currentPane.Content = new MockPanelVm { Label = "Current" };
+        _currentPanel = new ContentPanelVm();
+        _currentPanel.Content = new MockPanelVm { Label = "Current" };
 
         var bottomBar = new DockPanelVm();
         var bottomLeft = new StackPanelVm { Orientation = ItkOrientation.Horizontal };
@@ -47,29 +47,29 @@ public class AppWindowVm : DockPanelVm
         bottomBar.Add(selectorsPanel);
         AddBottom(bottomBar);
 
-        Add(CurrentPane);
+        Add(CurrentPanel);
     }
 
-    public ContentPanelVm CurrentPane => _currentPane;
+    public ContentPanelVm CurrentPanel => _currentPanel;
 
     private void OnSingleSelectorPanelSelectionChanged(object? sender, SelectionChangedEventArgs<String> e)
     {
-        if (CurrentPane.Content != null)
+        if (CurrentPanel.Content != null)
         {
-            var oldContent = CurrentPane.Content;
+            var oldContent = CurrentPanel.Content;
             (oldContent as IDisposable)?.Dispose();
-            CurrentPane.Content = null;
+            CurrentPanel.Content = null;
         }
         switch (e.NewItem)
         {
             case "SubPanelA":
-                CurrentPane.Content = new SubAPanelVm();
+                CurrentPanel.Content = new SubAPanelVm();
                 break;
             case "SubPanelB":
-                CurrentPane.Content = new SubBPanelVm();
+                CurrentPanel.Content = new SubBPanelVm();
                 break;
             case "SubPanelC":
-                CurrentPane.Content = new SubCPanelVm();
+                CurrentPanel.Content = new SubCPanelVm();
                 break;
         }
     }

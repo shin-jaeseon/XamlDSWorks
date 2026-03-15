@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using System.Collections.Specialized;
@@ -112,14 +111,11 @@ public class DockPanelView : TemplatedControl
 
     private Control CreateViewForChild(ViewModelBase childVm)
     {
-        // Use Avalonia's DataTemplate system to create the view
-        // This assumes there are DataTemplates registered for ViewModels
-        var view = new ContentPresenter
+        var presenter = new ViewPresenter
         {
-            Content = childVm,
             DataContext = childVm,
         };
-        return view;
+        return presenter;
     }
 
     private Avalonia.Controls.Dock ConvertToAvaloniaUIDock(DockPositon dock)
@@ -143,6 +139,4 @@ public class DockPanelView : TemplatedControl
             OnDataContextChanged(this, EventArgs.Empty);
         }
     }
-
-
 }

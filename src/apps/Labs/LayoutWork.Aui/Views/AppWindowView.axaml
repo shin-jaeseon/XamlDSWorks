@@ -4,11 +4,11 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:vm="using:LayoutWork.ViewModels"
 		xmlns:itk="http://xamldesignstudio.com"
-		mc:Ignorable="d" Width="1600" Height="960" MinHeight="720" MinWidth="1200"
+		mc:Ignorable="d" Width="1400" Height="800" MinHeight="720" MinWidth="1200"
 		x:DataType="vm:AppWindowVm"
 		x:Class="LayoutWork.Aui.Views.AppWindowView"
 		Title="AppWindowView">
 
-	<ContentControl Content="{Binding}"/>
+	<itk:ViewPresenter Margin="4"/>
 
 </Window>

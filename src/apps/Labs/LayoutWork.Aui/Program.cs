@@ -1,7 +1,6 @@
 ﻿using Avalonia;
 using Microsoft.Extensions.Hosting;
 using System;
-using XamlDS.Itk;
 
 namespace LayoutWork;
 
@@ -14,12 +13,6 @@ internal class Program
     public static void Main(string[] args)
     {
         var builder = Host.CreateApplicationBuilder(args);
-
-        var ItkAuiLib = new ItkAuiLibrary();
-        ItkAuiLib.Register(builder);
-
-        var layoutWorkLib = new LayoutWork.LayoutWorkLibrary();
-        layoutWorkLib.Register(builder);
 
         var layoutWorkAuiLib = new LayoutWorkAuiLibrary();
         layoutWorkAuiLib.Register(builder);
@@ -36,6 +29,5 @@ internal class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             //.WithInterFont()
-            .WithDeveloperTools()
             .LogToTrace();
 }

@@ -1,4 +1,5 @@
 ﻿using XamlDS.Itk.Themes;
+using XamlDS.Itk.ViewModels;
 using XamlDS.Itk.ViewModels.Layouts;
 using XamlDS.Itk.ViewModels.Panels;
 using XamlDS.Itk.ViewModels.Selectors;
@@ -16,9 +17,10 @@ public class SubAPanelVm : DockPanelVm
         leftMenuPanel.Add("Sub C", "SubC", ThemeAccentBrush.Default);
         leftMenuPanel.Add("Sub D", "SubD", ThemeAccentBrush.Default);
         leftMenuPanel.SelectItem("SubA");
-
         AddLeft(leftMenuPanel);
-        Add(new MockPanelVm { Label = "Sub A Center" });
+
+        var contentPanel = new ContentPanelVm { Content = "Empty Content Panel", PanelStyle = ContentPanelStyle.Bordered };
+        Add(contentPanel);
     }
 
     private void OnLeftMenuPanelSelectionChanged(object? sender, SelectionChangedEventArgs<string> e)

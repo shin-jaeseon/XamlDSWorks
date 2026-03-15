@@ -7,9 +7,9 @@ public abstract class ItkAuiLibraryBase : ItkLibraryBase
     public override void Register(HostApplicationBuilder hostBuilder)
     {
         base.Register(hostBuilder);
-        AddViewTemplates();
+        RegisterView();
     }
 
-    protected virtual void AddViewTemplates() { }
+    protected virtual void RegisterView() { }
 
 }

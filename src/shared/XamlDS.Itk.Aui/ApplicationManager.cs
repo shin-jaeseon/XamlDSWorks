@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using XamlDS.Itk.Messages;
 using XamlDS.Itk.Services;
 
-namespace XamlDS.Itk.Aui;
+namespace XamlDS.Itk;
 
 /// <summary>
 /// Manages the lifecycle of an Avalonia desktop application with built-in support for

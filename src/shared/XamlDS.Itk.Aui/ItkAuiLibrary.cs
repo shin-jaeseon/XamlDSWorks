@@ -29,18 +29,18 @@ public sealed class ItkAuiLibrary : ItkAuiLibraryBase
         services.AddSingleton<ToggleFullscreenWindowCommandVm, ToggleFullscreenWindowAuiCommandVm>();
     }
 
-    protected override void AddViewTemplates()
+    protected override void RegisterView()
     {
         // Layout Views - Explicit ViewModel → View mapping
-        ItkDataTemplates.Add<DockPanelVm, DockPanelView>();
-        ItkDataTemplates.Add<StackPanelVm, StackPanelView>();
-        ItkDataTemplates.Add<ContentPanelVm, ContentPanelView>();
+        ViewLocator.Register<DockPanelVm, DockPanelView>();
+        ViewLocator.Register<StackPanelVm, StackPanelView>();
+        ViewLocator.Register<ContentPanelVm, ContentPanelView>();
 
         // Panel Views
-        ItkDataTemplates.Add<MockPanelVm, MockPanelView>();
-        ItkDataTemplates.Add<GridLinePanelVm, GridLinePanelView>();
+        ViewLocator.Register<MockPanelVm, MockPanelView>();
+        ViewLocator.Register<GridLinePanelVm, GridLinePanelView>();
 
         // Conditional template for interface-based matching (lower priority)
-        ItkDataTemplates.AddConditional<ISelectorPanelVm, SelectorPanelView>();
+        ViewLocator.RegisterConditional<ISelectorPanelVm, SelectorPanelView>();
     }
 }

@@ -1,10 +1,18 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:XamlDS.Itk.Converters"
+                    xmlns:layouts="clr-namespace:XamlDS.Itk.Views.Layouts">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Themes/ItkBase.xaml"/>
+        
         <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Styles/ButtonStyles.xaml"/>
         <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Styles/RadioButtonStyles.xaml"/>
         <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Styles/LayoutStyles.xaml"/>
+
+        <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Styles/Views/Layouts/ContentPanelView.xaml"/>
+        <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Styles/Views/Layouts/DockPanelView.xaml"/>
+        <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Styles/Views/Layouts/StackPanelView.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

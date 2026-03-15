@@ -1,4 +1,4 @@
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Markup;
 
 [assembly: ThemeInfo(
@@ -10,5 +10,7 @@ using System.Windows.Markup;
                                                 // app, or any theme specific resource dictionaries)
 )]
 
+[assembly: XmlnsDefinition("http://xamldesignstudio.com", "XamlDS.Itk")]
 [assembly: XmlnsDefinition("http://xamldesignstudio.com", "XamlDS.Itk.Controls")]
+[assembly: XmlnsDefinition("http://xamldesignstudio.com", "XamlDS.Itk.Views")]
 [assembly: XmlnsPrefix("http://xamldesignstudio.com", "itk")]

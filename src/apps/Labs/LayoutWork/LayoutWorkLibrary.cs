@@ -9,8 +9,8 @@ public class LayoutWorkLibrary : ItkLibraryBase
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {
-        var itkLib = new ItkLibrary();
-        itkLib.Register(hostBuilder);
+        //var itkLib = new ItkLibrary();
+        //itkLib.Register(hostBuilder);
 
         base.Register(hostBuilder);
     }

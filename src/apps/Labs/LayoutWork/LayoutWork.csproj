@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\shared\XamlDS.Itk.Aui\XamlDS.Itk.Aui.csproj" />
-    <ProjectReference Include="..\..\..\shared\XamlDS.Itk.Simulators\XamlDS.Itk.Simulators.csproj" />
+    <ProjectReference Include="..\..\..\shared\XamlDS.Itk\XamlDS.Itk.csproj" />
   </ItemGroup>
 
 </Project>

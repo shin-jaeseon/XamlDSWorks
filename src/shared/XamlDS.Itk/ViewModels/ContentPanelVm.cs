@@ -3,8 +3,7 @@
 public enum ContentPanelStyle
 {
     Default,
-    Border,
-    Card
+    Bordered
 }
 
 /// <summary>
@@ -12,13 +11,13 @@ public enum ContentPanelStyle
 /// </summary>
 public class ContentPanelVm : PanelVm
 {
-    private ContentPanelStyle _style = ContentPanelStyle.Default;
+    private ContentPanelStyle _panelStyle = ContentPanelStyle.Default;
     private object? _content;
 
-    public ContentPanelStyle Style
+    public ContentPanelStyle PanelStyle
     {
-        get => _style;
-        set => SetProperty(ref _style, value);
+        get => _panelStyle;
+        set => SetProperty(ref _panelStyle, value);
     }
 
     public object? Content

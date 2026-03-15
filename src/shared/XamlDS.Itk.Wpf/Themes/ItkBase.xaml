@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:XamlDS.Itk.Converters"
+                    xmlns:local="clr-namespace:XamlDS.Itk">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Converters/Converters.xaml"/>
+        <ResourceDictionary Source="/XamlDS.Itk.Wpf;component/Themes/Views/ViewPresenter.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <FontFamily x:Key="GlobalFontFamily">
+        /XamlDS.Itk.Wpf;component/Assets/Fonts/#Noto Sans,
+        /XamlDS.Itk.Wpf;component/Assets/Fonts/#Noto Sans KR,
+        /XamlDS.Itk.Wpf;component/Assets/Fonts/#Noto Sans JP,
+        /XamlDS.Itk.Wpf;component/Assets/Fonts/#Noto Sans SC,
+        /XamlDS.Itk.Wpf;component/Assets/Fonts/#Noto Sans TC,
+        /XamlDS.Itk.Wpf;component/Assets/Fonts/#Noto Sans Arabic
+    </FontFamily>
+
+    <FontFamily x:Key="GlobalMonoFontFamily">
+        /XamlDS.Itk.Wpf;component/Assets/Fonts/#Noto Sans Mono
+    </FontFamily>
+
+    <local:ItkTemplateSelector x:Key="ItkTemplateSelector" />
+
+    <!--<Style x:Key="ItkContentControlStyle" TargetType="ContentControl">
+        <Setter Property="ContentTemplateSelector" Value="{DynamicResource ItkTemplateSelector}" />
+    </Style>
+
+    <Style TargetType="ContentControl" BasedOn="{StaticResource ItkContentControlStyle}" />-->
+
+    <Style TargetType="ContentControl">
+        <Setter Property="ContentTemplateSelector" Value="{DynamicResource ItkTemplateSelector}" />
+    </Style>
+
+    <Style TargetType="TextBlock">
+        <Setter Property="FontSize" Value="23"/>
+        <Setter Property="FontFamily" Value="{DynamicResource GlobalMonoFontFamily}" />
+    </Style>
+
+    <Style TargetType="TextElement">
+        <Setter Property="FontSize" Value="23"/>
+        <Setter Property="FontFamily" Value="{DynamicResource GlobalMonoFontFamily}" />
+    </Style>
+
+</ResourceDictionary>

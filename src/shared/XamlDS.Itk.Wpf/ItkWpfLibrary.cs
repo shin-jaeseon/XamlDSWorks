@@ -2,10 +2,12 @@
 using Microsoft.Extensions.Hosting;
 using XamlDS.Itk.ViewModels;
 using XamlDS.Itk.ViewModels.Commands;
+using XamlDS.Itk.ViewModels.Layouts;
+using XamlDS.Itk.Views.Layouts;
 
 namespace XamlDS.Itk;
 
-public sealed class ItkWpfLibrary : ItkLibraryBase
+public sealed class ItkWpfLibrary : ItkWpfLibraryBase
 {
     public override void Register(HostApplicationBuilder hostBuilder)
     {
@@ -20,5 +22,13 @@ public sealed class ItkWpfLibrary : ItkLibraryBase
 
         services.AddSingleton<QuitApplicationCommandVm, QuitApplicationWpfCommandVm>();
         services.AddSingleton<ToggleFullscreenWindowCommandVm, ToggleFullscreenWindowWpfCommandVm>();
+    }
+
+    protected override void RegisterView()
+    {
+        // Register layout views
+        ViewLocator.Register<ContentPanelVm, ContentPanelView>();
+        ViewLocator.Register<DockPanelVm, DockPanelView>();
+        ViewLocator.Register<StackPanelVm, StackPanelView>();
     }
 }

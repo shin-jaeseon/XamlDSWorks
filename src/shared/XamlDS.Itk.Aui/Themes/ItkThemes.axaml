@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-										xmlns:res="clr-namespace:XamlDS.Itk.Resources;assembly=XamlDS.Itk"
-										xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+					xmlns:res="clr-namespace:XamlDS.Itk.Resources;assembly=XamlDS.Itk"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 	<FontFamily x:Key="GlobalFontFamily">
 		avares://XamlDS.Itk.Aui/Assets/Fonts#Noto Sans,
@@ -18,7 +18,7 @@
 	<Thickness x:Key="ControlMargin">4.0</Thickness>
 	<Thickness x:Key="ControlPadding">4.0</Thickness>
 	<CornerRadius x:Key="ControlCornerRadius">6.0</CornerRadius>
-	
+
 
 	<!-- Input controls -->
 	<x:Double x:Key="InputFontSize">13</x:Double>

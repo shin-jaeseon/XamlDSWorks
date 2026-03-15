@@ -18,10 +18,10 @@
 			<IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
 			<PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.0-beta3" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\shared\XamlDS.Itk.Aui\XamlDS.Itk.Aui.csproj" />
 		<ProjectReference Include="..\LayoutWork\LayoutWork.csproj" />
 	</ItemGroup>
 </Project>

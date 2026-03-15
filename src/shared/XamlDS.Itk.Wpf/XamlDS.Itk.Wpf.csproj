@@ -12,4 +12,8 @@
 		<ProjectReference Include="..\XamlDS.Itk\XamlDS.Itk.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Resource Include="Assets\**" />
+	</ItemGroup>
+
 </Project>

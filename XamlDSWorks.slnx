@@ -8,7 +8,9 @@
   <Folder Name="/Apps/Labs/">
     <Project Path="src/apps/Labs/AvaloniaControlFactory/AvaloniaControlFactory.csproj" Id="0800d368-ca45-4378-8de0-f7cd3e218215" />
     <Project Path="src/apps/Labs/LayoutWork.Aui/LayoutWork.Aui.csproj" Id="db8eab2b-bac0-47c7-a4f4-04bb62e004de" />
+    <Project Path="src/apps/Labs/LayoutWork.Wpf/LayoutWork.Wpf.csproj" Id="e431680e-1b53-4d15-bfa0-6f79abc00906" />
     <Project Path="src/apps/Labs/LayoutWork/LayoutWork.csproj" Id="81acddba-c59e-41ef-a30c-cbd21be22f3f" />
+    <Project Path="src/apps/Labs/ResourceSampleApp/ResourceSampleApp.csproj" Id="bb95c3b2-8e58-4bb5-9283-dbf8844e8355" />
   </Folder>
   <Folder Name="/Shared/">
     <Project Path="src/shared/XamlDS.Itk.Aui/XamlDS.Itk.Aui.csproj" />

@@ -1,15 +1,35 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:itk="http://xamldesignstudio.com"
 					xmlns:controls="using:XamlDS.Itk.Views.Layouts">
 
 	<ControlTheme x:Key="{x:Type controls:ContentPanelView}" TargetType="controls:ContentPanelView">
 		<Setter Property="Width" Value="{Binding Width}"/>
 		<Setter Property="Height" Value="{Binding Height}"/>
-		<Setter Property="Template">
-			<ControlTemplate>
-				<ContentControl Content="{Binding Content}"/>
-			</ControlTemplate>
-		</Setter>
+		<Setter Property="PanelStyle" Value="{Binding PanelStyle}"/>
+		
+		<Style Selector="^:default">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<itk:ViewPresenter DataContext="{Binding Content}"/>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="^:bordered">
+			<Setter Property="Background" Value="{StaticResource Bg2Brush}"/>
+			<Setter Property="Margin" Value="2"/>
+			<Setter Property="BorderBrush" Value="{StaticResource Bg3Brush}"/>
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Border CornerRadius="6" Background="{TemplateBinding Background}" BorderThickness="2" BorderBrush="{TemplateBinding BorderBrush}" Padding="{TemplateBinding Margin}">
+						<!--<Rectangle Fill="{TemplateBinding Background}" RadiusX="{StaticResource InputRadius}" RadiusY="{StaticResource InputRadius}"
+							   Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{StaticResource InputStrokeThickness}"/>-->
+						<itk:ViewPresenter DataContext="{Binding Content}" />
+					</Border>
+				</ControlTemplate>
+			</Setter>
+		</Style>
 	</ControlTheme>
 
 </ResourceDictionary>
